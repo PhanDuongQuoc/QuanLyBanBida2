@@ -81,5 +81,10 @@ namespace QuanLyBanBida
         {
 
         }
+
+        private void dtgv_Bill_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Trinh sửa
+        }
     }
 }
