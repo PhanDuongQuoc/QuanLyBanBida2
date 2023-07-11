@@ -170,7 +170,6 @@ namespace QuanLyBanBida
             this.tcAdmin.SelectedIndex = 0;
             this.tcAdmin.Size = new System.Drawing.Size(867, 514);
             this.tcAdmin.TabIndex = 0;
-            this.tcAdmin.SelectedIndexChanged += new System.EventHandler(this.tcAdmin_SelectedIndexChanged);
             // 
             // tp_Bill
             // 
@@ -183,7 +182,6 @@ namespace QuanLyBanBida
             this.tp_Bill.TabIndex = 0;
             this.tp_Bill.Text = "Doanh thu";
             this.tp_Bill.UseVisualStyleBackColor = true;
-            this.tp_Bill.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // panel1
             // 
@@ -202,7 +200,6 @@ namespace QuanLyBanBida
             this.dtgv_Bill.RowTemplate.Height = 24;
             this.dtgv_Bill.Size = new System.Drawing.Size(842, 423);
             this.dtgv_Bill.TabIndex = 0;
-            this.dtgv_Bill.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_Bill_CellContentClick);
             // 
             // panel2
             // 
@@ -259,7 +256,6 @@ namespace QuanLyBanBida
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(417, 59);
             this.panel6.TabIndex = 3;
-            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
             // 
             // textBox1
             // 
@@ -288,7 +284,6 @@ namespace QuanLyBanBida
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(417, 59);
             this.panel5.TabIndex = 2;
-            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
             // btn_ViewFood
             // 
@@ -336,7 +331,6 @@ namespace QuanLyBanBida
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(417, 408);
             this.panel4.TabIndex = 1;
-            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // panel10
             // 
@@ -422,7 +416,6 @@ namespace QuanLyBanBida
             this.lbl_NameFood.Size = new System.Drawing.Size(111, 25);
             this.lbl_NameFood.TabIndex = 0;
             this.lbl_NameFood.Text = "Tên Món: ";
-            this.lbl_NameFood.Click += new System.EventHandler(this.lbl_NameFood_Click);
             // 
             // panel7
             // 
@@ -469,7 +462,6 @@ namespace QuanLyBanBida
             this.dtgv_Food.RowTemplate.Height = 24;
             this.dtgv_Food.Size = new System.Drawing.Size(417, 408);
             this.dtgv_Food.TabIndex = 0;
-            this.dtgv_Food.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_Food_CellContentClick);
             // 
             // tp_Category
             // 
@@ -539,7 +531,6 @@ namespace QuanLyBanBida
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(417, 408);
             this.panel13.TabIndex = 5;
-            this.panel13.Paint += new System.Windows.Forms.PaintEventHandler(this.panel13_Paint);
             // 
             // panel16
             // 
@@ -595,7 +586,6 @@ namespace QuanLyBanBida
             this.lbl_CategoryID.Size = new System.Drawing.Size(46, 25);
             this.lbl_CategoryID.TabIndex = 0;
             this.lbl_CategoryID.Text = "ID: ";
-            this.lbl_CategoryID.Click += new System.EventHandler(this.lbl_CategoryID_Click);
             // 
             // dtgv_Category
             // 
@@ -606,7 +596,6 @@ namespace QuanLyBanBida
             this.dtgv_Category.RowTemplate.Height = 24;
             this.dtgv_Category.Size = new System.Drawing.Size(417, 405);
             this.dtgv_Category.TabIndex = 4;
-            this.dtgv_Category.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_Category_CellContentClick);
             // 
             // tp_Table
             // 
@@ -621,7 +610,6 @@ namespace QuanLyBanBida
             this.tp_Table.TabIndex = 3;
             this.tp_Table.Text = "Bàn";
             this.tp_Table.UseVisualStyleBackColor = true;
-            this.tp_Table.Click += new System.EventHandler(this.tp_Table_Click);
             // 
             // panel19
             // 
@@ -1007,7 +995,6 @@ namespace QuanLyBanBida
             this.Name = "fAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin";
-            this.Load += new System.EventHandler(this.fAdmin_Load);
             this.tcAdmin.ResumeLayout(false);
             this.tp_Bill.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

@@ -61,7 +61,6 @@ namespace QuanLyBanBida
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(543, 69);
             this.panel2.TabIndex = 1;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // txt_NameIDInfo
             // 
@@ -107,7 +106,6 @@ namespace QuanLyBanBida
             this.lbl_DisplayName.Size = new System.Drawing.Size(144, 25);
             this.lbl_DisplayName.TabIndex = 0;
             this.lbl_DisplayName.Text = "Tên Hiển Thị:";
-            this.lbl_DisplayName.Click += new System.EventHandler(this.lbl_DisplayName_Click);
             // 
             // panel3
             // 
@@ -227,6 +225,7 @@ namespace QuanLyBanBida
             this.Name = "fAccountProfile";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Infomation";
+            this.Load += new System.EventHandler(this.fAccountProfile_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);

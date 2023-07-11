@@ -17,19 +17,14 @@ namespace QuanLyBanBida
             InitializeComponent();
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void lbl_DisplayName_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btn_Exit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void fAccountProfile_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

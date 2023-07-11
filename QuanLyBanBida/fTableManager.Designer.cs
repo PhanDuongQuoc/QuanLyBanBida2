@@ -65,7 +65,6 @@ namespace QuanLyBanBida
             this.menuStrip1.Size = new System.Drawing.Size(1168, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // menuStrip2
             // 
@@ -78,7 +77,6 @@ namespace QuanLyBanBida
             this.menuStrip2.Size = new System.Drawing.Size(1168, 28);
             this.menuStrip2.TabIndex = 2;
             this.menuStrip2.Text = "menuStrip2";
-            this.menuStrip2.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip2_ItemClicked);
             // 
             // adminToolStripMenuItem
             // 
@@ -95,19 +93,18 @@ namespace QuanLyBanBida
             this.thongTinTaiToolStripMenuItem.Name = "thongTinTaiToolStripMenuItem";
             this.thongTinTaiToolStripMenuItem.Size = new System.Drawing.Size(151, 24);
             this.thongTinTaiToolStripMenuItem.Text = "Thông tin tài khoản";
-            this.thongTinTaiToolStripMenuItem.Click += new System.EventHandler(this.thongTinTaiToolStripMenuItem_Click);
             // 
             // thôngTinCáNhânToolStripMenuItem
             // 
             this.thôngTinCáNhânToolStripMenuItem.Name = "thôngTinCáNhânToolStripMenuItem";
-            this.thôngTinCáNhânToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.thôngTinCáNhânToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
             this.thôngTinCáNhânToolStripMenuItem.Text = "Thông tin cá nhân";
             this.thôngTinCáNhânToolStripMenuItem.Click += new System.EventHandler(this.thôngTinCáNhânToolStripMenuItem_Click);
             // 
             // dăngXuấtToolStripMenuItem
             // 
             this.dăngXuấtToolStripMenuItem.Name = "dăngXuấtToolStripMenuItem";
-            this.dăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.dăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
             this.dăngXuấtToolStripMenuItem.Text = "Đăng Xuất";
             this.dăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.ĐăngXuấtToolStripMenuItem_Click);
             // 
@@ -118,7 +115,6 @@ namespace QuanLyBanBida
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(474, 436);
             this.panel2.TabIndex = 3;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // lsvBill
             // 
@@ -128,7 +124,6 @@ namespace QuanLyBanBida
             this.lsvBill.Size = new System.Drawing.Size(468, 430);
             this.lsvBill.TabIndex = 0;
             this.lsvBill.UseCompatibleStateImageBehavior = false;
-            this.lsvBill.SelectedIndexChanged += new System.EventHandler(this.lsvBill_SelectedIndexChanged);
             // 
             // panel3
             // 
@@ -141,7 +136,6 @@ namespace QuanLyBanBida
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(474, 82);
             this.panel3.TabIndex = 4;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // cb_SwitchTable
             // 
@@ -159,7 +153,6 @@ namespace QuanLyBanBida
             this.btn_SwitchTable.TabIndex = 6;
             this.btn_SwitchTable.Text = "Chuyển bàn";
             this.btn_SwitchTable.UseVisualStyleBackColor = true;
-            this.btn_SwitchTable.Click += new System.EventHandler(this.button1_Click_2);
             // 
             // nm_Discount
             // 
@@ -186,7 +179,6 @@ namespace QuanLyBanBida
             this.btn_Checkout.TabIndex = 4;
             this.btn_Checkout.Text = "Thanh toán";
             this.btn_Checkout.UseVisualStyleBackColor = true;
-            this.btn_Checkout.Click += new System.EventHandler(this.btn_Checkout_Click);
             // 
             // panel4
             // 
@@ -215,7 +207,6 @@ namespace QuanLyBanBida
             0,
             0,
             0});
-            this.nmFoodCount.ValueChanged += new System.EventHandler(this.nmFoodCount_ValueChanged);
             // 
             // btn_AddFood
             // 
@@ -225,7 +216,6 @@ namespace QuanLyBanBida
             this.btn_AddFood.TabIndex = 2;
             this.btn_AddFood.Text = "Gọi món";
             this.btn_AddFood.UseVisualStyleBackColor = true;
-            this.btn_AddFood.Click += new System.EventHandler(this.button1_Click);
             // 
             // comboBox1
             // 
@@ -245,10 +235,12 @@ namespace QuanLyBanBida
             // 
             // flpTable
             // 
+            this.flpTable.AutoScroll = true;
             this.flpTable.Location = new System.Drawing.Point(12, 41);
             this.flpTable.Name = "flpTable";
             this.flpTable.Size = new System.Drawing.Size(659, 614);
             this.flpTable.TabIndex = 4;
+            this.flpTable.Paint += new System.Windows.Forms.PaintEventHandler(this.flpTable_Paint);
             // 
             // fTableManager
             // 
@@ -265,7 +257,6 @@ namespace QuanLyBanBida
             this.Name = "fTableManager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TableManager";
-            this.Load += new System.EventHandler(this.fTableManager_Load);
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
             this.panel2.ResumeLayout(false);

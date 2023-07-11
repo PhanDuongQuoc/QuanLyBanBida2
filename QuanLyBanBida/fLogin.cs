@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyBanBida.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,40 +18,32 @@ namespace QuanLyBanBida
             InitializeComponent();
         }
 
-        private void lbl_NameID_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void btn_Login_Click(object sender, EventArgs e)
         {
-            fTableManager f = new fTableManager();
-            this.Hide();
-            f.ShowDialog();
-            this.Show();
+            string userName = txt_NameID.Text;
+            string passWord = txt_Password.Text;
+            if (Login(userName,passWord))
+            {
+
+                fTableManager f = new fTableManager();
+                this.Hide();
+                f.ShowDialog();
+                this.Show();
+            }
+            else
+            {
+                MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu!");
+            }
+            
         }
 
-        private void btn_Exit_Click(object sender, EventArgs e)
+        bool Login(string userName, string passWord)
+        {
+            return AccountDAO.Instance.Login(userName, passWord);
+        }
+
+        private void btn_Exit_Click_1(object sender, EventArgs e)
         {
             Application.Exit();
         }
@@ -62,10 +55,5 @@ namespace QuanLyBanBida
                 e.Cancel = true;
             }
         }
-
-        private void fLogin_Load(object sender, EventArgs e)
-        {
-
-        }
-    }
+    }    
 }
