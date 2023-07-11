@@ -35,7 +35,10 @@ namespace QuanLyBanBida
                     case "Trong":
                         btn.BackColor = Color.White;
                         break;
-                    default: btn.BackColor = Color.GreenYellow;
+                    case "Có Người":
+                        btn.BackColor = Color.DarkRed;
+                        break;
+                    case "Đặt bàn": btn.BackColor = Color.GreenYellow;
                         break;
                 }
                 flpTable.Controls.Add(btn);
@@ -67,6 +70,11 @@ namespace QuanLyBanBida
         #endregion
 
         private void flpTable_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void fTableManager_Load(object sender, EventArgs e)
         {
 
         }

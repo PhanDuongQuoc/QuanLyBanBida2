@@ -257,6 +257,7 @@ namespace QuanLyBanBida
             this.Name = "fTableManager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TableManager";
+            this.Load += new System.EventHandler(this.fTableManager_Load);
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
             this.panel2.ResumeLayout(false);
