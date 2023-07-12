@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.ListViewItem;
 
 namespace QuanLyBanBida
 {
@@ -29,7 +30,8 @@ namespace QuanLyBanBida
             {
                 Button btn = new Button() { Width = TableDAO.TableWidth, Height = TableDAO.TableHeight };
                 btn.Text = item.Name + Environment.NewLine + item.Status;
-
+                btn.Click += Btn_Click;
+                btn.Tag= item;
                 switch (item.Status)
                 {
                     case "Trong":
@@ -44,9 +46,30 @@ namespace QuanLyBanBida
                 flpTable.Controls.Add(btn);
             }
         }
-        #endregion
+
+        void ShowBill(int id)
+        {
+            lsvBill.Items.Clear();
+            List<BillInfo> listBillInfo = BillInfoDAO.Instance.GetListBillInfo(BillDAO.Instance.GetUncheckBillIDByTableID(id));
+
+            foreach(BillInfo item in listBillInfo)
+            {
+                ListViewItem lsvItem = new ListViewItem(item.FoodID.ToString());
+                lsvItem.SubItems.Add(item.Count.ToString());
+
+                lsvBill.Items.Add(lsvItem);
+            }
+
+        }
 
         #region Events
+
+        private void Btn_Click(object sender, EventArgs e)
+        {
+            int tableID = ((sender as Button).Tag as Table).ID;
+            ShowBill(tableID);
+        }
+        #endregion
         private void ĐăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DialogResult dangxuat = MessageBox.Show("bạn có muốn dăng xuất không ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);

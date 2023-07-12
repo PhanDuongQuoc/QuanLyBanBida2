@@ -1,4 +1,4 @@
-CREATE DATABASE QuanLyQuanBida
+﻿CREATE DATABASE QuanLyQuanBida
 GO
 
 USE QuanLyQuanBida
@@ -50,7 +50,7 @@ CREATE TABLE BILL
 (
 	id INT IDENTITY PRIMARY	KEY,
 	DateChecKIn DATE NOT NULL DEFAULT GETDATE(),
-	DateCheckOut DATE NOT NULL,
+	DateCheckOut DATE,
 	idTable INT NOT NULL,
 	status INT NOT NULL DEFAULT 0 -- 1: da thanh toan && 0: chua thanh toan
 
@@ -69,7 +69,7 @@ CREATE TABLE BillInfo
 	FOREIGN KEY (idFood) REFERENCES dbo.Food(id),
 )
 Go
-
+-- Thêm dữ liệu vào table account
 INSERT INTO dbo.Account
 		( UserName,
 		  DisplayName,
@@ -104,7 +104,7 @@ GO
 EXEC dbo.USP_GetAccountByUserName @userName = N'Admin' --nvarchar(100)
 
 GO
-
+-- Kiểm tra login
 CREATE PROC USP_Login
 @userName nvarchar(100) , @passWord nvarchar(100)
 AS
@@ -112,14 +112,122 @@ BEGIN
 	SELECT * FROM dbo.Account WHERE UserName = @userName AND PassWord = @passWord
 END
 GO
-
+-- Thêm bàn
 declare @i INT =1
 While @i <=10
 Begin
-	Insert dbo.TableBida (name) values ( N'B�n'+cast(@i as nvarchar(100)))
+	Insert dbo.TableBida (name) values ( N'Bàn'+cast(@i as nvarchar(100)))
 set @i = @i+1
 End
+-- Thêm Loại đồ ăn
+INSERT FoodCategory
+		(name)
+VALUES ( N'Nước ngọt' -- name - nvachar(100)
+		)
 
+INSERT FoodCategory
+		(name)
+VALUES ( N'Trái cây' -- name - nvachar(100)
+		)
+
+INSERT FoodCategory
+		(name)
+VALUES ( N'Bia' -- name - nvachar(100)
+		)
+
+-- Thêm món ăn
+
+INSERT Food
+	(name,idCategory,price)
+VALUES ( N'Sting', -- name - nvarchar(100)
+		1, -- idCategory - int
+		15000
+		)
+INSERT Food
+	(name,idCategory,price)
+VALUES ( N'Pessi', -- name - nvarchar(100)
+		1, -- idCategory - int
+		15000
+		)
+INSERT Food
+	(name,idCategory,price)
+VALUES ( N'Coca', -- name - nvarchar(100)
+		1, -- idCategory - int
+		15000
+		)
+INSERT Food
+	(name,idCategory,price)
+VALUES ( N'7Up', -- name - nvarchar(100)
+		1, -- idCategory - int
+		15000
+		)
+INSERT Food
+	(name,idCategory,price)
+VALUES ( N'Bò cụng', -- name - nvarchar(100)
+		1, -- idCategory - int
+		15000
+		)
+INSERT Food
+	(name,idCategory,price)
+VALUES ( N'Mận', -- name - nvarchar(100)
+		2, -- idCategory - int
+		25000
+		)
+INSERT Food
+	(name,idCategory,price)
+VALUES ( N'Ổi', -- name - nvarchar(100)
+		2, -- idCategory - int
+		20000
+		)
+INSERT Food
+	(name,idCategory,price)
+VALUES ( N'Nho', -- name - nvarchar(100)
+		2, -- idCategory - int
+		30000
+		)
+INSERT Food
+	(name,idCategory,price)
+VALUES ( N'Thơm thái', -- name - nvarchar(100)
+		2, -- idCategory - int
+		20000
+		)
+INSERT Food
+	(name,idCategory,price)
+VALUES ( N'Dưa hấu', -- name - nvarchar(100)
+		2, -- idCategory - int
+		18000
+		)
+INSERT Food
+	(name,idCategory,price)
+VALUES ( N'SaiGon', -- name - nvarchar(100)
+		3, -- idCategory - int
+		30000
+		)
+INSERT Food
+	(name,idCategory,price)
+VALUES ( N'Heniken', -- name - nvarchar(100)
+		3, -- idCategory - int
+		50000
+		)
+INSERT Food
+	(name,idCategory,price)
+VALUES ( N'Tiger', -- name - nvarchar(100)
+		3, -- idCategory - int
+		45000
+		)
+-- Thêm bill
+INSERT BILL
+	()
+VALUES ( GETDATE()
+-- Thêm bàn
+declare @i INT =1
+While @i <=20
+Begin
+	Insert dbo.BILL(DateChecKIn,DateCheckOut,idTable,status) values (GETDATE(),null,@i,0)
+set @i = @i+1
+End
+Select * from dbo.TableBida
+drop table dbo.BILL
 
 
 CREATE PROC USP_GetTableList
@@ -128,3 +236,15 @@ GO
 
 EXEC dbo.USP_GetTableList
 
+
+Select * from dbo.BILL
+go
+
+select * from dbo.BillInfo
+go
+
+select * from dbo.Food
+go
+
+select * from dbo.FoodCategory
+go
