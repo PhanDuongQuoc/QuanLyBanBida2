@@ -21,15 +21,15 @@ namespace QuanLyBanBida.DAO
         private MenuDAO() { }
 
 
-        public List<Menu> GetListMenuByTable(int id)
+        public List<DTO.Mennu> GetListMenuByTable(int id)
         {
-            List<Menu> listMenu = new List<Menu>();
+            List<DTO.Mennu> listMenu = new List<DTO.Mennu>();
             string query = "select f.name, bi.count, f.price, f.price * bi.count as totalPrice from dbo.BILL as b,dbo.Food as f,dbo.BillInfo as bi where bi.idBill=b.id and bi.idFood=f.id and b.idTable ="+id;
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
             foreach(DataRow item in data.Rows) 
             {
-                Menu menu = new Menu(item);
+                DTO.Mennu menu = new DTO.Mennu(item);
                 listMenu.Add(menu);
             }
             return listMenu;

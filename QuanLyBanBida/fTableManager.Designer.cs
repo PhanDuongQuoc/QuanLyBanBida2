@@ -51,6 +51,8 @@ namespace QuanLyBanBida
             this.flpTable = new System.Windows.Forms.FlowLayoutPanel();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.menuStrip2.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -122,10 +124,12 @@ namespace QuanLyBanBida
             // 
             this.lsvBill.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
-            this.columnHeader2});
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4});
             this.lsvBill.GridLines = true;
             this.lsvBill.HideSelection = false;
-            this.lsvBill.Location = new System.Drawing.Point(3, 3);
+            this.lsvBill.Location = new System.Drawing.Point(3, 0);
             this.lsvBill.Name = "lsvBill";
             this.lsvBill.Size = new System.Drawing.Size(468, 430);
             this.lsvBill.TabIndex = 0;
@@ -251,11 +255,23 @@ namespace QuanLyBanBida
             // 
             // columnHeader1
             // 
-            this.columnHeader1.Text = "ID Food";
+            this.columnHeader1.Text = "Tên món";
+            this.columnHeader1.Width = 168;
             // 
             // columnHeader2
             // 
-            this.columnHeader2.Text = "Count";
+            this.columnHeader2.Text = "Số lượng";
+            this.columnHeader2.Width = 80;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Đơn giá";
+            this.columnHeader3.Width = 107;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Thành tiền";
+            this.columnHeader4.Width = 151;
             // 
             // fTableManager
             // 
@@ -308,5 +324,7 @@ namespace QuanLyBanBida
         private System.Windows.Forms.ComboBox cb_SwitchTable;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
     }
 }

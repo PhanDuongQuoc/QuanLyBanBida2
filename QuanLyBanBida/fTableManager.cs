@@ -50,12 +50,14 @@ namespace QuanLyBanBida
         void ShowBill(int id)
         {
             lsvBill.Items.Clear();
-            List<BillInfo> listBillInfo = BillInfoDAO.Instance.GetListBillInfo(BillDAO.Instance.GetUncheckBillIDByTableID(id));
+            List<Mennu> listBillInfo = MenuDAO.Instance.GetListMenuByTable(id);
 
-            foreach(BillInfo item in listBillInfo)
+            foreach(Mennu item in listBillInfo)
             {
-                ListViewItem lsvItem = new ListViewItem(item.FoodID.ToString());
+                ListViewItem lsvItem = new ListViewItem(item.FoodName.ToString());
                 lsvItem.SubItems.Add(item.Count.ToString());
+                lsvItem.SubItems.Add(item.Price.ToString());
+                lsvItem.SubItems.Add(item.TotalPrice.ToString());
 
                 lsvBill.Items.Add(lsvItem);
             }
