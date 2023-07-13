@@ -18,6 +18,12 @@ namespace QuanLyBanBida.DAO
             private set { BillInfoDAO.instance = value; }
         }
 
+
+        /// <summary>
+        /// phan duong quoc 12345678
+        /// </summary>
+        /// <param name="id"></param>asdfhjkjhgfdfhjk
+        /// <returns></returns>
         public List<BillInfo> GetListBillInfo(int id)
         {
             List<BillInfo> ListBillInfo = new List<BillInfo>();
