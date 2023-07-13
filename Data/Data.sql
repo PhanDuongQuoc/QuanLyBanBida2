@@ -50,13 +50,16 @@ CREATE TABLE BILL
 (
 	id INT IDENTITY PRIMARY	KEY,
 	DateChecKIn DATE NOT NULL DEFAULT GETDATE(),
-	DateCheckOut DATE,
+	DateCheckOut DATE NOT NULL,
 	idTable INT NOT NULL,
 	status INT NOT NULL DEFAULT 0 -- 1: da thanh toan && 0: chua thanh toan
 
 	FOREIGN KEY (idTable) REFERENCES dbo.TableBida(id),
 )
 GO
+-- Set giá trị của Date lại thành null
+Alter table BILL
+Alter column DateCheckOut DATE null
 
 CREATE TABLE BillInfo
 (
@@ -92,7 +95,7 @@ VALUES	( N'Admin',
 		  N'1',
 		 0
 		)
-
+--Tạo thủ tục tìm account từ username
 CREATE PROC USP_GetAccountByUserName
 @userName nvarchar(100)
 AS
@@ -137,7 +140,7 @@ VALUES ( N'Bia' -- name - nvachar(100)
 
 -- Thêm món ăn
 
-INSERT Food
+INSERT dbo.Food
 	(name,idCategory,price)
 VALUES ( N'Sting', -- name - nvarchar(100)
 		1, -- idCategory - int
@@ -219,22 +222,40 @@ VALUES ( N'Tiger', -- name - nvarchar(100)
 INSERT BILL
 	()
 VALUES ( GETDATE()
--- Thêm bàn
+-- Thêm bill
 declare @i INT =1
 While @i <=20
 Begin
 	Insert dbo.BILL(DateChecKIn,DateCheckOut,idTable,status) values (GETDATE(),null,@i,0)
 set @i = @i+1
 End
-Select * from dbo.TableBida
-drop table dbo.BILL
+-- Thêm billInfo
 
+declare @i INT =141
+declare @j int =14
+While @i <=160
+Begin
+	While @j <=26
+	begin
+			Insert dbo.BillInfo(idBill,idFood,count) values (@i,@j,1)
+			set @j=@j+1
+	end
 
+set @i = @i+1
+End
+
+-- Lấy thông tin bàn
 CREATE PROC USP_GetTableList
 AS SELECT * FROM dbo.TableBida
 GO
-
 EXEC dbo.USP_GetTableList
+
+
+select id from dbo.BILL where idTable=3 and status = 0
+select * from dbo.BillInfo where idBill=141
+
+select f.name, bi.count, f.price, f.price * bi.count as totalPrice from dbo.BILL as b,dbo.Food as f,dbo.BillInfo as bi 
+where bi.idBill=b.id and bi.idFood=f.id and b.idTable = 1
 
 
 Select * from dbo.BILL
