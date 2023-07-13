@@ -29,7 +29,7 @@ namespace QuanLyBanBida.DAO
                 Table table = new Table(item);
                 tableList.Add(table);
             }
-            return tableList;// aloo
+            return tableList;// hallo
         }
 
         public static int TableWidth = 100;
