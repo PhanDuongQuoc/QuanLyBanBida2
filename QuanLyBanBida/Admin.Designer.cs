@@ -29,6 +29,7 @@ namespace QuanLyBanBida
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fAdmin));
             this.tcAdmin = new System.Windows.Forms.TabControl();
             this.tp_Bill = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -165,6 +166,7 @@ namespace QuanLyBanBida
             this.tcAdmin.Controls.Add(this.tp_Table);
             this.tcAdmin.Controls.Add(this.tp_Account);
             this.tcAdmin.Controls.Add(this.tp_InfoCustomer);
+            this.tcAdmin.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tcAdmin.Location = new System.Drawing.Point(0, 4);
             this.tcAdmin.Name = "tcAdmin";
             this.tcAdmin.SelectedIndex = 0;
@@ -175,10 +177,10 @@ namespace QuanLyBanBida
             // 
             this.tp_Bill.Controls.Add(this.panel1);
             this.tp_Bill.Controls.Add(this.panel2);
-            this.tp_Bill.Location = new System.Drawing.Point(4, 25);
+            this.tp_Bill.Location = new System.Drawing.Point(4, 28);
             this.tp_Bill.Name = "tp_Bill";
             this.tp_Bill.Padding = new System.Windows.Forms.Padding(3);
-            this.tp_Bill.Size = new System.Drawing.Size(859, 485);
+            this.tp_Bill.Size = new System.Drawing.Size(859, 482);
             this.tp_Bill.TabIndex = 0;
             this.tp_Bill.Text = "Doanh thu";
             this.tp_Bill.UseVisualStyleBackColor = true;
@@ -224,14 +226,14 @@ namespace QuanLyBanBida
             // 
             this.dtpk_ToDate.Location = new System.Drawing.Point(593, 13);
             this.dtpk_ToDate.Name = "dtpk_ToDate";
-            this.dtpk_ToDate.Size = new System.Drawing.Size(229, 22);
+            this.dtpk_ToDate.Size = new System.Drawing.Size(229, 27);
             this.dtpk_ToDate.TabIndex = 1;
             // 
             // dtpk_FromDate
             // 
             this.dtpk_FromDate.Location = new System.Drawing.Point(14, 13);
             this.dtpk_FromDate.Name = "dtpk_FromDate";
-            this.dtpk_FromDate.Size = new System.Drawing.Size(229, 22);
+            this.dtpk_FromDate.Size = new System.Drawing.Size(229, 27);
             this.dtpk_FromDate.TabIndex = 0;
             // 
             // tp_Food
@@ -240,10 +242,10 @@ namespace QuanLyBanBida
             this.tp_Food.Controls.Add(this.panel5);
             this.tp_Food.Controls.Add(this.panel4);
             this.tp_Food.Controls.Add(this.panel3);
-            this.tp_Food.Location = new System.Drawing.Point(4, 25);
+            this.tp_Food.Location = new System.Drawing.Point(4, 28);
             this.tp_Food.Name = "tp_Food";
             this.tp_Food.Padding = new System.Windows.Forms.Padding(3);
-            this.tp_Food.Size = new System.Drawing.Size(859, 485);
+            this.tp_Food.Size = new System.Drawing.Size(859, 482);
             this.tp_Food.TabIndex = 1;
             this.tp_Food.Text = "Thức ăn";
             this.tp_Food.UseVisualStyleBackColor = true;
@@ -252,22 +254,23 @@ namespace QuanLyBanBida
             // 
             this.panel6.Controls.Add(this.textBox1);
             this.panel6.Controls.Add(this.btn_SearchFood);
-            this.panel6.Location = new System.Drawing.Point(431, 6);
+            this.panel6.Location = new System.Drawing.Point(516, 6);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(417, 59);
+            this.panel6.Size = new System.Drawing.Size(332, 59);
             this.panel6.TabIndex = 3;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(18, 18);
+            this.textBox1.Location = new System.Drawing.Point(36, 15);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(305, 27);
+            this.textBox1.Size = new System.Drawing.Size(170, 30);
             this.textBox1.TabIndex = 6;
             // 
             // btn_SearchFood
             // 
-            this.btn_SearchFood.Location = new System.Drawing.Point(329, 3);
+            this.btn_SearchFood.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.btn_SearchFood.Location = new System.Drawing.Point(238, 3);
             this.btn_SearchFood.Name = "btn_SearchFood";
             this.btn_SearchFood.Size = new System.Drawing.Size(75, 53);
             this.btn_SearchFood.TabIndex = 5;
@@ -282,12 +285,13 @@ namespace QuanLyBanBida
             this.panel5.Controls.Add(this.btn_AddFood);
             this.panel5.Location = new System.Drawing.Point(8, 6);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(417, 59);
+            this.panel5.Size = new System.Drawing.Size(502, 59);
             this.panel5.TabIndex = 2;
             // 
             // btn_ViewFood
             // 
-            this.btn_ViewFood.Location = new System.Drawing.Point(321, 3);
+            this.btn_ViewFood.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.btn_ViewFood.Location = new System.Drawing.Point(384, 3);
             this.btn_ViewFood.Name = "btn_ViewFood";
             this.btn_ViewFood.Size = new System.Drawing.Size(75, 53);
             this.btn_ViewFood.TabIndex = 4;
@@ -296,7 +300,8 @@ namespace QuanLyBanBida
             // 
             // btn_EditFood
             // 
-            this.btn_EditFood.Location = new System.Drawing.Point(216, 3);
+            this.btn_EditFood.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.btn_EditFood.Location = new System.Drawing.Point(255, 3);
             this.btn_EditFood.Name = "btn_EditFood";
             this.btn_EditFood.Size = new System.Drawing.Size(75, 53);
             this.btn_EditFood.TabIndex = 3;
@@ -305,7 +310,8 @@ namespace QuanLyBanBida
             // 
             // btn_DeleteFood
             // 
-            this.btn_DeleteFood.Location = new System.Drawing.Point(113, 3);
+            this.btn_DeleteFood.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.btn_DeleteFood.Location = new System.Drawing.Point(134, 3);
             this.btn_DeleteFood.Name = "btn_DeleteFood";
             this.btn_DeleteFood.Size = new System.Drawing.Size(75, 53);
             this.btn_DeleteFood.TabIndex = 2;
@@ -314,6 +320,7 @@ namespace QuanLyBanBida
             // 
             // btn_AddFood
             // 
+            this.btn_AddFood.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_AddFood.Location = new System.Drawing.Point(15, 3);
             this.btn_AddFood.Name = "btn_AddFood";
             this.btn_AddFood.Size = new System.Drawing.Size(75, 53);
@@ -327,151 +334,165 @@ namespace QuanLyBanBida
             this.panel4.Controls.Add(this.panel9);
             this.panel4.Controls.Add(this.panel8);
             this.panel4.Controls.Add(this.panel7);
-            this.panel4.Location = new System.Drawing.Point(431, 71);
+            this.panel4.Location = new System.Drawing.Point(516, 71);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(417, 408);
+            this.panel4.Size = new System.Drawing.Size(332, 408);
             this.panel4.TabIndex = 1;
             // 
             // panel10
             // 
             this.panel10.Controls.Add(this.numericUpDown1);
             this.panel10.Controls.Add(this.lbl_FoodPrice);
-            this.panel10.Location = new System.Drawing.Point(3, 278);
+            this.panel10.Location = new System.Drawing.Point(16, 260);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(411, 69);
+            this.panel10.Size = new System.Drawing.Size(300, 70);
             this.panel10.TabIndex = 4;
+            this.panel10.Paint += new System.Windows.Forms.PaintEventHandler(this.panel10_Paint);
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(142, 25);
+            this.numericUpDown1.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.numericUpDown1.Location = new System.Drawing.Point(118, 26);
             this.numericUpDown1.Maximum = new decimal(new int[] {
             100000000,
             0,
             0,
             0});
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(266, 22);
+            this.numericUpDown1.Size = new System.Drawing.Size(170, 30);
             this.numericUpDown1.TabIndex = 1;
+            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
             // lbl_FoodPrice
             // 
             this.lbl_FoodPrice.AutoSize = true;
-            this.lbl_FoodPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_FoodPrice.Location = new System.Drawing.Point(10, 25);
+            this.lbl_FoodPrice.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.lbl_FoodPrice.Location = new System.Drawing.Point(38, 26);
             this.lbl_FoodPrice.Name = "lbl_FoodPrice";
-            this.lbl_FoodPrice.Size = new System.Drawing.Size(58, 25);
+            this.lbl_FoodPrice.Size = new System.Drawing.Size(50, 22);
             this.lbl_FoodPrice.TabIndex = 0;
             this.lbl_FoodPrice.Text = "Giá: ";
+            this.lbl_FoodPrice.Click += new System.EventHandler(this.lbl_FoodPrice_Click);
             // 
             // panel9
             // 
             this.panel9.Controls.Add(this.txt_Category);
             this.panel9.Controls.Add(this.lbl_Category);
-            this.panel9.Location = new System.Drawing.Point(3, 189);
+            this.panel9.Location = new System.Drawing.Point(16, 179);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(411, 69);
+            this.panel9.Size = new System.Drawing.Size(300, 70);
             this.panel9.TabIndex = 3;
             // 
             // txt_Category
             // 
-            this.txt_Category.Location = new System.Drawing.Point(142, 25);
+            this.txt_Category.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.txt_Category.Location = new System.Drawing.Point(118, 20);
             this.txt_Category.Multiline = true;
             this.txt_Category.Name = "txt_Category";
-            this.txt_Category.Size = new System.Drawing.Size(266, 22);
+            this.txt_Category.Size = new System.Drawing.Size(170, 30);
             this.txt_Category.TabIndex = 1;
+            this.txt_Category.TextChanged += new System.EventHandler(this.txt_Category_TextChanged);
             // 
             // lbl_Category
             // 
             this.lbl_Category.AutoSize = true;
-            this.lbl_Category.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Category.Location = new System.Drawing.Point(10, 22);
+            this.lbl_Category.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.lbl_Category.Location = new System.Drawing.Point(3, 28);
             this.lbl_Category.Name = "lbl_Category";
-            this.lbl_Category.Size = new System.Drawing.Size(123, 25);
+            this.lbl_Category.Size = new System.Drawing.Size(102, 22);
             this.lbl_Category.TabIndex = 0;
             this.lbl_Category.Text = "Danh Mục: ";
+            this.lbl_Category.Click += new System.EventHandler(this.lbl_Category_Click);
             // 
             // panel8
             // 
             this.panel8.Controls.Add(this.txt_NameFood);
             this.panel8.Controls.Add(this.lbl_NameFood);
-            this.panel8.Location = new System.Drawing.Point(3, 98);
+            this.panel8.Location = new System.Drawing.Point(16, 98);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(411, 69);
+            this.panel8.Size = new System.Drawing.Size(300, 70);
             this.panel8.TabIndex = 3;
             // 
             // txt_NameFood
             // 
-            this.txt_NameFood.Location = new System.Drawing.Point(142, 22);
+            this.txt_NameFood.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.txt_NameFood.Location = new System.Drawing.Point(118, 22);
             this.txt_NameFood.Multiline = true;
             this.txt_NameFood.Name = "txt_NameFood";
-            this.txt_NameFood.Size = new System.Drawing.Size(266, 25);
+            this.txt_NameFood.Size = new System.Drawing.Size(170, 30);
             this.txt_NameFood.TabIndex = 1;
+            this.txt_NameFood.TextChanged += new System.EventHandler(this.txt_NameFood_TextChanged);
             // 
             // lbl_NameFood
             // 
             this.lbl_NameFood.AutoSize = true;
-            this.lbl_NameFood.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_NameFood.Location = new System.Drawing.Point(10, 22);
+            this.lbl_NameFood.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.lbl_NameFood.Location = new System.Drawing.Point(13, 25);
             this.lbl_NameFood.Name = "lbl_NameFood";
-            this.lbl_NameFood.Size = new System.Drawing.Size(111, 25);
+            this.lbl_NameFood.Size = new System.Drawing.Size(92, 22);
             this.lbl_NameFood.TabIndex = 0;
             this.lbl_NameFood.Text = "Tên Món: ";
+            this.lbl_NameFood.Click += new System.EventHandler(this.lbl_NameFood_Click);
             // 
             // panel7
             // 
             this.panel7.Controls.Add(this.txt_FoodID);
             this.panel7.Controls.Add(this.lbl_FoodID);
-            this.panel7.Location = new System.Drawing.Point(3, 13);
+            this.panel7.Location = new System.Drawing.Point(16, 17);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(411, 69);
+            this.panel7.Size = new System.Drawing.Size(300, 70);
             this.panel7.TabIndex = 2;
             // 
             // txt_FoodID
             // 
-            this.txt_FoodID.Location = new System.Drawing.Point(142, 25);
+            this.txt_FoodID.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.txt_FoodID.Location = new System.Drawing.Point(118, 17);
             this.txt_FoodID.Multiline = true;
             this.txt_FoodID.Name = "txt_FoodID";
             this.txt_FoodID.ReadOnly = true;
-            this.txt_FoodID.Size = new System.Drawing.Size(266, 22);
+            this.txt_FoodID.Size = new System.Drawing.Size(170, 30);
             this.txt_FoodID.TabIndex = 1;
+            this.txt_FoodID.TextChanged += new System.EventHandler(this.txt_FoodID_TextChanged);
             // 
             // lbl_FoodID
             // 
             this.lbl_FoodID.AutoSize = true;
-            this.lbl_FoodID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_FoodID.Location = new System.Drawing.Point(10, 25);
+            this.lbl_FoodID.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.lbl_FoodID.Location = new System.Drawing.Point(64, 25);
             this.lbl_FoodID.Name = "lbl_FoodID";
-            this.lbl_FoodID.Size = new System.Drawing.Size(46, 25);
+            this.lbl_FoodID.Size = new System.Drawing.Size(41, 22);
             this.lbl_FoodID.TabIndex = 0;
             this.lbl_FoodID.Text = "ID: ";
+            this.lbl_FoodID.Click += new System.EventHandler(this.lbl_FoodID_Click);
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.dtgv_Food);
             this.panel3.Location = new System.Drawing.Point(8, 71);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(417, 408);
+            this.panel3.Size = new System.Drawing.Size(502, 408);
             this.panel3.TabIndex = 0;
             // 
             // dtgv_Food
             // 
             this.dtgv_Food.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgv_Food.Location = new System.Drawing.Point(0, 0);
+            this.dtgv_Food.Location = new System.Drawing.Point(3, 1);
             this.dtgv_Food.Name = "dtgv_Food";
             this.dtgv_Food.RowHeadersWidth = 51;
             this.dtgv_Food.RowTemplate.Height = 24;
-            this.dtgv_Food.Size = new System.Drawing.Size(417, 408);
+            this.dtgv_Food.Size = new System.Drawing.Size(496, 408);
             this.dtgv_Food.TabIndex = 0;
+            this.dtgv_Food.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_Food_CellContentClick);
             // 
             // tp_Category
             // 
             this.tp_Category.Controls.Add(this.panel12);
             this.tp_Category.Controls.Add(this.panel13);
             this.tp_Category.Controls.Add(this.dtgv_Category);
-            this.tp_Category.Location = new System.Drawing.Point(4, 25);
+            this.tp_Category.Location = new System.Drawing.Point(4, 28);
             this.tp_Category.Name = "tp_Category";
             this.tp_Category.Padding = new System.Windows.Forms.Padding(3);
-            this.tp_Category.Size = new System.Drawing.Size(859, 485);
+            this.tp_Category.Size = new System.Drawing.Size(859, 482);
             this.tp_Category.TabIndex = 2;
             this.tp_Category.Text = "Danh Mục";
             this.tp_Category.UseVisualStyleBackColor = true;
@@ -489,6 +510,7 @@ namespace QuanLyBanBida
             // 
             // btn_ViewCategory
             // 
+            this.btn_ViewCategory.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.btn_ViewCategory.Location = new System.Drawing.Point(321, 3);
             this.btn_ViewCategory.Name = "btn_ViewCategory";
             this.btn_ViewCategory.Size = new System.Drawing.Size(75, 53);
@@ -498,6 +520,7 @@ namespace QuanLyBanBida
             // 
             // btn_EditCategory
             // 
+            this.btn_EditCategory.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.btn_EditCategory.Location = new System.Drawing.Point(216, 3);
             this.btn_EditCategory.Name = "btn_EditCategory";
             this.btn_EditCategory.Size = new System.Drawing.Size(75, 53);
@@ -507,6 +530,7 @@ namespace QuanLyBanBida
             // 
             // btn_DeleteCategory
             // 
+            this.btn_DeleteCategory.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.btn_DeleteCategory.Location = new System.Drawing.Point(113, 3);
             this.btn_DeleteCategory.Name = "btn_DeleteCategory";
             this.btn_DeleteCategory.Size = new System.Drawing.Size(75, 53);
@@ -516,6 +540,7 @@ namespace QuanLyBanBida
             // 
             // btn_AddCategory
             // 
+            this.btn_AddCategory.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_AddCategory.Location = new System.Drawing.Point(15, 3);
             this.btn_AddCategory.Name = "btn_AddCategory";
             this.btn_AddCategory.Size = new System.Drawing.Size(75, 53);
@@ -552,10 +577,10 @@ namespace QuanLyBanBida
             // lbl_CategoryName
             // 
             this.lbl_CategoryName.AutoSize = true;
-            this.lbl_CategoryName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_CategoryName.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.lbl_CategoryName.Location = new System.Drawing.Point(0, 22);
             this.lbl_CategoryName.Name = "lbl_CategoryName";
-            this.lbl_CategoryName.Size = new System.Drawing.Size(167, 25);
+            this.lbl_CategoryName.Size = new System.Drawing.Size(137, 22);
             this.lbl_CategoryName.TabIndex = 0;
             this.lbl_CategoryName.Text = "Tên Danh Mục: ";
             // 
@@ -580,10 +605,10 @@ namespace QuanLyBanBida
             // lbl_CategoryID
             // 
             this.lbl_CategoryID.AutoSize = true;
-            this.lbl_CategoryID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_CategoryID.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.lbl_CategoryID.Location = new System.Drawing.Point(0, 25);
             this.lbl_CategoryID.Name = "lbl_CategoryID";
-            this.lbl_CategoryID.Size = new System.Drawing.Size(46, 25);
+            this.lbl_CategoryID.Size = new System.Drawing.Size(41, 22);
             this.lbl_CategoryID.TabIndex = 0;
             this.lbl_CategoryID.Text = "ID: ";
             // 
@@ -603,10 +628,10 @@ namespace QuanLyBanBida
             this.tp_Table.Controls.Add(this.panel11);
             this.tp_Table.Controls.Add(this.panel14);
             this.tp_Table.Controls.Add(this.dtgv_Table);
-            this.tp_Table.Location = new System.Drawing.Point(4, 25);
+            this.tp_Table.Location = new System.Drawing.Point(4, 28);
             this.tp_Table.Name = "tp_Table";
             this.tp_Table.Padding = new System.Windows.Forms.Padding(3);
-            this.tp_Table.Size = new System.Drawing.Size(859, 485);
+            this.tp_Table.Size = new System.Drawing.Size(859, 482);
             this.tp_Table.TabIndex = 3;
             this.tp_Table.Text = "Bàn";
             this.tp_Table.UseVisualStyleBackColor = true;
@@ -615,28 +640,29 @@ namespace QuanLyBanBida
             // 
             this.panel19.Controls.Add(this.cb_TableStatus);
             this.panel19.Controls.Add(this.lbl_TableStatus);
-            this.panel19.Location = new System.Drawing.Point(432, 326);
+            this.panel19.Location = new System.Drawing.Point(505, 326);
             this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(411, 69);
+            this.panel19.Size = new System.Drawing.Size(316, 69);
             this.panel19.TabIndex = 4;
             // 
             // cb_TableStatus
             // 
             this.cb_TableStatus.FormattingEnabled = true;
-            this.cb_TableStatus.Location = new System.Drawing.Point(168, 26);
+            this.cb_TableStatus.Location = new System.Drawing.Point(134, 26);
             this.cb_TableStatus.Name = "cb_TableStatus";
-            this.cb_TableStatus.Size = new System.Drawing.Size(240, 24);
+            this.cb_TableStatus.Size = new System.Drawing.Size(170, 27);
             this.cb_TableStatus.TabIndex = 1;
             // 
             // lbl_TableStatus
             // 
             this.lbl_TableStatus.AutoSize = true;
-            this.lbl_TableStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_TableStatus.Location = new System.Drawing.Point(10, 22);
+            this.lbl_TableStatus.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.lbl_TableStatus.Location = new System.Drawing.Point(23, 26);
             this.lbl_TableStatus.Name = "lbl_TableStatus";
-            this.lbl_TableStatus.Size = new System.Drawing.Size(123, 25);
+            this.lbl_TableStatus.Size = new System.Drawing.Size(100, 22);
             this.lbl_TableStatus.TabIndex = 0;
             this.lbl_TableStatus.Text = "Trạng thái: ";
+            this.lbl_TableStatus.Click += new System.EventHandler(this.lbl_TableStatus_Click);
             // 
             // panel11
             // 
@@ -646,12 +672,13 @@ namespace QuanLyBanBida
             this.panel11.Controls.Add(this.btn_AddTable);
             this.panel11.Location = new System.Drawing.Point(9, 6);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(417, 59);
+            this.panel11.Size = new System.Drawing.Size(446, 59);
             this.panel11.TabIndex = 9;
             // 
             // btn_ViewTable
             // 
-            this.btn_ViewTable.Location = new System.Drawing.Point(321, 3);
+            this.btn_ViewTable.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.btn_ViewTable.Location = new System.Drawing.Point(342, 3);
             this.btn_ViewTable.Name = "btn_ViewTable";
             this.btn_ViewTable.Size = new System.Drawing.Size(75, 53);
             this.btn_ViewTable.TabIndex = 4;
@@ -660,7 +687,8 @@ namespace QuanLyBanBida
             // 
             // btn_EditTable
             // 
-            this.btn_EditTable.Location = new System.Drawing.Point(216, 3);
+            this.btn_EditTable.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.btn_EditTable.Location = new System.Drawing.Point(231, 3);
             this.btn_EditTable.Name = "btn_EditTable";
             this.btn_EditTable.Size = new System.Drawing.Size(75, 53);
             this.btn_EditTable.TabIndex = 3;
@@ -669,7 +697,8 @@ namespace QuanLyBanBida
             // 
             // btn_DeleteTable
             // 
-            this.btn_DeleteTable.Location = new System.Drawing.Point(113, 3);
+            this.btn_DeleteTable.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.btn_DeleteTable.Location = new System.Drawing.Point(115, 3);
             this.btn_DeleteTable.Name = "btn_DeleteTable";
             this.btn_DeleteTable.Size = new System.Drawing.Size(75, 53);
             this.btn_DeleteTable.TabIndex = 2;
@@ -678,6 +707,7 @@ namespace QuanLyBanBida
             // 
             // btn_AddTable
             // 
+            this.btn_AddTable.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_AddTable.Location = new System.Drawing.Point(15, 3);
             this.btn_AddTable.Name = "btn_AddTable";
             this.btn_AddTable.Size = new System.Drawing.Size(75, 53);
@@ -689,35 +719,36 @@ namespace QuanLyBanBida
             // 
             this.panel14.Controls.Add(this.panel15);
             this.panel14.Controls.Add(this.panel18);
-            this.panel14.Location = new System.Drawing.Point(432, 71);
+            this.panel14.Location = new System.Drawing.Point(473, 71);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(417, 408);
+            this.panel14.Size = new System.Drawing.Size(376, 408);
             this.panel14.TabIndex = 8;
             // 
             // panel15
             // 
             this.panel15.Controls.Add(this.txt_TableName);
             this.panel15.Controls.Add(this.lbl_TableName);
-            this.panel15.Location = new System.Drawing.Point(3, 161);
+            this.panel15.Location = new System.Drawing.Point(32, 166);
             this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(411, 69);
+            this.panel15.Size = new System.Drawing.Size(316, 69);
             this.panel15.TabIndex = 3;
             // 
             // txt_TableName
             // 
-            this.txt_TableName.Location = new System.Drawing.Point(165, 22);
+            this.txt_TableName.Location = new System.Drawing.Point(134, 22);
             this.txt_TableName.Multiline = true;
             this.txt_TableName.Name = "txt_TableName";
-            this.txt_TableName.Size = new System.Drawing.Size(243, 25);
+            this.txt_TableName.Size = new System.Drawing.Size(170, 30);
             this.txt_TableName.TabIndex = 1;
+            this.txt_TableName.TextChanged += new System.EventHandler(this.txt_TableName_TextChanged);
             // 
             // lbl_TableName
             // 
             this.lbl_TableName.AutoSize = true;
-            this.lbl_TableName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_TableName.Location = new System.Drawing.Point(10, 22);
+            this.lbl_TableName.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.lbl_TableName.Location = new System.Drawing.Point(36, 23);
             this.lbl_TableName.Name = "lbl_TableName";
-            this.lbl_TableName.Size = new System.Drawing.Size(107, 25);
+            this.lbl_TableName.Size = new System.Drawing.Size(87, 22);
             this.lbl_TableName.TabIndex = 0;
             this.lbl_TableName.Text = "Tên Bàn: ";
             // 
@@ -725,27 +756,27 @@ namespace QuanLyBanBida
             // 
             this.panel18.Controls.Add(this.txt_IDTable);
             this.panel18.Controls.Add(this.lbl_IDTable);
-            this.panel18.Location = new System.Drawing.Point(3, 72);
+            this.panel18.Location = new System.Drawing.Point(32, 79);
             this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(414, 69);
+            this.panel18.Size = new System.Drawing.Size(316, 69);
             this.panel18.TabIndex = 2;
             // 
             // txt_IDTable
             // 
-            this.txt_IDTable.Location = new System.Drawing.Point(165, 25);
+            this.txt_IDTable.Location = new System.Drawing.Point(134, 15);
             this.txt_IDTable.Multiline = true;
             this.txt_IDTable.Name = "txt_IDTable";
             this.txt_IDTable.ReadOnly = true;
-            this.txt_IDTable.Size = new System.Drawing.Size(243, 22);
+            this.txt_IDTable.Size = new System.Drawing.Size(170, 30);
             this.txt_IDTable.TabIndex = 1;
             // 
             // lbl_IDTable
             // 
             this.lbl_IDTable.AutoSize = true;
-            this.lbl_IDTable.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_IDTable.Location = new System.Drawing.Point(10, 25);
+            this.lbl_IDTable.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.lbl_IDTable.Location = new System.Drawing.Point(82, 20);
             this.lbl_IDTable.Name = "lbl_IDTable";
-            this.lbl_IDTable.Size = new System.Drawing.Size(46, 25);
+            this.lbl_IDTable.Size = new System.Drawing.Size(41, 22);
             this.lbl_IDTable.TabIndex = 0;
             this.lbl_IDTable.Text = "ID: ";
             // 
@@ -756,7 +787,7 @@ namespace QuanLyBanBida
             this.dtgv_Table.Name = "dtgv_Table";
             this.dtgv_Table.RowHeadersWidth = 51;
             this.dtgv_Table.RowTemplate.Height = 24;
-            this.dtgv_Table.Size = new System.Drawing.Size(417, 405);
+            this.dtgv_Table.Size = new System.Drawing.Size(446, 405);
             this.dtgv_Table.TabIndex = 7;
             // 
             // tp_Account
@@ -764,10 +795,10 @@ namespace QuanLyBanBida
             this.tp_Account.Controls.Add(this.dtgv_Account);
             this.tp_Account.Controls.Add(this.panel21);
             this.tp_Account.Controls.Add(this.panel22);
-            this.tp_Account.Location = new System.Drawing.Point(4, 25);
+            this.tp_Account.Location = new System.Drawing.Point(4, 28);
             this.tp_Account.Name = "tp_Account";
             this.tp_Account.Padding = new System.Windows.Forms.Padding(3);
-            this.tp_Account.Size = new System.Drawing.Size(859, 485);
+            this.tp_Account.Size = new System.Drawing.Size(859, 482);
             this.tp_Account.TabIndex = 4;
             this.tp_Account.Text = "Tài Khoản";
             this.tp_Account.UseVisualStyleBackColor = true;
@@ -842,9 +873,9 @@ namespace QuanLyBanBida
             // 
             // btn_ResetPassword
             // 
-            this.btn_ResetPassword.Location = new System.Drawing.Point(283, 276);
+            this.btn_ResetPassword.Location = new System.Drawing.Point(251, 276);
             this.btn_ResetPassword.Name = "btn_ResetPassword";
-            this.btn_ResetPassword.Size = new System.Drawing.Size(118, 48);
+            this.btn_ResetPassword.Size = new System.Drawing.Size(150, 48);
             this.btn_ResetPassword.TabIndex = 2;
             this.btn_ResetPassword.Text = "Đặt lại mật khẩu";
             this.btn_ResetPassword.UseVisualStyleBackColor = true;
@@ -863,16 +894,16 @@ namespace QuanLyBanBida
             this.txt_AccountType.Location = new System.Drawing.Point(182, 25);
             this.txt_AccountType.Multiline = true;
             this.txt_AccountType.Name = "txt_AccountType";
-            this.txt_AccountType.Size = new System.Drawing.Size(226, 22);
+            this.txt_AccountType.Size = new System.Drawing.Size(170, 30);
             this.txt_AccountType.TabIndex = 1;
             // 
             // lbl_AccountType
             // 
             this.lbl_AccountType.AutoSize = true;
-            this.lbl_AccountType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_AccountType.Location = new System.Drawing.Point(-3, 22);
+            this.lbl_AccountType.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.lbl_AccountType.Location = new System.Drawing.Point(21, 25);
             this.lbl_AccountType.Name = "lbl_AccountType";
-            this.lbl_AccountType.Size = new System.Drawing.Size(172, 25);
+            this.lbl_AccountType.Size = new System.Drawing.Size(145, 22);
             this.lbl_AccountType.TabIndex = 0;
             this.lbl_AccountType.Text = "Loại Tài Khoản: ";
             // 
@@ -890,16 +921,16 @@ namespace QuanLyBanBida
             this.txt_DisplayName.Location = new System.Drawing.Point(182, 22);
             this.txt_DisplayName.Multiline = true;
             this.txt_DisplayName.Name = "txt_DisplayName";
-            this.txt_DisplayName.Size = new System.Drawing.Size(226, 25);
+            this.txt_DisplayName.Size = new System.Drawing.Size(170, 30);
             this.txt_DisplayName.TabIndex = 1;
             // 
             // lbl_DisplayName
             // 
             this.lbl_DisplayName.AutoSize = true;
-            this.lbl_DisplayName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_DisplayName.Location = new System.Drawing.Point(-3, 22);
+            this.lbl_DisplayName.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.lbl_DisplayName.Location = new System.Drawing.Point(40, 23);
             this.lbl_DisplayName.Name = "lbl_DisplayName";
-            this.lbl_DisplayName.Size = new System.Drawing.Size(150, 25);
+            this.lbl_DisplayName.Size = new System.Drawing.Size(126, 22);
             this.lbl_DisplayName.TabIndex = 0;
             this.lbl_DisplayName.Text = "Tên Hiển Thị: ";
             // 
@@ -918,16 +949,16 @@ namespace QuanLyBanBida
             this.txt_NameID.Multiline = true;
             this.txt_NameID.Name = "txt_NameID";
             this.txt_NameID.ReadOnly = true;
-            this.txt_NameID.Size = new System.Drawing.Size(226, 22);
+            this.txt_NameID.Size = new System.Drawing.Size(170, 30);
             this.txt_NameID.TabIndex = 1;
             // 
             // lbl_NameID
             // 
             this.lbl_NameID.AutoSize = true;
-            this.lbl_NameID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_NameID.Location = new System.Drawing.Point(-3, 25);
+            this.lbl_NameID.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.lbl_NameID.Location = new System.Drawing.Point(22, 25);
             this.lbl_NameID.Name = "lbl_NameID";
-            this.lbl_NameID.Size = new System.Drawing.Size(177, 25);
+            this.lbl_NameID.Size = new System.Drawing.Size(144, 22);
             this.lbl_NameID.TabIndex = 0;
             this.lbl_NameID.Text = "Tên Đăng Nhập: ";
             // 
@@ -935,10 +966,10 @@ namespace QuanLyBanBida
             // 
             this.tp_InfoCustomer.Controls.Add(this.panel20);
             this.tp_InfoCustomer.Controls.Add(this.dtgv_InfoCustomer);
-            this.tp_InfoCustomer.Location = new System.Drawing.Point(4, 25);
+            this.tp_InfoCustomer.Location = new System.Drawing.Point(4, 28);
             this.tp_InfoCustomer.Name = "tp_InfoCustomer";
             this.tp_InfoCustomer.Padding = new System.Windows.Forms.Padding(3);
-            this.tp_InfoCustomer.Size = new System.Drawing.Size(859, 485);
+            this.tp_InfoCustomer.Size = new System.Drawing.Size(859, 482);
             this.tp_InfoCustomer.TabIndex = 5;
             this.tp_InfoCustomer.Text = "Thông tin khách hàng";
             this.tp_InfoCustomer.UseVisualStyleBackColor = true;
@@ -966,14 +997,14 @@ namespace QuanLyBanBida
             // 
             this.dtpk_ToDateInfo.Location = new System.Drawing.Point(593, 13);
             this.dtpk_ToDateInfo.Name = "dtpk_ToDateInfo";
-            this.dtpk_ToDateInfo.Size = new System.Drawing.Size(229, 22);
+            this.dtpk_ToDateInfo.Size = new System.Drawing.Size(229, 27);
             this.dtpk_ToDateInfo.TabIndex = 1;
             // 
             // dtpk_FromDateInfo
             // 
             this.dtpk_FromDateInfo.Location = new System.Drawing.Point(14, 13);
             this.dtpk_FromDateInfo.Name = "dtpk_FromDateInfo";
-            this.dtpk_FromDateInfo.Size = new System.Drawing.Size(229, 22);
+            this.dtpk_FromDateInfo.Size = new System.Drawing.Size(229, 27);
             this.dtpk_FromDateInfo.TabIndex = 0;
             // 
             // dtgv_InfoCustomer
@@ -992,6 +1023,7 @@ namespace QuanLyBanBida
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(870, 525);
             this.Controls.Add(this.tcAdmin);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "fAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin";

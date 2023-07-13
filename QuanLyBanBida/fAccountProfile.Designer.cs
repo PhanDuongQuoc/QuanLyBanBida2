@@ -29,6 +29,7 @@ namespace QuanLyBanBida
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fAccountProfile));
             this.panel2 = new System.Windows.Forms.Panel();
             this.txt_NameIDInfo = new System.Windows.Forms.TextBox();
             this.lbl_NameIDInfo = new System.Windows.Forms.Label();
@@ -42,11 +43,11 @@ namespace QuanLyBanBida
             this.txt_NewPassword = new System.Windows.Forms.TextBox();
             this.lbl_NewPassword = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.txt_Reeter = new System.Windows.Forms.TextBox();
             this.lbl_Reeter = new System.Windows.Forms.Label();
             this.btn_UpDate = new System.Windows.Forms.Button();
             this.btn_Exit = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -178,6 +179,16 @@ namespace QuanLyBanBida
             this.panel5.Size = new System.Drawing.Size(438, 60);
             this.panel5.TabIndex = 5;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.label1.Location = new System.Drawing.Point(10, 32);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(137, 22);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Mật Khẩu Mới: ";
+            // 
             // txt_Reeter
             // 
             this.txt_Reeter.Font = new System.Drawing.Font("Times New Roman", 12F);
@@ -219,16 +230,6 @@ namespace QuanLyBanBida
             this.btn_Exit.UseVisualStyleBackColor = true;
             this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.label1.Location = new System.Drawing.Point(10, 32);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(137, 22);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Mật Khẩu Mới: ";
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::QuanLyBanBida.Properties.Resources.useraccount;
@@ -253,6 +254,7 @@ namespace QuanLyBanBida
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "fAccountProfile";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Infomation";
