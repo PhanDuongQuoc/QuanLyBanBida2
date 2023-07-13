@@ -22,7 +22,7 @@ namespace QuanLyBanBida.DAO
         /// <summary>
         /// phan duong quoc 12345678
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id"></param>asdfhjkjhgfdfhjk
         /// <returns></returns>
         public List<BillInfo> GetListBillInfo(int id)
         {
