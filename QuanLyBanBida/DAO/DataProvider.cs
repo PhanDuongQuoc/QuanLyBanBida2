@@ -20,7 +20,7 @@ namespace QuanLyBanBida.DAO
 
         private DataProvider() { }
 
-        private string connectionSTR = "Data Source=.\\sqlexpress;Initial Catalog=QuanLyQuanBida;Integrated Security=True";
+        private string connectionSTR = "Data Source=DESKTOP-EL2BUEB\\FULEIM1;Initial Catalog=QuanLyQuanBida;Integrated Security=True";
 
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {
