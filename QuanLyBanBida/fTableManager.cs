@@ -36,17 +36,22 @@ namespace QuanLyBanBida
                 {
                     case "Trong":
                         btn.BackColor = Color.White;
-                        /*btn.Image = Properties.Resources;*/
+                        btn.Image = Properties.Resources.ban;
                         break;
                     case "Có Người":
                         btn.BackColor = Color.DarkRed;
-                       /* btn.Image = Properties.Resources.TrongIcon;*/
+                        btn.Image = Properties.Resources.banconguoi;
                         break;
                     case "Đặt bàn": btn.BackColor = Color.GreenYellow;
-                        /*btn.Image = Properties.Resources.TrongIcon;*/
+                        btn.Image = Properties.Resources.bandat;
                         break;
                 }
                 flpTable.Controls.Add(btn);
+                btn.TextImageRelation = TextImageRelation.ImageAboveText;
+                btn.Font = new Font("Time new roman", 7, FontStyle.Bold);
+
+                // Căn giữa văn bản
+                btn.TextAlign = ContentAlignment.MiddleCenter;
             }
         }
 
@@ -80,7 +85,9 @@ namespace QuanLyBanBida
             DialogResult dangxuat = MessageBox.Show("bạn có muốn dăng xuất không ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if (dangxuat == DialogResult.Yes) 
             {
-                Application.Exit();
+                fLogin fLogin = new fLogin();
+                fLogin.Show();
+                this.Hide();
             }
         }
 
