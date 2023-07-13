@@ -36,11 +36,14 @@ namespace QuanLyBanBida
                 {
                     case "Trong":
                         btn.BackColor = Color.White;
+                        /*btn.Image = Properties.Resources;*/
                         break;
                     case "Có Người":
                         btn.BackColor = Color.DarkRed;
+                       /* btn.Image = Properties.Resources.TrongIcon;*/
                         break;
                     case "Đặt bàn": btn.BackColor = Color.GreenYellow;
+                        /*btn.Image = Properties.Resources.TrongIcon;*/
                         break;
                 }
                 flpTable.Controls.Add(btn);
