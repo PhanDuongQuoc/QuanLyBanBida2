@@ -142,7 +142,7 @@ namespace QuanLyBanBida
             this.pictureBox1.Image = global::QuanLyBanBida.Properties.Resources.user;
             this.pictureBox1.Location = new System.Drawing.Point(203, 15);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(131, 126);
+            this.pictureBox1.Size = new System.Drawing.Size(170, 150);
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
