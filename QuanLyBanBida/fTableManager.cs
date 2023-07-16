@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +20,7 @@ namespace QuanLyBanBida
         {
             InitializeComponent();
             Table();
+            category_loai();
         }
 
         #region Method
@@ -59,16 +61,18 @@ namespace QuanLyBanBida
         {
             lsvBill.Items.Clear();
             List<Mennu> listBillInfo = MenuDAO.Instance.GetListMenuByTable(id);
-
+            double tongtien = 0;
             foreach(Mennu item in listBillInfo)
             {
                 ListViewItem lsvItem = new ListViewItem(item.FoodName.ToString());
                 lsvItem.SubItems.Add(item.Count.ToString());
                 lsvItem.SubItems.Add(item.Price.ToString());
                 lsvItem.SubItems.Add(item.TotalPrice.ToString());
-
+                tongtien +=item.TotalPrice;
                 lsvBill.Items.Add(lsvItem);
             }
+            CultureInfo usinglanguage=new CultureInfo("vi-VN");
+            txttongtien.Text=tongtien.ToString("c",usinglanguage);
 
         }
 
@@ -112,6 +116,34 @@ namespace QuanLyBanBida
         private void fTableManager_Load(object sender, EventArgs e)
         {
 
+        }
+
+        void category_loai() 
+        {
+            List<Category> listcategory = CategoryDAO.Instance.Getlistcategory();
+            cbCategory.DataSource= listcategory;
+            cbCategory.DisplayMember = "name";
+        }
+
+        void listfoodcategoryid(int id) 
+        {
+            List<Food> listfood = FoodDAO.Instance.Getlistfood(id);
+            cbfood.DataSource = listfood;
+            cbfood.DisplayMember= "name";
+        }
+
+        private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int id = 0;
+            ComboBox cb = sender as ComboBox;
+            if (cb.SelectedItem == null)
+            {
+                return;
+            }
+            Category select=cb.SelectedItem as Category;
+            id=select.Id;
+
+            listfoodcategoryid(id);
         }
     }
 }
