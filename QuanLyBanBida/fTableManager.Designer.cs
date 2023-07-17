@@ -48,10 +48,10 @@ namespace QuanLyBanBida
             this.btn_Discount = new System.Windows.Forms.Button();
             this.btn_Checkout = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.nmFoodCount = new System.Windows.Forms.NumericUpDown();
-            this.btn_AddFood = new System.Windows.Forms.Button();
             this.cbfood = new System.Windows.Forms.ComboBox();
             this.cbCategory = new System.Windows.Forms.ComboBox();
+            this.nmFoodCount = new System.Windows.Forms.NumericUpDown();
+            this.btn_AddFood = new System.Windows.Forms.Button();
             this.flpTable = new System.Windows.Forms.FlowLayoutPanel();
             this.txttongtien = new System.Windows.Forms.TextBox();
             this.menuStrip2.SuspendLayout();
@@ -102,14 +102,14 @@ namespace QuanLyBanBida
             // thôngTinCáNhânToolStripMenuItem
             // 
             this.thôngTinCáNhânToolStripMenuItem.Name = "thôngTinCáNhânToolStripMenuItem";
-            this.thôngTinCáNhânToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.thôngTinCáNhânToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
             this.thôngTinCáNhânToolStripMenuItem.Text = "Thông tin cá nhân";
             this.thôngTinCáNhânToolStripMenuItem.Click += new System.EventHandler(this.thôngTinCáNhânToolStripMenuItem_Click);
             // 
             // dăngXuấtToolStripMenuItem
             // 
             this.dăngXuấtToolStripMenuItem.Name = "dăngXuấtToolStripMenuItem";
-            this.dăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.dăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
             this.dăngXuấtToolStripMenuItem.Text = "Đăng Xuất";
             this.dăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.ĐăngXuấtToolStripMenuItem_Click);
             // 
@@ -223,6 +223,23 @@ namespace QuanLyBanBida
             this.panel4.Size = new System.Drawing.Size(474, 73);
             this.panel4.TabIndex = 5;
             // 
+            // cbfood
+            // 
+            this.cbfood.FormattingEnabled = true;
+            this.cbfood.Location = new System.Drawing.Point(1, 46);
+            this.cbfood.Name = "cbfood";
+            this.cbfood.Size = new System.Drawing.Size(312, 24);
+            this.cbfood.TabIndex = 1;
+            // 
+            // cbCategory
+            // 
+            this.cbCategory.FormattingEnabled = true;
+            this.cbCategory.Location = new System.Drawing.Point(0, 1);
+            this.cbCategory.Name = "cbCategory";
+            this.cbCategory.Size = new System.Drawing.Size(312, 24);
+            this.cbCategory.TabIndex = 0;
+            this.cbCategory.SelectedIndexChanged += new System.EventHandler(this.cbCategory_SelectedIndexChanged);
+            // 
             // nmFoodCount
             // 
             this.nmFoodCount.Location = new System.Drawing.Point(332, 48);
@@ -248,23 +265,7 @@ namespace QuanLyBanBida
             this.btn_AddFood.TabIndex = 2;
             this.btn_AddFood.Text = "Gọi món";
             this.btn_AddFood.UseVisualStyleBackColor = true;
-            // 
-            // cbfood
-            // 
-            this.cbfood.FormattingEnabled = true;
-            this.cbfood.Location = new System.Drawing.Point(1, 46);
-            this.cbfood.Name = "cbfood";
-            this.cbfood.Size = new System.Drawing.Size(312, 24);
-            this.cbfood.TabIndex = 1;
-            // 
-            // cbCategory
-            // 
-            this.cbCategory.FormattingEnabled = true;
-            this.cbCategory.Location = new System.Drawing.Point(0, 1);
-            this.cbCategory.Name = "cbCategory";
-            this.cbCategory.Size = new System.Drawing.Size(312, 24);
-            this.cbCategory.TabIndex = 0;
-            this.cbCategory.SelectedIndexChanged += new System.EventHandler(this.cbCategory_SelectedIndexChanged);
+            this.btn_AddFood.Click += new System.EventHandler(this.btn_AddFood_Click);
             // 
             // flpTable
             // 

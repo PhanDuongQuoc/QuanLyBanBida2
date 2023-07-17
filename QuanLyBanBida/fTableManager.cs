@@ -77,12 +77,15 @@ namespace QuanLyBanBida
         }
 
         #region Events
-
+        //tác dụng: khi người dùn lick vào bàn nào thì bàn đó sẽ hiển thị tag của bàn đó 
         private void Btn_Click(object sender, EventArgs e)
         {
             int tableID = ((sender as Button).Tag as Table).ID;
+            lsvBill.Tag=((sender as Button).Tag);
             ShowBill(tableID);
         }
+
+
         #endregion
         private void ĐăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -144,6 +147,26 @@ namespace QuanLyBanBida
             id=select.Id;
 
             listfoodcategoryid(id);
+        }
+
+        private void btn_AddFood_Click(object sender, EventArgs e)
+        {
+            Table table=lsvBill.Tag as Table;
+            
+            int idbill = BillDAO.Instance.GetUncheckBillIDByTableID(table.ID);
+
+            int foodid = (cbfood.SelectedItem as Food).Id;
+            int count=(int)nmFoodCount.Value;
+            if (idbill == -1) 
+            {
+                BillDAO.Instance.addbill(table.ID);
+                BillInfoDAO.Instance.addbillinfo(1, BillDAO.Instance.getmaxidbill(), foodid, count);
+            }
+            else
+            {
+                BillInfoDAO.Instance.addbillinfo(1,idbill, foodid, count);
+            }
+
         }
     }
 }

@@ -29,5 +29,23 @@ namespace QuanLyBanBida.DAO
             }
             return -1; // thất bại = -1 
         }
+
+        public void addbill(int id) 
+        {
+            DataProvider.Instance.ExecuteNonQuery("USP_chendulieuvaobill1 @idTable ", new object[] {id});
+        }
+
+
+        public int getmaxidbill() 
+        {
+            try 
+            {
+                return (int)DataProvider.Instance.ExecuteScala("select max(id) from bill");
+            }
+            catch 
+            {
+                return 1;
+            }
+        }
     }
 }

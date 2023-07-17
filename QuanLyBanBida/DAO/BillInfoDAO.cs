@@ -36,5 +36,10 @@ namespace QuanLyBanBida.DAO
             }
             return ListBillInfo;
         }
+
+        public void addbillinfo(int id,int idbill,int idfood,int count)
+        {
+            DataProvider.Instance.ExecuteNonQuery("USP_adddulieubillinfo2 @id ,@idBill  ,@idFood, @count", new object[] {1, idbill,idfood,count});
+        }
     }
 }
