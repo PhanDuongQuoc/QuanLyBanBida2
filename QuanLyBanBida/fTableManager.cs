@@ -175,11 +175,12 @@ namespace QuanLyBanBida
         {
             Table table= lsvBill.Tag as Table;
             int idbill = BillDAO.Instance.GetUncheckBillIDByTableID(table.ID);
+            int discount = (int)nm_Discount.Value;
             if (idbill != -1)
             {
                 if (MessageBox.Show("Bạn có muốn thanh toán hóa đơn:" + table.Name ,"Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK) 
                 {
-                    BillDAO.Instance.kiemtrthanhtoan(table.ID);
+                    BillDAO.Instance.kiemtrthanhtoan(idbill,discount);
                     ShowBill(table.ID);
                     
                     MessageBox.Show("bạn đã thanh toán thành công !", "Thông báo ", MessageBoxButtons.OK);
