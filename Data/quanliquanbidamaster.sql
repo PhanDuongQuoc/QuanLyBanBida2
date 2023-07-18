@@ -323,3 +323,26 @@ select * from dbo.FoodCategory
 go
 
 select *from dbo.TableBida
+
+
+/*chèn dữ liệu vào bill*/
+
+create proc USP_chendulieuvaobill1
+@idTable int
+as
+begin 
+	insert dbo.BILL(id ,DateChecKIn,DateCheckOut,idTable,status) values (1,GETDATE(),null,@idTable,0)
+
+end
+
+
+create proc USP_adddulieubillinfo2
+@id int,@idBill int ,@idFood int, @count int
+as
+begin
+	insert dbo.BillInfo(id,idBill,idFood,count) values (@id,@idBill,@idFood,@count)
+
+
+end
+
+select max(id) from bill

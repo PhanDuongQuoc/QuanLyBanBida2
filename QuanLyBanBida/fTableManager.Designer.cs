@@ -211,6 +211,7 @@ namespace QuanLyBanBida
             this.btn_Checkout.TabIndex = 4;
             this.btn_Checkout.Text = "Thanh toán";
             this.btn_Checkout.UseVisualStyleBackColor = true;
+            this.btn_Checkout.Click += new System.EventHandler(this.btn_Checkout_Click);
             // 
             // panel4
             // 

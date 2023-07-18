@@ -47,5 +47,13 @@ namespace QuanLyBanBida.DAO
                 return 1;
             }
         }
+
+
+        public void kiemtrthanhtoan(int id)
+        {
+            string query = "update dbo.Bill set status=1 where id=" + id;
+            DataProvider.Instance.ExecuteQuery(query);
+        }
+
     }
 }
