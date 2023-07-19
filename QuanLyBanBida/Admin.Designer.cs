@@ -58,6 +58,7 @@ namespace QuanLyBanBida
             this.txt_NameFood = new System.Windows.Forms.TextBox();
             this.lbl_NameFood = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.txt_idFood = new System.Windows.Forms.TextBox();
             this.lbl_FoodID = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dtgv_Food = new System.Windows.Forms.DataGridView();
@@ -72,6 +73,7 @@ namespace QuanLyBanBida
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.lbl_CategoryName = new System.Windows.Forms.Label();
             this.panel17 = new System.Windows.Forms.Panel();
+            this.txt_idcatogory = new System.Windows.Forms.TextBox();
             this.lbl_CategoryID = new System.Windows.Forms.Label();
             this.dtgv_Category = new System.Windows.Forms.DataGridView();
             this.tp_Table = new System.Windows.Forms.TabPage();
@@ -88,6 +90,7 @@ namespace QuanLyBanBida
             this.txt_TableName = new System.Windows.Forms.TextBox();
             this.lbl_TableName = new System.Windows.Forms.Label();
             this.panel18 = new System.Windows.Forms.Panel();
+            this.txt_idtable = new System.Windows.Forms.TextBox();
             this.lbl_IDTable = new System.Windows.Forms.Label();
             this.dtgv_Table = new System.Windows.Forms.DataGridView();
             this.tp_Account = new System.Windows.Forms.TabPage();
@@ -106,17 +109,31 @@ namespace QuanLyBanBida
             this.txt_DisplayName = new System.Windows.Forms.TextBox();
             this.lbl_DisplayName = new System.Windows.Forms.Label();
             this.panel26 = new System.Windows.Forms.Panel();
+            this.txt_nameaccount = new System.Windows.Forms.TextBox();
             this.lbl_NameID = new System.Windows.Forms.Label();
             this.tp_InfoCustomer = new System.Windows.Forms.TabPage();
+            this.btnvecuoi = new System.Windows.Forms.Button();
+            this.btnquaphai = new System.Windows.Forms.Button();
             this.panel20 = new System.Windows.Forms.Panel();
-            this.btn_ViewInfo = new System.Windows.Forms.Button();
-            this.dtpk_ToDateInfo = new System.Windows.Forms.DateTimePicker();
-            this.dtpk_FromDateInfo = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtloaikh = new System.Windows.Forms.TextBox();
+            this.txtsdt = new System.Windows.Forms.TextBox();
+            this.txtgioitinh = new System.Windows.Forms.TextBox();
+            this.txttenkh = new System.Windows.Forms.TextBox();
+            this.txtmakh = new System.Windows.Forms.TextBox();
+            this.btnxoa = new System.Windows.Forms.Button();
+            this.btncapnhat = new System.Windows.Forms.Button();
+            this.btnthem = new System.Windows.Forms.Button();
+            this.btnxem = new System.Windows.Forms.Button();
+            this.btnvedau = new System.Windows.Forms.Button();
+            this.btnquatrai = new System.Windows.Forms.Button();
             this.dtgv_InfoCustomer = new System.Windows.Forms.DataGridView();
-            this.txt_idFood = new System.Windows.Forms.TextBox();
-            this.txt_idcatogory = new System.Windows.Forms.TextBox();
-            this.txt_idtable = new System.Windows.Forms.TextBox();
-            this.txt_nameaccount = new System.Windows.Forms.TextBox();
+            this.txtngaycheckin = new System.Windows.Forms.TextBox();
             this.tcAdmin.SuspendLayout();
             this.tp_Bill.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -170,7 +187,7 @@ namespace QuanLyBanBida
             this.tcAdmin.Location = new System.Drawing.Point(0, 4);
             this.tcAdmin.Name = "tcAdmin";
             this.tcAdmin.SelectedIndex = 0;
-            this.tcAdmin.Size = new System.Drawing.Size(867, 514);
+            this.tcAdmin.Size = new System.Drawing.Size(867, 519);
             this.tcAdmin.TabIndex = 0;
             // 
             // tp_Bill
@@ -180,7 +197,7 @@ namespace QuanLyBanBida
             this.tp_Bill.Location = new System.Drawing.Point(4, 28);
             this.tp_Bill.Name = "tp_Bill";
             this.tp_Bill.Padding = new System.Windows.Forms.Padding(3);
-            this.tp_Bill.Size = new System.Drawing.Size(859, 482);
+            this.tp_Bill.Size = new System.Drawing.Size(859, 487);
             this.tp_Bill.TabIndex = 0;
             this.tp_Bill.Text = "Doanh thu";
             this.tp_Bill.UseVisualStyleBackColor = true;
@@ -245,7 +262,7 @@ namespace QuanLyBanBida
             this.tp_Food.Location = new System.Drawing.Point(4, 28);
             this.tp_Food.Name = "tp_Food";
             this.tp_Food.Padding = new System.Windows.Forms.Padding(3);
-            this.tp_Food.Size = new System.Drawing.Size(859, 482);
+            this.tp_Food.Size = new System.Drawing.Size(859, 487);
             this.tp_Food.TabIndex = 1;
             this.tp_Food.Text = "Thức ăn";
             this.tp_Food.UseVisualStyleBackColor = true;
@@ -443,6 +460,13 @@ namespace QuanLyBanBida
             this.panel7.Size = new System.Drawing.Size(300, 70);
             this.panel7.TabIndex = 2;
             // 
+            // txt_idFood
+            // 
+            this.txt_idFood.Location = new System.Drawing.Point(118, 25);
+            this.txt_idFood.Name = "txt_idFood";
+            this.txt_idFood.Size = new System.Drawing.Size(170, 27);
+            this.txt_idFood.TabIndex = 1;
+            // 
             // lbl_FoodID
             // 
             this.lbl_FoodID.AutoSize = true;
@@ -481,7 +505,7 @@ namespace QuanLyBanBida
             this.tp_Category.Location = new System.Drawing.Point(4, 28);
             this.tp_Category.Name = "tp_Category";
             this.tp_Category.Padding = new System.Windows.Forms.Padding(3);
-            this.tp_Category.Size = new System.Drawing.Size(859, 482);
+            this.tp_Category.Size = new System.Drawing.Size(859, 487);
             this.tp_Category.TabIndex = 2;
             this.tp_Category.Text = "Danh Mục";
             this.tp_Category.UseVisualStyleBackColor = true;
@@ -582,6 +606,13 @@ namespace QuanLyBanBida
             this.panel17.Size = new System.Drawing.Size(414, 69);
             this.panel17.TabIndex = 2;
             // 
+            // txt_idcatogory
+            // 
+            this.txt_idcatogory.Location = new System.Drawing.Point(173, 24);
+            this.txt_idcatogory.Name = "txt_idcatogory";
+            this.txt_idcatogory.Size = new System.Drawing.Size(235, 27);
+            this.txt_idcatogory.TabIndex = 1;
+            // 
             // lbl_CategoryID
             // 
             this.lbl_CategoryID.AutoSize = true;
@@ -611,7 +642,7 @@ namespace QuanLyBanBida
             this.tp_Table.Location = new System.Drawing.Point(4, 28);
             this.tp_Table.Name = "tp_Table";
             this.tp_Table.Padding = new System.Windows.Forms.Padding(3);
-            this.tp_Table.Size = new System.Drawing.Size(859, 482);
+            this.tp_Table.Size = new System.Drawing.Size(859, 487);
             this.tp_Table.TabIndex = 3;
             this.tp_Table.Text = "Bàn";
             this.tp_Table.UseVisualStyleBackColor = true;
@@ -741,6 +772,13 @@ namespace QuanLyBanBida
             this.panel18.Size = new System.Drawing.Size(316, 69);
             this.panel18.TabIndex = 2;
             // 
+            // txt_idtable
+            // 
+            this.txt_idtable.Location = new System.Drawing.Point(134, 19);
+            this.txt_idtable.Name = "txt_idtable";
+            this.txt_idtable.Size = new System.Drawing.Size(170, 27);
+            this.txt_idtable.TabIndex = 1;
+            // 
             // lbl_IDTable
             // 
             this.lbl_IDTable.AutoSize = true;
@@ -769,7 +807,7 @@ namespace QuanLyBanBida
             this.tp_Account.Location = new System.Drawing.Point(4, 28);
             this.tp_Account.Name = "tp_Account";
             this.tp_Account.Padding = new System.Windows.Forms.Padding(3);
-            this.tp_Account.Size = new System.Drawing.Size(859, 482);
+            this.tp_Account.Size = new System.Drawing.Size(859, 487);
             this.tp_Account.TabIndex = 4;
             this.tp_Account.Text = "Tài Khoản";
             this.tp_Account.UseVisualStyleBackColor = true;
@@ -914,6 +952,13 @@ namespace QuanLyBanBida
             this.panel26.Size = new System.Drawing.Size(411, 69);
             this.panel26.TabIndex = 2;
             // 
+            // txt_nameaccount
+            // 
+            this.txt_nameaccount.Location = new System.Drawing.Point(182, 25);
+            this.txt_nameaccount.Name = "txt_nameaccount";
+            this.txt_nameaccount.Size = new System.Drawing.Size(170, 27);
+            this.txt_nameaccount.TabIndex = 1;
+            // 
             // lbl_NameID
             // 
             this.lbl_NameID.AutoSize = true;
@@ -926,86 +971,229 @@ namespace QuanLyBanBida
             // 
             // tp_InfoCustomer
             // 
+            this.tp_InfoCustomer.Controls.Add(this.btnvecuoi);
+            this.tp_InfoCustomer.Controls.Add(this.btnquaphai);
             this.tp_InfoCustomer.Controls.Add(this.panel20);
+            this.tp_InfoCustomer.Controls.Add(this.btnvedau);
+            this.tp_InfoCustomer.Controls.Add(this.btnquatrai);
             this.tp_InfoCustomer.Controls.Add(this.dtgv_InfoCustomer);
             this.tp_InfoCustomer.Location = new System.Drawing.Point(4, 28);
             this.tp_InfoCustomer.Name = "tp_InfoCustomer";
             this.tp_InfoCustomer.Padding = new System.Windows.Forms.Padding(3);
-            this.tp_InfoCustomer.Size = new System.Drawing.Size(859, 482);
+            this.tp_InfoCustomer.Size = new System.Drawing.Size(859, 487);
             this.tp_InfoCustomer.TabIndex = 5;
             this.tp_InfoCustomer.Text = "Thông tin khách hàng";
             this.tp_InfoCustomer.UseVisualStyleBackColor = true;
+            this.tp_InfoCustomer.Click += new System.EventHandler(this.tp_InfoCustomer_Click);
+            // 
+            // btnvecuoi
+            // 
+            this.btnvecuoi.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnvecuoi.Location = new System.Drawing.Point(730, 456);
+            this.btnvecuoi.Name = "btnvecuoi";
+            this.btnvecuoi.Size = new System.Drawing.Size(129, 31);
+            this.btnvecuoi.TabIndex = 6;
+            this.btnvecuoi.Text = "|>";
+            this.btnvecuoi.UseVisualStyleBackColor = false;
+            this.btnvecuoi.Click += new System.EventHandler(this.btnvecuoi_Click);
+            // 
+            // btnquaphai
+            // 
+            this.btnquaphai.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnquaphai.Location = new System.Drawing.Point(511, 456);
+            this.btnquaphai.Name = "btnquaphai";
+            this.btnquaphai.Size = new System.Drawing.Size(129, 31);
+            this.btnquaphai.TabIndex = 5;
+            this.btnquaphai.Text = ">>>";
+            this.btnquaphai.UseVisualStyleBackColor = false;
+            this.btnquaphai.Click += new System.EventHandler(this.btnquaphai_Click);
             // 
             // panel20
             // 
-            this.panel20.Controls.Add(this.btn_ViewInfo);
-            this.panel20.Controls.Add(this.dtpk_ToDateInfo);
-            this.panel20.Controls.Add(this.dtpk_FromDateInfo);
+            this.panel20.Controls.Add(this.txtngaycheckin);
+            this.panel20.Controls.Add(this.label1);
+            this.panel20.Controls.Add(this.label6);
+            this.panel20.Controls.Add(this.label5);
+            this.panel20.Controls.Add(this.label4);
+            this.panel20.Controls.Add(this.label3);
+            this.panel20.Controls.Add(this.label2);
+            this.panel20.Controls.Add(this.txtloaikh);
+            this.panel20.Controls.Add(this.txtsdt);
+            this.panel20.Controls.Add(this.txtgioitinh);
+            this.panel20.Controls.Add(this.txttenkh);
+            this.panel20.Controls.Add(this.txtmakh);
+            this.panel20.Controls.Add(this.btnxoa);
+            this.panel20.Controls.Add(this.btncapnhat);
+            this.panel20.Controls.Add(this.btnthem);
+            this.panel20.Controls.Add(this.btnxem);
             this.panel20.Location = new System.Drawing.Point(8, 3);
             this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(841, 47);
+            this.panel20.Size = new System.Drawing.Size(851, 177);
             this.panel20.TabIndex = 3;
+            this.panel20.Paint += new System.Windows.Forms.PaintEventHandler(this.panel20_Paint);
             // 
-            // btn_ViewInfo
+            // label1
             // 
-            this.btn_ViewInfo.Location = new System.Drawing.Point(360, 11);
-            this.btn_ViewInfo.Name = "btn_ViewInfo";
-            this.btn_ViewInfo.Size = new System.Drawing.Size(129, 31);
-            this.btn_ViewInfo.TabIndex = 2;
-            this.btn_ViewInfo.Text = "Xem";
-            this.btn_ViewInfo.UseVisualStyleBackColor = true;
+            this.label1.Location = new System.Drawing.Point(3, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(77, 19);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "Makh";
             // 
-            // dtpk_ToDateInfo
+            // label6
             // 
-            this.dtpk_ToDateInfo.Location = new System.Drawing.Point(593, 13);
-            this.dtpk_ToDateInfo.Name = "dtpk_ToDateInfo";
-            this.dtpk_ToDateInfo.Size = new System.Drawing.Size(229, 27);
-            this.dtpk_ToDateInfo.TabIndex = 1;
+            this.label6.Location = new System.Drawing.Point(3, 118);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(77, 19);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "Giới tính:";
             // 
-            // dtpk_FromDateInfo
+            // label5
             // 
-            this.dtpk_FromDateInfo.Location = new System.Drawing.Point(14, 13);
-            this.dtpk_FromDateInfo.Name = "dtpk_FromDateInfo";
-            this.dtpk_FromDateInfo.Size = new System.Drawing.Size(229, 27);
-            this.dtpk_FromDateInfo.TabIndex = 0;
+            this.label5.Location = new System.Drawing.Point(3, 65);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(77, 19);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "Họ tên:";
+            // 
+            // label4
+            // 
+            this.label4.Location = new System.Drawing.Point(401, 113);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(141, 19);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "Loại khách hàng:";
+            // 
+            // label3
+            // 
+            this.label3.Location = new System.Drawing.Point(401, 65);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(141, 19);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Ngày checkin:";
+            // 
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(401, 21);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(141, 19);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Số điện thoại:\r\n";
+            // 
+            // txtloaikh
+            // 
+            this.txtloaikh.Location = new System.Drawing.Point(562, 110);
+            this.txtloaikh.Name = "txtloaikh";
+            this.txtloaikh.Size = new System.Drawing.Size(283, 27);
+            this.txtloaikh.TabIndex = 11;
+            // 
+            // txtsdt
+            // 
+            this.txtsdt.Location = new System.Drawing.Point(562, 13);
+            this.txtsdt.Name = "txtsdt";
+            this.txtsdt.Size = new System.Drawing.Size(284, 27);
+            this.txtsdt.TabIndex = 9;
+            // 
+            // txtgioitinh
+            // 
+            this.txtgioitinh.Location = new System.Drawing.Point(86, 110);
+            this.txtgioitinh.Name = "txtgioitinh";
+            this.txtgioitinh.Size = new System.Drawing.Size(264, 27);
+            this.txtgioitinh.TabIndex = 8;
+            // 
+            // txttenkh
+            // 
+            this.txttenkh.Location = new System.Drawing.Point(86, 57);
+            this.txttenkh.Name = "txttenkh";
+            this.txttenkh.Size = new System.Drawing.Size(264, 27);
+            this.txttenkh.TabIndex = 7;
+            // 
+            // txtmakh
+            // 
+            this.txtmakh.Location = new System.Drawing.Point(86, 13);
+            this.txtmakh.Name = "txtmakh";
+            this.txtmakh.Size = new System.Drawing.Size(264, 27);
+            this.txtmakh.TabIndex = 6;
+            // 
+            // btnxoa
+            // 
+            this.btnxoa.Location = new System.Drawing.Point(221, 143);
+            this.btnxoa.Name = "btnxoa";
+            this.btnxoa.Size = new System.Drawing.Size(129, 31);
+            this.btnxoa.TabIndex = 5;
+            this.btnxoa.Text = "Xóa";
+            this.btnxoa.UseVisualStyleBackColor = true;
+            this.btnxoa.Click += new System.EventHandler(this.btnxoa_Click);
+            // 
+            // btncapnhat
+            // 
+            this.btncapnhat.Location = new System.Drawing.Point(717, 143);
+            this.btncapnhat.Name = "btncapnhat";
+            this.btncapnhat.Size = new System.Drawing.Size(129, 31);
+            this.btncapnhat.TabIndex = 4;
+            this.btncapnhat.Text = "Cập nhật ";
+            this.btncapnhat.UseVisualStyleBackColor = true;
+            this.btncapnhat.Click += new System.EventHandler(this.btncapnhat_Click);
+            // 
+            // btnthem
+            // 
+            this.btnthem.Location = new System.Drawing.Point(86, 143);
+            this.btnthem.Name = "btnthem";
+            this.btnthem.Size = new System.Drawing.Size(129, 31);
+            this.btnthem.TabIndex = 3;
+            this.btnthem.Text = "Thêm";
+            this.btnthem.UseVisualStyleBackColor = true;
+            this.btnthem.Click += new System.EventHandler(this.btnthem_Click);
+            // 
+            // btnxem
+            // 
+            this.btnxem.Location = new System.Drawing.Point(562, 143);
+            this.btnxem.Name = "btnxem";
+            this.btnxem.Size = new System.Drawing.Size(129, 31);
+            this.btnxem.TabIndex = 2;
+            this.btnxem.Text = "Xem";
+            this.btnxem.UseVisualStyleBackColor = true;
+            this.btnxem.Click += new System.EventHandler(this.btnxem_Click);
+            // 
+            // btnvedau
+            // 
+            this.btnvedau.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnvedau.Location = new System.Drawing.Point(0, 456);
+            this.btnvedau.Name = "btnvedau";
+            this.btnvedau.Size = new System.Drawing.Size(129, 31);
+            this.btnvedau.TabIndex = 3;
+            this.btnvedau.Text = "<|\r\n";
+            this.btnvedau.UseVisualStyleBackColor = false;
+            this.btnvedau.Click += new System.EventHandler(this.btnvedau_Click);
+            // 
+            // btnquatrai
+            // 
+            this.btnquatrai.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnquatrai.Location = new System.Drawing.Point(206, 456);
+            this.btnquatrai.Name = "btnquatrai";
+            this.btnquatrai.Size = new System.Drawing.Size(129, 31);
+            this.btnquatrai.TabIndex = 4;
+            this.btnquatrai.Text = "<<<";
+            this.btnquatrai.UseVisualStyleBackColor = false;
+            this.btnquatrai.Click += new System.EventHandler(this.btnquatrai_Click);
             // 
             // dtgv_InfoCustomer
             // 
             this.dtgv_InfoCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgv_InfoCustomer.Location = new System.Drawing.Point(0, 56);
+            this.dtgv_InfoCustomer.Location = new System.Drawing.Point(0, 177);
             this.dtgv_InfoCustomer.Name = "dtgv_InfoCustomer";
             this.dtgv_InfoCustomer.RowHeadersWidth = 51;
             this.dtgv_InfoCustomer.RowTemplate.Height = 24;
-            this.dtgv_InfoCustomer.Size = new System.Drawing.Size(859, 429);
+            this.dtgv_InfoCustomer.Size = new System.Drawing.Size(859, 277);
             this.dtgv_InfoCustomer.TabIndex = 0;
+            this.dtgv_InfoCustomer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_InfoCustomer_CellContentClick);
             // 
-            // txt_idFood
+            // txtngaycheckin
             // 
-            this.txt_idFood.Location = new System.Drawing.Point(118, 25);
-            this.txt_idFood.Name = "txt_idFood";
-            this.txt_idFood.Size = new System.Drawing.Size(170, 27);
-            this.txt_idFood.TabIndex = 1;
-            // 
-            // txt_idcatogory
-            // 
-            this.txt_idcatogory.Location = new System.Drawing.Point(173, 24);
-            this.txt_idcatogory.Name = "txt_idcatogory";
-            this.txt_idcatogory.Size = new System.Drawing.Size(235, 27);
-            this.txt_idcatogory.TabIndex = 1;
-            // 
-            // txt_idtable
-            // 
-            this.txt_idtable.Location = new System.Drawing.Point(134, 19);
-            this.txt_idtable.Name = "txt_idtable";
-            this.txt_idtable.Size = new System.Drawing.Size(170, 27);
-            this.txt_idtable.TabIndex = 1;
-            // 
-            // txt_nameaccount
-            // 
-            this.txt_nameaccount.Location = new System.Drawing.Point(182, 25);
-            this.txt_nameaccount.Name = "txt_nameaccount";
-            this.txt_nameaccount.Size = new System.Drawing.Size(170, 27);
-            this.txt_nameaccount.TabIndex = 1;
+            this.txtngaycheckin.Location = new System.Drawing.Point(562, 65);
+            this.txtngaycheckin.Name = "txtngaycheckin";
+            this.txtngaycheckin.Size = new System.Drawing.Size(283, 27);
+            this.txtngaycheckin.TabIndex = 19;
             // 
             // fAdmin
             // 
@@ -1017,6 +1205,7 @@ namespace QuanLyBanBida
             this.Name = "fAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin";
+            this.Load += new System.EventHandler(this.fAdmin_Load);
             this.tcAdmin.ResumeLayout(false);
             this.tp_Bill.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -1068,6 +1257,7 @@ namespace QuanLyBanBida
             this.panel26.PerformLayout();
             this.tp_InfoCustomer.ResumeLayout(false);
             this.panel20.ResumeLayout(false);
+            this.panel20.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_InfoCustomer)).EndInit();
             this.ResumeLayout(false);
 
@@ -1154,13 +1344,30 @@ namespace QuanLyBanBida
         private System.Windows.Forms.Button btn_ResetPassword;
         private System.Windows.Forms.TabPage tp_InfoCustomer;
         private System.Windows.Forms.Panel panel20;
-        private System.Windows.Forms.Button btn_ViewInfo;
-        private System.Windows.Forms.DateTimePicker dtpk_ToDateInfo;
-        private System.Windows.Forms.DateTimePicker dtpk_FromDateInfo;
+        private System.Windows.Forms.Button btnxem;
         private System.Windows.Forms.DataGridView dtgv_InfoCustomer;
         private System.Windows.Forms.TextBox txt_idFood;
         private System.Windows.Forms.TextBox txt_idcatogory;
         private System.Windows.Forms.TextBox txt_idtable;
         private System.Windows.Forms.TextBox txt_nameaccount;
+        private System.Windows.Forms.Button btnxoa;
+        private System.Windows.Forms.Button btncapnhat;
+        private System.Windows.Forms.Button btnthem;
+        private System.Windows.Forms.Button btnvedau;
+        private System.Windows.Forms.Button btnquatrai;
+        private System.Windows.Forms.Button btnquaphai;
+        private System.Windows.Forms.Button btnvecuoi;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtloaikh;
+        private System.Windows.Forms.TextBox txtsdt;
+        private System.Windows.Forms.TextBox txtgioitinh;
+        private System.Windows.Forms.TextBox txttenkh;
+        private System.Windows.Forms.TextBox txtmakh;
+        private System.Windows.Forms.TextBox txtngaycheckin;
     }
 }
