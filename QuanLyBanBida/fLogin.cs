@@ -17,25 +17,9 @@ namespace QuanLyBanBida
         {
             InitializeComponent();
         }
-
-
-        private void btn_Login_Click(object sender, EventArgs e)
+        private void btn_Login_Click_1(object sender, EventArgs e)
         {
-            string userName = txt_NameID.Text;
-            string passWord = txt_Password.Text;
-            if (Login(userName,passWord))
-            {
 
-                fTableManager f = new fTableManager();
-                this.Hide();
-                f.ShowDialog();
-                this.Show();
-            }
-            else
-            {
-                MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu!");
-            }
-            
         }
 
         bool Login(string userName, string passWord)
@@ -55,5 +39,12 @@ namespace QuanLyBanBida
                 e.Cancel = true;
             }
         }
+
+        private void guna2PictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
     }    
 }
