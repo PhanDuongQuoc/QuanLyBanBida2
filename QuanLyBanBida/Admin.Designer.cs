@@ -58,7 +58,6 @@ namespace QuanLyBanBida
             this.txt_NameFood = new System.Windows.Forms.TextBox();
             this.lbl_NameFood = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.txt_FoodID = new System.Windows.Forms.TextBox();
             this.lbl_FoodID = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dtgv_Food = new System.Windows.Forms.DataGridView();
@@ -73,7 +72,6 @@ namespace QuanLyBanBida
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.lbl_CategoryName = new System.Windows.Forms.Label();
             this.panel17 = new System.Windows.Forms.Panel();
-            this.txt_CategoryID = new System.Windows.Forms.TextBox();
             this.lbl_CategoryID = new System.Windows.Forms.Label();
             this.dtgv_Category = new System.Windows.Forms.DataGridView();
             this.tp_Table = new System.Windows.Forms.TabPage();
@@ -90,7 +88,6 @@ namespace QuanLyBanBida
             this.txt_TableName = new System.Windows.Forms.TextBox();
             this.lbl_TableName = new System.Windows.Forms.Label();
             this.panel18 = new System.Windows.Forms.Panel();
-            this.txt_IDTable = new System.Windows.Forms.TextBox();
             this.lbl_IDTable = new System.Windows.Forms.Label();
             this.dtgv_Table = new System.Windows.Forms.DataGridView();
             this.tp_Account = new System.Windows.Forms.TabPage();
@@ -109,7 +106,6 @@ namespace QuanLyBanBida
             this.txt_DisplayName = new System.Windows.Forms.TextBox();
             this.lbl_DisplayName = new System.Windows.Forms.Label();
             this.panel26 = new System.Windows.Forms.Panel();
-            this.txt_NameID = new System.Windows.Forms.TextBox();
             this.lbl_NameID = new System.Windows.Forms.Label();
             this.tp_InfoCustomer = new System.Windows.Forms.TabPage();
             this.panel20 = new System.Windows.Forms.Panel();
@@ -117,6 +113,10 @@ namespace QuanLyBanBida
             this.dtpk_ToDateInfo = new System.Windows.Forms.DateTimePicker();
             this.dtpk_FromDateInfo = new System.Windows.Forms.DateTimePicker();
             this.dtgv_InfoCustomer = new System.Windows.Forms.DataGridView();
+            this.txt_idFood = new System.Windows.Forms.TextBox();
+            this.txt_idcatogory = new System.Windows.Forms.TextBox();
+            this.txt_idtable = new System.Windows.Forms.TextBox();
+            this.txt_nameaccount = new System.Windows.Forms.TextBox();
             this.tcAdmin.SuspendLayout();
             this.tp_Bill.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -436,23 +436,12 @@ namespace QuanLyBanBida
             // 
             // panel7
             // 
-            this.panel7.Controls.Add(this.txt_FoodID);
+            this.panel7.Controls.Add(this.txt_idFood);
             this.panel7.Controls.Add(this.lbl_FoodID);
             this.panel7.Location = new System.Drawing.Point(16, 17);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(300, 70);
             this.panel7.TabIndex = 2;
-            // 
-            // txt_FoodID
-            // 
-            this.txt_FoodID.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.txt_FoodID.Location = new System.Drawing.Point(118, 17);
-            this.txt_FoodID.Multiline = true;
-            this.txt_FoodID.Name = "txt_FoodID";
-            this.txt_FoodID.ReadOnly = true;
-            this.txt_FoodID.Size = new System.Drawing.Size(170, 30);
-            this.txt_FoodID.TabIndex = 1;
-            this.txt_FoodID.TextChanged += new System.EventHandler(this.txt_FoodID_TextChanged);
             // 
             // lbl_FoodID
             // 
@@ -586,21 +575,12 @@ namespace QuanLyBanBida
             // 
             // panel17
             // 
-            this.panel17.Controls.Add(this.txt_CategoryID);
+            this.panel17.Controls.Add(this.txt_idcatogory);
             this.panel17.Controls.Add(this.lbl_CategoryID);
             this.panel17.Location = new System.Drawing.Point(3, 111);
             this.panel17.Name = "panel17";
             this.panel17.Size = new System.Drawing.Size(414, 69);
             this.panel17.TabIndex = 2;
-            // 
-            // txt_CategoryID
-            // 
-            this.txt_CategoryID.Location = new System.Drawing.Point(173, 25);
-            this.txt_CategoryID.Multiline = true;
-            this.txt_CategoryID.Name = "txt_CategoryID";
-            this.txt_CategoryID.ReadOnly = true;
-            this.txt_CategoryID.Size = new System.Drawing.Size(235, 22);
-            this.txt_CategoryID.TabIndex = 1;
             // 
             // lbl_CategoryID
             // 
@@ -754,21 +734,12 @@ namespace QuanLyBanBida
             // 
             // panel18
             // 
-            this.panel18.Controls.Add(this.txt_IDTable);
+            this.panel18.Controls.Add(this.txt_idtable);
             this.panel18.Controls.Add(this.lbl_IDTable);
             this.panel18.Location = new System.Drawing.Point(32, 79);
             this.panel18.Name = "panel18";
             this.panel18.Size = new System.Drawing.Size(316, 69);
             this.panel18.TabIndex = 2;
-            // 
-            // txt_IDTable
-            // 
-            this.txt_IDTable.Location = new System.Drawing.Point(134, 15);
-            this.txt_IDTable.Multiline = true;
-            this.txt_IDTable.Name = "txt_IDTable";
-            this.txt_IDTable.ReadOnly = true;
-            this.txt_IDTable.Size = new System.Drawing.Size(170, 30);
-            this.txt_IDTable.TabIndex = 1;
             // 
             // lbl_IDTable
             // 
@@ -936,21 +907,12 @@ namespace QuanLyBanBida
             // 
             // panel26
             // 
-            this.panel26.Controls.Add(this.txt_NameID);
+            this.panel26.Controls.Add(this.txt_nameaccount);
             this.panel26.Controls.Add(this.lbl_NameID);
             this.panel26.Location = new System.Drawing.Point(3, 13);
             this.panel26.Name = "panel26";
             this.panel26.Size = new System.Drawing.Size(411, 69);
             this.panel26.TabIndex = 2;
-            // 
-            // txt_NameID
-            // 
-            this.txt_NameID.Location = new System.Drawing.Point(182, 25);
-            this.txt_NameID.Multiline = true;
-            this.txt_NameID.Name = "txt_NameID";
-            this.txt_NameID.ReadOnly = true;
-            this.txt_NameID.Size = new System.Drawing.Size(170, 30);
-            this.txt_NameID.TabIndex = 1;
             // 
             // lbl_NameID
             // 
@@ -1016,6 +978,34 @@ namespace QuanLyBanBida
             this.dtgv_InfoCustomer.RowTemplate.Height = 24;
             this.dtgv_InfoCustomer.Size = new System.Drawing.Size(859, 429);
             this.dtgv_InfoCustomer.TabIndex = 0;
+            // 
+            // txt_idFood
+            // 
+            this.txt_idFood.Location = new System.Drawing.Point(118, 25);
+            this.txt_idFood.Name = "txt_idFood";
+            this.txt_idFood.Size = new System.Drawing.Size(170, 27);
+            this.txt_idFood.TabIndex = 1;
+            // 
+            // txt_idcatogory
+            // 
+            this.txt_idcatogory.Location = new System.Drawing.Point(173, 24);
+            this.txt_idcatogory.Name = "txt_idcatogory";
+            this.txt_idcatogory.Size = new System.Drawing.Size(235, 27);
+            this.txt_idcatogory.TabIndex = 1;
+            // 
+            // txt_idtable
+            // 
+            this.txt_idtable.Location = new System.Drawing.Point(134, 19);
+            this.txt_idtable.Name = "txt_idtable";
+            this.txt_idtable.Size = new System.Drawing.Size(170, 27);
+            this.txt_idtable.TabIndex = 1;
+            // 
+            // txt_nameaccount
+            // 
+            this.txt_nameaccount.Location = new System.Drawing.Point(182, 25);
+            this.txt_nameaccount.Name = "txt_nameaccount";
+            this.txt_nameaccount.Size = new System.Drawing.Size(170, 27);
+            this.txt_nameaccount.TabIndex = 1;
             // 
             // fAdmin
             // 
@@ -1117,7 +1107,6 @@ namespace QuanLyBanBida
         private System.Windows.Forms.TextBox txt_NameFood;
         private System.Windows.Forms.Label lbl_NameFood;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.TextBox txt_FoodID;
         private System.Windows.Forms.Label lbl_FoodID;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Panel panel12;
@@ -1130,7 +1119,6 @@ namespace QuanLyBanBida
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label lbl_CategoryName;
         private System.Windows.Forms.Panel panel17;
-        private System.Windows.Forms.TextBox txt_CategoryID;
         private System.Windows.Forms.Label lbl_CategoryID;
         private System.Windows.Forms.DataGridView dtgv_Category;
         private System.Windows.Forms.Panel panel19;
@@ -1146,7 +1134,6 @@ namespace QuanLyBanBida
         private System.Windows.Forms.TextBox txt_TableName;
         private System.Windows.Forms.Label lbl_TableName;
         private System.Windows.Forms.Panel panel18;
-        private System.Windows.Forms.TextBox txt_IDTable;
         private System.Windows.Forms.Label lbl_IDTable;
         private System.Windows.Forms.DataGridView dtgv_Table;
         private System.Windows.Forms.DataGridView dtgv_Account;
@@ -1163,7 +1150,6 @@ namespace QuanLyBanBida
         private System.Windows.Forms.TextBox txt_DisplayName;
         private System.Windows.Forms.Label lbl_DisplayName;
         private System.Windows.Forms.Panel panel26;
-        private System.Windows.Forms.TextBox txt_NameID;
         private System.Windows.Forms.Label lbl_NameID;
         private System.Windows.Forms.Button btn_ResetPassword;
         private System.Windows.Forms.TabPage tp_InfoCustomer;
@@ -1172,5 +1158,9 @@ namespace QuanLyBanBida
         private System.Windows.Forms.DateTimePicker dtpk_ToDateInfo;
         private System.Windows.Forms.DateTimePicker dtpk_FromDateInfo;
         private System.Windows.Forms.DataGridView dtgv_InfoCustomer;
+        private System.Windows.Forms.TextBox txt_idFood;
+        private System.Windows.Forms.TextBox txt_idcatogory;
+        private System.Windows.Forms.TextBox txt_idtable;
+        private System.Windows.Forms.TextBox txt_nameaccount;
     }
 }

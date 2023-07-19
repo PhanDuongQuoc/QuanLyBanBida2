@@ -13,18 +13,21 @@ namespace QuanLyBanBida.DTO
         private DateTime? dateCheckIn;
         private DateTime? dateCheckOut;
         private int status;
+        private int discount;
 
         public int Id { get => id; set => id = value; }
         public DateTime? DateCheckIn { get => dateCheckIn; set => dateCheckIn = value; }
         public DateTime? DateCheckOut { get => dateCheckOut; set => dateCheckOut = value; }
         public int Status { get => status; set => status = value; }
+        public int Discount { get => discount; set => discount = value; }
 
-        public Bill(int id, DateTime? dateCheckIn, DateTime? dateCheckOut, int status)
+        public Bill(int id, DateTime? dateCheckIn, DateTime? dateCheckOut, int status, int discount)
         {
             Id = id;
             DateCheckIn = dateCheckIn;
             DateCheckOut = dateCheckOut;
             Status = status;
+            Discount = discount; 
         }
 
         public Bill(DataRow row) 
@@ -35,6 +38,8 @@ namespace QuanLyBanBida.DTO
             if(dateCheckOutTemp.ToString() != "")
                 this.DateCheckOut = (DateTime?)dateCheckOutTemp;
             Status = (int)row["status"];
+
+            Discount = (int)row["discount"];
         }
     }
 }

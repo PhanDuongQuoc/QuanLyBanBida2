@@ -26,6 +26,7 @@ namespace QuanLyBanBida
         #region Method
         void Table()
         {
+            flpTable.Controls.Clear();
             List<Table> tableList = TableDAO.Instance.TableList();
 
             foreach (Table item in tableList)
@@ -73,6 +74,7 @@ namespace QuanLyBanBida
             }
             CultureInfo usinglanguage=new CultureInfo("vi-VN");
             txttongtien.Text=tongtien.ToString("c",usinglanguage);
+            Table();
 
         }
 
@@ -167,6 +169,26 @@ namespace QuanLyBanBida
                 BillInfoDAO.Instance.addbillinfo(1,idbill, foodid, count);
             }
 
+        }
+
+        private void btn_Checkout_Click(object sender, EventArgs e)
+        {
+            Table table= lsvBill.Tag as Table;
+            int idbill = BillDAO.Instance.GetUncheckBillIDByTableID(table.ID);
+            int discount = (int)nm_Discount.Value;
+            if (idbill != -1)
+            {
+                if (MessageBox.Show("Bạn có muốn thanh toán hóa đơn:" + table.Name ,"Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK) 
+                {
+                    BillDAO.Instance.kiemtrthanhtoan(idbill,discount);
+                    ShowBill(table.ID);
+                    
+                    MessageBox.Show("bạn đã thanh toán thành công !", "Thông báo ", MessageBoxButtons.OK);
+                    lsvBill.Items.Clear();
+                    Table();
+
+                }
+            }
         }
     }
 }
