@@ -42,9 +42,25 @@ namespace QuanLyBanBida
 
         private void guna2PictureBox2_Click(object sender, EventArgs e)
         {
-
+           
         }
 
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            string userName = txt_NameID.Text;
+            string passWord = txt_Password.Text;
+            if (Login(userName, passWord))
+            {
 
+                fTableManager f = new fTableManager();
+                this.Hide();
+                f.ShowDialog();
+                this.Show();
+            }
+            else
+            {
+                MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu!");
+            }
+        }
     }    
 }
