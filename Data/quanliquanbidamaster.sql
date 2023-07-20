@@ -72,6 +72,24 @@ CREATE TABLE BillInfo
 	FOREIGN KEY (idFood) REFERENCES dbo.Food(id),
 )
 Go
+
+
+
+-- bảng thông tin khách hàng
+
+
+
+CREATE TABLE Customer (
+	idcustomer varchar(100) PRIMARY KEY,
+	name nvarchar(100),
+	gender nvarchar(100),
+	phonenumber nvarchar(100),
+	daycheckin varchar(100),
+	idcategorycustomer nvarchar(100),
+
+);
+drop table Customer
+
 -- Thêm dữ liệu vào table account
 INSERT INTO dbo.Account
 		( UserName,

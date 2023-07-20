@@ -83,8 +83,6 @@ namespace QuanLyBanBida
             this.panel11 = new System.Windows.Forms.Panel();
             this.btn_ViewTable = new System.Windows.Forms.Button();
             this.btn_EditTable = new System.Windows.Forms.Button();
-            this.btn_DeleteTable = new System.Windows.Forms.Button();
-            this.btn_AddTable = new System.Windows.Forms.Button();
             this.panel14 = new System.Windows.Forms.Panel();
             this.panel15 = new System.Windows.Forms.Panel();
             this.txt_TableName = new System.Windows.Forms.TextBox();
@@ -101,7 +99,9 @@ namespace QuanLyBanBida
             this.btn_DeleteAccount = new System.Windows.Forms.Button();
             this.btn_AddAccount = new System.Windows.Forms.Button();
             this.panel22 = new System.Windows.Forms.Panel();
-            this.btn_ResetPassword = new System.Windows.Forms.Button();
+            this.panel23 = new System.Windows.Forms.Panel();
+            this.txtPasswordaccount = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel24 = new System.Windows.Forms.Panel();
             this.txt_AccountType = new System.Windows.Forms.TextBox();
             this.lbl_AccountType = new System.Windows.Forms.Label();
@@ -115,6 +115,7 @@ namespace QuanLyBanBida
             this.btnvecuoi = new System.Windows.Forms.Button();
             this.btnquaphai = new System.Windows.Forms.Button();
             this.panel20 = new System.Windows.Forms.Panel();
+            this.txtngaycheckin = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -133,7 +134,6 @@ namespace QuanLyBanBida
             this.btnvedau = new System.Windows.Forms.Button();
             this.btnquatrai = new System.Windows.Forms.Button();
             this.dtgv_InfoCustomer = new System.Windows.Forms.DataGridView();
-            this.txtngaycheckin = new System.Windows.Forms.TextBox();
             this.tcAdmin.SuspendLayout();
             this.tp_Bill.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -167,6 +167,7 @@ namespace QuanLyBanBida
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_Account)).BeginInit();
             this.panel21.SuspendLayout();
             this.panel22.SuspendLayout();
+            this.panel23.SuspendLayout();
             this.panel24.SuspendLayout();
             this.panel25.SuspendLayout();
             this.panel26.SuspendLayout();
@@ -659,6 +660,10 @@ namespace QuanLyBanBida
             // cb_TableStatus
             // 
             this.cb_TableStatus.FormattingEnabled = true;
+            this.cb_TableStatus.Items.AddRange(new object[] {
+            "Trong",
+            "Có Người",
+            "Đặt Bàn"});
             this.cb_TableStatus.Location = new System.Drawing.Point(134, 26);
             this.cb_TableStatus.Name = "cb_TableStatus";
             this.cb_TableStatus.Size = new System.Drawing.Size(170, 27);
@@ -679,52 +684,32 @@ namespace QuanLyBanBida
             // 
             this.panel11.Controls.Add(this.btn_ViewTable);
             this.panel11.Controls.Add(this.btn_EditTable);
-            this.panel11.Controls.Add(this.btn_DeleteTable);
-            this.panel11.Controls.Add(this.btn_AddTable);
-            this.panel11.Location = new System.Drawing.Point(9, 6);
+            this.panel11.Location = new System.Drawing.Point(473, 6);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(446, 59);
+            this.panel11.Size = new System.Drawing.Size(376, 59);
             this.panel11.TabIndex = 9;
             // 
             // btn_ViewTable
             // 
             this.btn_ViewTable.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.btn_ViewTable.Location = new System.Drawing.Point(342, 3);
+            this.btn_ViewTable.Location = new System.Drawing.Point(217, 3);
             this.btn_ViewTable.Name = "btn_ViewTable";
-            this.btn_ViewTable.Size = new System.Drawing.Size(75, 53);
+            this.btn_ViewTable.Size = new System.Drawing.Size(156, 53);
             this.btn_ViewTable.TabIndex = 4;
             this.btn_ViewTable.Text = "Xem";
             this.btn_ViewTable.UseVisualStyleBackColor = true;
+            this.btn_ViewTable.Click += new System.EventHandler(this.btn_ViewTable_Click);
             // 
             // btn_EditTable
             // 
             this.btn_EditTable.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.btn_EditTable.Location = new System.Drawing.Point(231, 3);
+            this.btn_EditTable.Location = new System.Drawing.Point(3, 3);
             this.btn_EditTable.Name = "btn_EditTable";
-            this.btn_EditTable.Size = new System.Drawing.Size(75, 53);
+            this.btn_EditTable.Size = new System.Drawing.Size(152, 53);
             this.btn_EditTable.TabIndex = 3;
             this.btn_EditTable.Text = "Sửa";
             this.btn_EditTable.UseVisualStyleBackColor = true;
-            // 
-            // btn_DeleteTable
-            // 
-            this.btn_DeleteTable.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.btn_DeleteTable.Location = new System.Drawing.Point(115, 3);
-            this.btn_DeleteTable.Name = "btn_DeleteTable";
-            this.btn_DeleteTable.Size = new System.Drawing.Size(75, 53);
-            this.btn_DeleteTable.TabIndex = 2;
-            this.btn_DeleteTable.Text = "Xóa";
-            this.btn_DeleteTable.UseVisualStyleBackColor = true;
-            // 
-            // btn_AddTable
-            // 
-            this.btn_AddTable.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_AddTable.Location = new System.Drawing.Point(15, 3);
-            this.btn_AddTable.Name = "btn_AddTable";
-            this.btn_AddTable.Size = new System.Drawing.Size(75, 53);
-            this.btn_AddTable.TabIndex = 1;
-            this.btn_AddTable.Text = "Thêm";
-            this.btn_AddTable.UseVisualStyleBackColor = true;
+            this.btn_EditTable.Click += new System.EventHandler(this.btn_EditTable_Click);
             // 
             // panel14
             // 
@@ -783,7 +768,7 @@ namespace QuanLyBanBida
             // 
             this.lbl_IDTable.AutoSize = true;
             this.lbl_IDTable.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.lbl_IDTable.Location = new System.Drawing.Point(82, 20);
+            this.lbl_IDTable.Location = new System.Drawing.Point(36, 24);
             this.lbl_IDTable.Name = "lbl_IDTable";
             this.lbl_IDTable.Size = new System.Drawing.Size(41, 22);
             this.lbl_IDTable.TabIndex = 0;
@@ -792,17 +777,19 @@ namespace QuanLyBanBida
             // dtgv_Table
             // 
             this.dtgv_Table.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgv_Table.Location = new System.Drawing.Point(9, 74);
+            this.dtgv_Table.Location = new System.Drawing.Point(9, 9);
             this.dtgv_Table.Name = "dtgv_Table";
             this.dtgv_Table.RowHeadersWidth = 51;
             this.dtgv_Table.RowTemplate.Height = 24;
-            this.dtgv_Table.Size = new System.Drawing.Size(446, 405);
+            this.dtgv_Table.Size = new System.Drawing.Size(446, 470);
             this.dtgv_Table.TabIndex = 7;
             // 
             // tp_Account
             // 
             this.tp_Account.Controls.Add(this.dtgv_Account);
             this.tp_Account.Controls.Add(this.panel21);
+            this.tp_Account.Controls.Add(this.panel26);
+            this.tp_Account.Controls.Add(this.panel25);
             this.tp_Account.Controls.Add(this.panel22);
             this.tp_Account.Location = new System.Drawing.Point(4, 28);
             this.tp_Account.Name = "tp_Account";
@@ -841,6 +828,7 @@ namespace QuanLyBanBida
             this.btn_ViewAccount.TabIndex = 4;
             this.btn_ViewAccount.Text = "Xem";
             this.btn_ViewAccount.UseVisualStyleBackColor = true;
+            this.btn_ViewAccount.Click += new System.EventHandler(this.btn_ViewAccount_Click);
             // 
             // btn_EditAccount
             // 
@@ -868,32 +856,49 @@ namespace QuanLyBanBida
             this.btn_AddAccount.TabIndex = 1;
             this.btn_AddAccount.Text = "Thêm";
             this.btn_AddAccount.UseVisualStyleBackColor = true;
+            this.btn_AddAccount.Click += new System.EventHandler(this.btn_AddAccount_Click);
             // 
             // panel22
             // 
-            this.panel22.Controls.Add(this.btn_ResetPassword);
+            this.panel22.Controls.Add(this.panel23);
             this.panel22.Controls.Add(this.panel24);
-            this.panel22.Controls.Add(this.panel25);
-            this.panel22.Controls.Add(this.panel26);
             this.panel22.Location = new System.Drawing.Point(437, 74);
             this.panel22.Name = "panel22";
             this.panel22.Size = new System.Drawing.Size(417, 408);
             this.panel22.TabIndex = 5;
             // 
-            // btn_ResetPassword
+            // panel23
             // 
-            this.btn_ResetPassword.Location = new System.Drawing.Point(251, 276);
-            this.btn_ResetPassword.Name = "btn_ResetPassword";
-            this.btn_ResetPassword.Size = new System.Drawing.Size(150, 48);
-            this.btn_ResetPassword.TabIndex = 2;
-            this.btn_ResetPassword.Text = "Đặt lại mật khẩu";
-            this.btn_ResetPassword.UseVisualStyleBackColor = true;
+            this.panel23.Controls.Add(this.txtPasswordaccount);
+            this.panel23.Controls.Add(this.label7);
+            this.panel23.Location = new System.Drawing.Point(3, 183);
+            this.panel23.Name = "panel23";
+            this.panel23.Size = new System.Drawing.Size(411, 69);
+            this.panel23.TabIndex = 7;
+            // 
+            // txtPasswordaccount
+            // 
+            this.txtPasswordaccount.Location = new System.Drawing.Point(182, 25);
+            this.txtPasswordaccount.Multiline = true;
+            this.txtPasswordaccount.Name = "txtPasswordaccount";
+            this.txtPasswordaccount.Size = new System.Drawing.Size(170, 30);
+            this.txtPasswordaccount.TabIndex = 1;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.label7.Location = new System.Drawing.Point(18, 26);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(88, 22);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Mật khẩu:";
             // 
             // panel24
             // 
             this.panel24.Controls.Add(this.txt_AccountType);
             this.panel24.Controls.Add(this.lbl_AccountType);
-            this.panel24.Location = new System.Drawing.Point(3, 189);
+            this.panel24.Location = new System.Drawing.Point(0, 269);
             this.panel24.Name = "panel24";
             this.panel24.Size = new System.Drawing.Size(411, 69);
             this.panel24.TabIndex = 3;
@@ -920,7 +925,7 @@ namespace QuanLyBanBida
             // 
             this.panel25.Controls.Add(this.txt_DisplayName);
             this.panel25.Controls.Add(this.lbl_DisplayName);
-            this.panel25.Location = new System.Drawing.Point(3, 98);
+            this.panel25.Location = new System.Drawing.Point(437, 77);
             this.panel25.Name = "panel25";
             this.panel25.Size = new System.Drawing.Size(411, 69);
             this.panel25.TabIndex = 3;
@@ -937,7 +942,7 @@ namespace QuanLyBanBida
             // 
             this.lbl_DisplayName.AutoSize = true;
             this.lbl_DisplayName.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.lbl_DisplayName.Location = new System.Drawing.Point(40, 23);
+            this.lbl_DisplayName.Location = new System.Drawing.Point(18, 23);
             this.lbl_DisplayName.Name = "lbl_DisplayName";
             this.lbl_DisplayName.Size = new System.Drawing.Size(126, 22);
             this.lbl_DisplayName.TabIndex = 0;
@@ -947,7 +952,7 @@ namespace QuanLyBanBida
             // 
             this.panel26.Controls.Add(this.txt_nameaccount);
             this.panel26.Controls.Add(this.lbl_NameID);
-            this.panel26.Location = new System.Drawing.Point(3, 13);
+            this.panel26.Location = new System.Drawing.Point(437, 160);
             this.panel26.Name = "panel26";
             this.panel26.Size = new System.Drawing.Size(411, 69);
             this.panel26.TabIndex = 2;
@@ -963,7 +968,7 @@ namespace QuanLyBanBida
             // 
             this.lbl_NameID.AutoSize = true;
             this.lbl_NameID.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.lbl_NameID.Location = new System.Drawing.Point(22, 25);
+            this.lbl_NameID.Location = new System.Drawing.Point(18, 26);
             this.lbl_NameID.Name = "lbl_NameID";
             this.lbl_NameID.Size = new System.Drawing.Size(144, 22);
             this.lbl_NameID.TabIndex = 0;
@@ -1031,6 +1036,13 @@ namespace QuanLyBanBida
             this.panel20.Size = new System.Drawing.Size(851, 177);
             this.panel20.TabIndex = 3;
             this.panel20.Paint += new System.Windows.Forms.PaintEventHandler(this.panel20_Paint);
+            // 
+            // txtngaycheckin
+            // 
+            this.txtngaycheckin.Location = new System.Drawing.Point(562, 65);
+            this.txtngaycheckin.Name = "txtngaycheckin";
+            this.txtngaycheckin.Size = new System.Drawing.Size(283, 27);
+            this.txtngaycheckin.TabIndex = 19;
             // 
             // label1
             // 
@@ -1188,13 +1200,6 @@ namespace QuanLyBanBida
             this.dtgv_InfoCustomer.TabIndex = 0;
             this.dtgv_InfoCustomer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_InfoCustomer_CellContentClick);
             // 
-            // txtngaycheckin
-            // 
-            this.txtngaycheckin.Location = new System.Drawing.Point(562, 65);
-            this.txtngaycheckin.Name = "txtngaycheckin";
-            this.txtngaycheckin.Size = new System.Drawing.Size(283, 27);
-            this.txtngaycheckin.TabIndex = 19;
-            // 
             // fAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1249,6 +1254,8 @@ namespace QuanLyBanBida
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_Account)).EndInit();
             this.panel21.ResumeLayout(false);
             this.panel22.ResumeLayout(false);
+            this.panel23.ResumeLayout(false);
+            this.panel23.PerformLayout();
             this.panel24.ResumeLayout(false);
             this.panel24.PerformLayout();
             this.panel25.ResumeLayout(false);
@@ -1317,8 +1324,6 @@ namespace QuanLyBanBida
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Button btn_ViewTable;
         private System.Windows.Forms.Button btn_EditTable;
-        private System.Windows.Forms.Button btn_DeleteTable;
-        private System.Windows.Forms.Button btn_AddTable;
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.TextBox txt_TableName;
@@ -1341,7 +1346,6 @@ namespace QuanLyBanBida
         private System.Windows.Forms.Label lbl_DisplayName;
         private System.Windows.Forms.Panel panel26;
         private System.Windows.Forms.Label lbl_NameID;
-        private System.Windows.Forms.Button btn_ResetPassword;
         private System.Windows.Forms.TabPage tp_InfoCustomer;
         private System.Windows.Forms.Panel panel20;
         private System.Windows.Forms.Button btnxem;
@@ -1369,5 +1373,8 @@ namespace QuanLyBanBida
         private System.Windows.Forms.TextBox txttenkh;
         private System.Windows.Forms.TextBox txtmakh;
         private System.Windows.Forms.TextBox txtngaycheckin;
+        private System.Windows.Forms.Panel panel23;
+        private System.Windows.Forms.TextBox txtPasswordaccount;
+        private System.Windows.Forms.Label label7;
     }
 }

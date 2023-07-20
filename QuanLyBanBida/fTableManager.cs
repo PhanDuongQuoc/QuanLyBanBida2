@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.ListViewItem;
 
+
 namespace QuanLyBanBida
 {
     public partial class fTableManager : Form
@@ -120,7 +121,7 @@ namespace QuanLyBanBida
 
         private void fTableManager_Load(object sender, EventArgs e)
         {
-
+           
         }
 
         void category_loai() 

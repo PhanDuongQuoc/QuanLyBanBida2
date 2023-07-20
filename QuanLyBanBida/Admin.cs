@@ -144,6 +144,7 @@ namespace QuanLyBanBida
    
 
      
+        //ntu1 thêm khách hàng
 
         private void btnthem_Click(object sender, EventArgs e)
         {
@@ -175,7 +176,7 @@ namespace QuanLyBanBida
            
   
         }   
-        
+        //nút xóa khách hàng
 
         void deletecustomer(string idcustomer) 
         {
@@ -196,6 +197,8 @@ namespace QuanLyBanBida
                 MessageBox.Show("Khách hàng bạn muốn xóa không tồn tại !");
             }
         }
+
+        //nút xóa thông tin khách hàng
         private void btnxoa_Click(object sender, EventArgs e)
         {
             string ma=txtmakh.Text;
@@ -208,6 +211,8 @@ namespace QuanLyBanBida
             txtsdt.Text = "";
             txtloaikh.Text = "";
         }
+
+        // cập nhật thông tin khách hàng 
 
         public void updatekhachanh(string idcustomer, string name, string gender, string phonenumber, string daycheckin, string idcategorycustomer) 
         {
@@ -238,6 +243,7 @@ namespace QuanLyBanBida
             }
         }
 
+        //nút cập nhật thông tin khách hàng 
 
         private void btncapnhat_Click(object sender, EventArgs e)
         {
@@ -257,8 +263,9 @@ namespace QuanLyBanBida
             txtloaikh.Text = "";
         }
 
+        // binding source thông thin khách hàng 
         BindingSource bs = null;
-        public void databinding()
+        public void databindingcustomer()
         {
             SqlConnection sqlConnection = new SqlConnection(connect);
             if (sqlConnection == null)
@@ -280,30 +287,6 @@ namespace QuanLyBanBida
             txtloaikh.DataBindings.Add("text", bs, "idcategorycustomer");
 
         }
-        private void fAdmin_Load(object sender, EventArgs e)
-        {
-            xemdulieukhachang();
-            databinding();
-        }
-
-
-     
-
-        private void panel20_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void dtgv_InfoCustomer_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
-
-        private void tp_InfoCustomer_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void btnvedau_Click(object sender, EventArgs e)
         {
             bs.Position = 0;
@@ -330,5 +313,195 @@ namespace QuanLyBanBida
                 bs.Position++;
             }
         }
+
+        public void kiemtrathongtinban()
+        {
+            SqlConnection conn = new SqlConnection(connect);
+
+
+        }
+
+
+        public void viewdatatable() 
+        {
+            SqlConnection sqlConnection=new SqlConnection(connect);
+            string query = "select id as[ Mã bàn], name as[Tên bàn], status as[Trạng thái] from TableBida";
+           SqlDataAdapter adpter=new SqlDataAdapter(query, sqlConnection);
+            DataSet dt = new DataSet();
+
+            adpter.Fill(dt,"TableBida");
+            dtgv_Table.DataSource= dt.Tables["TableBida"];
+
+
+        }
+
+        public bool kiemtradulieutable( string id,string name) 
+        {
+            SqlConnection connection = new SqlConnection(connect);
+            string query = "select COUNT(*)from TableBida where id=@id and name=@name";
+            SqlCommand cmd =new SqlCommand(query,connection);
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Parameters.AddWithValue ("@name", name);
+            connection.Open();
+            int count=(int)cmd.ExecuteScalar();
+            connection.Close();
+            return count > 0;
+        }
+        //kiem tra thông tin khách hàng 
+
+        public void updatetable(string id,string name,string status) 
+        {
+            if (kiemtradulieutable(id, name)) 
+            {
+                SqlConnection connection = new SqlConnection(connect);
+                string query ="update TableBida set status=@status where id=@id and name=@name";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.CommandType = CommandType.Text;
+                command.Parameters.AddWithValue("@id", id);
+                command.Parameters.AddWithValue("@name", name);
+                command.Parameters.AddWithValue("@status", status);
+                connection.Open();
+                command.ExecuteNonQuery();
+                connection.Close();
+                MessageBox.Show("Cập nhật thành công !");
+            }
+            else 
+            {
+                MessageBox.Show("Dữ liệu bạn muốn cập nhật không tồn tại !");
+            }
+
+           
+        }
+
+        //chức năng cập nhật bàn 
+        private void btn_EditTable_Click(object sender, EventArgs e)
+        {
+            string id = txt_idtable.Text;
+           string name=txt_TableName.Text;
+            string status=cb_TableStatus.Text;
+            updatetable(id,name,status);
+            viewdatatable();
+
+        }
+
+        // load lại bàn sau khi cập nhật hoặc thêm  
+        private void btn_ViewTable_Click(object sender, EventArgs e)
+        {
+            viewdatatable();
+        }
+
+
+     // hiển thị danh sách tài khoản 
+
+        public void viewlistaccount() 
+        {
+            SqlConnection sqlConnection=new SqlConnection(connect);
+            string query = "select DisplayName as[ Tên tài khoản ], UserName as[Tên người dùng], PassWord as[mật khẩu],Type as[Loại tài khoản] from Account ";
+            SqlDataAdapter adpter=new SqlDataAdapter(query, sqlConnection);
+            DataSet dt = new DataSet();
+            adpter.Fill(dt,"Account");
+            dtgv_Account.DataSource = dt.Tables["Account"];
+
+
+        }
+
+      public bool kiemtrathongtintaikhoan(string username)
+        {
+            SqlConnection sqlConnection=new SqlConnection(connect);
+            string query = "select count(*) from Account where UserName=@username";
+            SqlCommand command = new SqlCommand(query, sqlConnection);
+            command.Parameters.AddWithValue("@username", username);
+            sqlConnection.Open();
+            int count=(int)command.ExecuteScalar();
+            sqlConnection.Close();
+            return count > 0;
+        }
+
+        // Thêm tài khoản cho admin
+
+        public void addAcount(string DisplayName,string UserName,string PassWord, string Type) 
+        {
+            if (kiemtrathongtintaikhoan(UserName)) 
+            {
+                MessageBox.Show("Tài khoản bạn muốn thêm hiện đã có !");
+            }
+            else 
+            {
+                SqlConnection sqlConnection = new SqlConnection(connect);
+                string query = "insert into Account(DisplayName,UserName,PassWord,Type) values (@DisplayName,@UserName,@PassWord,@Type)";
+
+                SqlCommand cmd=new SqlCommand(query, sqlConnection);
+                cmd.Parameters.Add("@DisplayName", DisplayName);
+                cmd.Parameters.Add("@UserName", UserName);
+                cmd.Parameters.Add("@PassWord", PassWord);
+                cmd.Parameters.Add("@Type", Type);
+                sqlConnection.Open();
+                cmd.ExecuteNonQuery();
+                sqlConnection.Close() ;
+                MessageBox.Show("Thêm dữ iệu thành công !");
+            }
+        }
+        // nhấp vào nút thêm tài khoản 
+        private void btn_AddAccount_Click(object sender, EventArgs e)
+        {
+            string displayname = txt_DisplayName.Text;
+            string username = txt_nameaccount.Text;
+            string password=txtPasswordaccount.Text;
+            string type=int.Parse(txt_AccountType.Text).ToString();
+            addAcount(displayname,username,password,type);
+            viewlistaccount();
+            txt_DisplayName.Text = "";
+            txt_nameaccount.Text = "";
+            txtPasswordaccount.Text = "";
+            txt_AccountType.Text = "";
+
+        }
+        // xem dữ liệu sau khi load danh sách tài khoản 
+
+        private void btn_ViewAccount_Click(object sender, EventArgs e)
+        {
+            viewlistaccount();
+        }
+
+        //load lại tất cả thông tin sau khi cập nhật tất cả các chức năng
+        private void fAdmin_Load(object sender, EventArgs e)
+        {
+            // load thông tin khách hàng 
+            xemdulieukhachang();
+            databindingcustomer();
+            //load thông tin bàn
+            viewdatatable();
+
+            //load thông tin tài khoản 
+            viewlistaccount();
+
+        }
+
+  
+
+
+
+
+
+
+
+
+
+        private void panel20_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dtgv_InfoCustomer_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void tp_InfoCustomer_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        
     }
 }
