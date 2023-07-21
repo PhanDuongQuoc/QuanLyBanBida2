@@ -135,7 +135,7 @@ END
 GO
 -- Thêm bàn
 declare @i INT =1
-While @i <=10
+While @i <=20
 Begin
 
 	Insert dbo.TableBida (id,name) values (@i, N'Bàn'+cast(@i as nvarchar(100)))
@@ -345,11 +345,11 @@ select *from dbo.TableBida
 
 /*chèn dữ liệu vào bill*/
 
-create proc USP_chendulieuvaobill1
+alter proc USP_chendulieuvaobill1
 @idTable int
 as
 begin 
-	insert dbo.BILL(id ,DateChecKIn,DateCheckOut,idTable,status) values (1,GETDATE(),null,@idTable,0)
+	insert dbo.BILL(id ,DateChecKIn,DateCheckOut,idTable,status,discount) values (1,GETDATE(),null,@idTable,0,0)
 
 end
 
@@ -364,3 +364,40 @@ begin
 end
 
 select max(id) from bill
+
+
+CREATE TRIGGER UTG_UPDATEBILLINFO
+on dbo.BillInfo for insert,update 
+as
+begin 
+	declare @idBill int 
+	select @idBill=idBill from Inserted
+	declare @idTable int 
+	select @idTable=idTable from dbo.BILL where id=@idBill and status=0
+	Update dbo.TableBida set status=N'Có Người' Where id =@idTable
+
+end
+go
+
+
+create trigger UTG_UPDATEBILL
+ON dbo.Bill for Update 
+as
+begin
+	declare @idBill int 
+	select @idBill=id from Inserted
+	declare @idTable int 
+	select @idTable=idTable from dbo.BILL where id=@idBill
+	declare @count int =0
+	select @count=count(*)from dbo.BILL where idTaBle=@idTable and status=0
+	if(@count=0)
+		update dbo.TableBida set status=N'Trống'where id=@idTable
+end
+go
+
+alter Table dbo.BILL
+add discount int 
+
+update dbo.BILL set discount=0
+
+select *from dbo.BILL

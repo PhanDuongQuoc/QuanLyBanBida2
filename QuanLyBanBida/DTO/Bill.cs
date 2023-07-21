@@ -27,7 +27,7 @@ namespace QuanLyBanBida.DTO
             DateCheckIn = dateCheckIn;
             DateCheckOut = dateCheckOut;
             Status = status;
-            Discount = discount; 
+            Discount = discount;
         }
 
         public Bill(DataRow row) 

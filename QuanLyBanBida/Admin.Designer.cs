@@ -98,6 +98,12 @@ namespace QuanLyBanBida
             this.btn_EditAccount = new System.Windows.Forms.Button();
             this.btn_DeleteAccount = new System.Windows.Forms.Button();
             this.btn_AddAccount = new System.Windows.Forms.Button();
+            this.panel26 = new System.Windows.Forms.Panel();
+            this.txt_nameaccount = new System.Windows.Forms.TextBox();
+            this.lbl_NameID = new System.Windows.Forms.Label();
+            this.panel25 = new System.Windows.Forms.Panel();
+            this.txt_DisplayName = new System.Windows.Forms.TextBox();
+            this.lbl_DisplayName = new System.Windows.Forms.Label();
             this.panel22 = new System.Windows.Forms.Panel();
             this.panel23 = new System.Windows.Forms.Panel();
             this.txtPasswordaccount = new System.Windows.Forms.TextBox();
@@ -105,12 +111,6 @@ namespace QuanLyBanBida
             this.panel24 = new System.Windows.Forms.Panel();
             this.txt_AccountType = new System.Windows.Forms.TextBox();
             this.lbl_AccountType = new System.Windows.Forms.Label();
-            this.panel25 = new System.Windows.Forms.Panel();
-            this.txt_DisplayName = new System.Windows.Forms.TextBox();
-            this.lbl_DisplayName = new System.Windows.Forms.Label();
-            this.panel26 = new System.Windows.Forms.Panel();
-            this.txt_nameaccount = new System.Windows.Forms.TextBox();
-            this.lbl_NameID = new System.Windows.Forms.Label();
             this.tp_InfoCustomer = new System.Windows.Forms.TabPage();
             this.btnvecuoi = new System.Windows.Forms.Button();
             this.btnquaphai = new System.Windows.Forms.Button();
@@ -134,6 +134,9 @@ namespace QuanLyBanBida
             this.btnvedau = new System.Windows.Forms.Button();
             this.btnquatrai = new System.Windows.Forms.Button();
             this.dtgv_InfoCustomer = new System.Windows.Forms.DataGridView();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.tsttimkiem = new System.Windows.Forms.ToolStripButton();
+            this.txtsearch = new System.Windows.Forms.ToolStripTextBox();
             this.tcAdmin.SuspendLayout();
             this.tp_Bill.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -166,14 +169,15 @@ namespace QuanLyBanBida
             this.tp_Account.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_Account)).BeginInit();
             this.panel21.SuspendLayout();
+            this.panel26.SuspendLayout();
+            this.panel25.SuspendLayout();
             this.panel22.SuspendLayout();
             this.panel23.SuspendLayout();
             this.panel24.SuspendLayout();
-            this.panel25.SuspendLayout();
-            this.panel26.SuspendLayout();
             this.tp_InfoCustomer.SuspendLayout();
             this.panel20.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_InfoCustomer)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcAdmin
@@ -786,10 +790,9 @@ namespace QuanLyBanBida
             // 
             // tp_Account
             // 
+            this.tp_Account.Controls.Add(this.toolStrip1);
             this.tp_Account.Controls.Add(this.dtgv_Account);
             this.tp_Account.Controls.Add(this.panel21);
-            this.tp_Account.Controls.Add(this.panel26);
-            this.tp_Account.Controls.Add(this.panel25);
             this.tp_Account.Controls.Add(this.panel22);
             this.tp_Account.Location = new System.Drawing.Point(4, 28);
             this.tp_Account.Name = "tp_Account";
@@ -802,11 +805,11 @@ namespace QuanLyBanBida
             // dtgv_Account
             // 
             this.dtgv_Account.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgv_Account.Location = new System.Drawing.Point(8, 71);
+            this.dtgv_Account.Location = new System.Drawing.Point(2, 33);
             this.dtgv_Account.Name = "dtgv_Account";
             this.dtgv_Account.RowHeadersWidth = 51;
             this.dtgv_Account.RowTemplate.Height = 24;
-            this.dtgv_Account.Size = new System.Drawing.Size(423, 408);
+            this.dtgv_Account.Size = new System.Drawing.Size(429, 454);
             this.dtgv_Account.TabIndex = 4;
             // 
             // panel21
@@ -815,16 +818,16 @@ namespace QuanLyBanBida
             this.panel21.Controls.Add(this.btn_EditAccount);
             this.panel21.Controls.Add(this.btn_DeleteAccount);
             this.panel21.Controls.Add(this.btn_AddAccount);
-            this.panel21.Location = new System.Drawing.Point(8, 6);
+            this.panel21.Location = new System.Drawing.Point(430, 33);
             this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(417, 59);
+            this.panel21.Size = new System.Drawing.Size(423, 61);
             this.panel21.TabIndex = 6;
             // 
             // btn_ViewAccount
             // 
-            this.btn_ViewAccount.Location = new System.Drawing.Point(321, 3);
+            this.btn_ViewAccount.Location = new System.Drawing.Point(306, 3);
             this.btn_ViewAccount.Name = "btn_ViewAccount";
-            this.btn_ViewAccount.Size = new System.Drawing.Size(75, 53);
+            this.btn_ViewAccount.Size = new System.Drawing.Size(108, 53);
             this.btn_ViewAccount.TabIndex = 4;
             this.btn_ViewAccount.Text = "Xem";
             this.btn_ViewAccount.UseVisualStyleBackColor = true;
@@ -832,48 +835,105 @@ namespace QuanLyBanBida
             // 
             // btn_EditAccount
             // 
-            this.btn_EditAccount.Location = new System.Drawing.Point(216, 3);
+            this.btn_EditAccount.Location = new System.Drawing.Point(194, 3);
             this.btn_EditAccount.Name = "btn_EditAccount";
-            this.btn_EditAccount.Size = new System.Drawing.Size(75, 53);
+            this.btn_EditAccount.Size = new System.Drawing.Size(106, 53);
             this.btn_EditAccount.TabIndex = 3;
             this.btn_EditAccount.Text = "Sửa";
             this.btn_EditAccount.UseVisualStyleBackColor = true;
+            this.btn_EditAccount.Click += new System.EventHandler(this.btn_EditAccount_Click);
             // 
             // btn_DeleteAccount
             // 
-            this.btn_DeleteAccount.Location = new System.Drawing.Point(113, 3);
+            this.btn_DeleteAccount.Location = new System.Drawing.Point(96, 3);
             this.btn_DeleteAccount.Name = "btn_DeleteAccount";
-            this.btn_DeleteAccount.Size = new System.Drawing.Size(75, 53);
+            this.btn_DeleteAccount.Size = new System.Drawing.Size(92, 53);
             this.btn_DeleteAccount.TabIndex = 2;
             this.btn_DeleteAccount.Text = "Xóa";
             this.btn_DeleteAccount.UseVisualStyleBackColor = true;
+            this.btn_DeleteAccount.Click += new System.EventHandler(this.btn_DeleteAccount_Click);
             // 
             // btn_AddAccount
             // 
-            this.btn_AddAccount.Location = new System.Drawing.Point(15, 3);
+            this.btn_AddAccount.Location = new System.Drawing.Point(3, 3);
             this.btn_AddAccount.Name = "btn_AddAccount";
-            this.btn_AddAccount.Size = new System.Drawing.Size(75, 53);
+            this.btn_AddAccount.Size = new System.Drawing.Size(87, 53);
             this.btn_AddAccount.TabIndex = 1;
             this.btn_AddAccount.Text = "Thêm";
             this.btn_AddAccount.UseVisualStyleBackColor = true;
             this.btn_AddAccount.Click += new System.EventHandler(this.btn_AddAccount_Click);
             // 
+            // panel26
+            // 
+            this.panel26.Controls.Add(this.txt_nameaccount);
+            this.panel26.Controls.Add(this.lbl_NameID);
+            this.panel26.Location = new System.Drawing.Point(3, 71);
+            this.panel26.Name = "panel26";
+            this.panel26.Size = new System.Drawing.Size(411, 67);
+            this.panel26.TabIndex = 2;
+            // 
+            // txt_nameaccount
+            // 
+            this.txt_nameaccount.Location = new System.Drawing.Point(182, 25);
+            this.txt_nameaccount.Name = "txt_nameaccount";
+            this.txt_nameaccount.Size = new System.Drawing.Size(170, 27);
+            this.txt_nameaccount.TabIndex = 1;
+            // 
+            // lbl_NameID
+            // 
+            this.lbl_NameID.AutoSize = true;
+            this.lbl_NameID.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.lbl_NameID.Location = new System.Drawing.Point(18, 26);
+            this.lbl_NameID.Name = "lbl_NameID";
+            this.lbl_NameID.Size = new System.Drawing.Size(144, 22);
+            this.lbl_NameID.TabIndex = 0;
+            this.lbl_NameID.Text = "Tên Đăng Nhập: ";
+            // 
+            // panel25
+            // 
+            this.panel25.Controls.Add(this.txt_DisplayName);
+            this.panel25.Controls.Add(this.lbl_DisplayName);
+            this.panel25.Location = new System.Drawing.Point(3, 0);
+            this.panel25.Name = "panel25";
+            this.panel25.Size = new System.Drawing.Size(411, 68);
+            this.panel25.TabIndex = 3;
+            // 
+            // txt_DisplayName
+            // 
+            this.txt_DisplayName.Location = new System.Drawing.Point(182, 22);
+            this.txt_DisplayName.Multiline = true;
+            this.txt_DisplayName.Name = "txt_DisplayName";
+            this.txt_DisplayName.Size = new System.Drawing.Size(170, 30);
+            this.txt_DisplayName.TabIndex = 1;
+            // 
+            // lbl_DisplayName
+            // 
+            this.lbl_DisplayName.AutoSize = true;
+            this.lbl_DisplayName.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.lbl_DisplayName.Location = new System.Drawing.Point(18, 23);
+            this.lbl_DisplayName.Name = "lbl_DisplayName";
+            this.lbl_DisplayName.Size = new System.Drawing.Size(126, 22);
+            this.lbl_DisplayName.TabIndex = 0;
+            this.lbl_DisplayName.Text = "Tên Hiển Thị: ";
+            // 
             // panel22
             // 
             this.panel22.Controls.Add(this.panel23);
             this.panel22.Controls.Add(this.panel24);
-            this.panel22.Location = new System.Drawing.Point(437, 74);
+            this.panel22.Controls.Add(this.panel25);
+            this.panel22.Controls.Add(this.panel26);
+            this.panel22.Location = new System.Drawing.Point(431, 194);
             this.panel22.Name = "panel22";
-            this.panel22.Size = new System.Drawing.Size(417, 408);
+            this.panel22.Size = new System.Drawing.Size(417, 293);
             this.panel22.TabIndex = 5;
             // 
             // panel23
             // 
             this.panel23.Controls.Add(this.txtPasswordaccount);
             this.panel23.Controls.Add(this.label7);
-            this.panel23.Location = new System.Drawing.Point(3, 183);
+            this.panel23.Location = new System.Drawing.Point(3, 144);
             this.panel23.Name = "panel23";
-            this.panel23.Size = new System.Drawing.Size(411, 69);
+            this.panel23.Size = new System.Drawing.Size(411, 66);
             this.panel23.TabIndex = 7;
             // 
             // txtPasswordaccount
@@ -898,7 +958,7 @@ namespace QuanLyBanBida
             // 
             this.panel24.Controls.Add(this.txt_AccountType);
             this.panel24.Controls.Add(this.lbl_AccountType);
-            this.panel24.Location = new System.Drawing.Point(0, 269);
+            this.panel24.Location = new System.Drawing.Point(6, 216);
             this.panel24.Name = "panel24";
             this.panel24.Size = new System.Drawing.Size(411, 69);
             this.panel24.TabIndex = 3;
@@ -920,59 +980,6 @@ namespace QuanLyBanBida
             this.lbl_AccountType.Size = new System.Drawing.Size(145, 22);
             this.lbl_AccountType.TabIndex = 0;
             this.lbl_AccountType.Text = "Loại Tài Khoản: ";
-            // 
-            // panel25
-            // 
-            this.panel25.Controls.Add(this.txt_DisplayName);
-            this.panel25.Controls.Add(this.lbl_DisplayName);
-            this.panel25.Location = new System.Drawing.Point(437, 77);
-            this.panel25.Name = "panel25";
-            this.panel25.Size = new System.Drawing.Size(411, 69);
-            this.panel25.TabIndex = 3;
-            // 
-            // txt_DisplayName
-            // 
-            this.txt_DisplayName.Location = new System.Drawing.Point(182, 22);
-            this.txt_DisplayName.Multiline = true;
-            this.txt_DisplayName.Name = "txt_DisplayName";
-            this.txt_DisplayName.Size = new System.Drawing.Size(170, 30);
-            this.txt_DisplayName.TabIndex = 1;
-            // 
-            // lbl_DisplayName
-            // 
-            this.lbl_DisplayName.AutoSize = true;
-            this.lbl_DisplayName.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.lbl_DisplayName.Location = new System.Drawing.Point(18, 23);
-            this.lbl_DisplayName.Name = "lbl_DisplayName";
-            this.lbl_DisplayName.Size = new System.Drawing.Size(126, 22);
-            this.lbl_DisplayName.TabIndex = 0;
-            this.lbl_DisplayName.Text = "Tên Hiển Thị: ";
-            // 
-            // panel26
-            // 
-            this.panel26.Controls.Add(this.txt_nameaccount);
-            this.panel26.Controls.Add(this.lbl_NameID);
-            this.panel26.Location = new System.Drawing.Point(437, 160);
-            this.panel26.Name = "panel26";
-            this.panel26.Size = new System.Drawing.Size(411, 69);
-            this.panel26.TabIndex = 2;
-            // 
-            // txt_nameaccount
-            // 
-            this.txt_nameaccount.Location = new System.Drawing.Point(182, 25);
-            this.txt_nameaccount.Name = "txt_nameaccount";
-            this.txt_nameaccount.Size = new System.Drawing.Size(170, 27);
-            this.txt_nameaccount.TabIndex = 1;
-            // 
-            // lbl_NameID
-            // 
-            this.lbl_NameID.AutoSize = true;
-            this.lbl_NameID.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.lbl_NameID.Location = new System.Drawing.Point(18, 26);
-            this.lbl_NameID.Name = "lbl_NameID";
-            this.lbl_NameID.Size = new System.Drawing.Size(144, 22);
-            this.lbl_NameID.TabIndex = 0;
-            this.lbl_NameID.Text = "Tên Đăng Nhập: ";
             // 
             // tp_InfoCustomer
             // 
@@ -1200,6 +1207,35 @@ namespace QuanLyBanBida
             this.dtgv_InfoCustomer.TabIndex = 0;
             this.dtgv_InfoCustomer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_InfoCustomer_CellContentClick);
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsttimkiem,
+            this.txtsearch});
+            this.toolStrip1.Location = new System.Drawing.Point(3, 3);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(853, 31);
+            this.toolStrip1.TabIndex = 7;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // tsttimkiem
+            // 
+            this.tsttimkiem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsttimkiem.Image = ((System.Drawing.Image)(resources.GetObject("tsttimkiem.Image")));
+            this.tsttimkiem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsttimkiem.Name = "tsttimkiem";
+            this.tsttimkiem.Size = new System.Drawing.Size(29, 28);
+            this.tsttimkiem.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // txtsearch
+            // 
+            this.txtsearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtsearch.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtsearch.Name = "txtsearch";
+            this.txtsearch.Size = new System.Drawing.Size(580, 31);
+            this.txtsearch.Text = "Tìm kiếm";
+            // 
             // fAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1251,21 +1287,24 @@ namespace QuanLyBanBida
             this.panel18.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_Table)).EndInit();
             this.tp_Account.ResumeLayout(false);
+            this.tp_Account.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_Account)).EndInit();
             this.panel21.ResumeLayout(false);
+            this.panel26.ResumeLayout(false);
+            this.panel26.PerformLayout();
+            this.panel25.ResumeLayout(false);
+            this.panel25.PerformLayout();
             this.panel22.ResumeLayout(false);
             this.panel23.ResumeLayout(false);
             this.panel23.PerformLayout();
             this.panel24.ResumeLayout(false);
             this.panel24.PerformLayout();
-            this.panel25.ResumeLayout(false);
-            this.panel25.PerformLayout();
-            this.panel26.ResumeLayout(false);
-            this.panel26.PerformLayout();
             this.tp_InfoCustomer.ResumeLayout(false);
             this.panel20.ResumeLayout(false);
             this.panel20.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_InfoCustomer)).EndInit();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1376,5 +1415,8 @@ namespace QuanLyBanBida
         private System.Windows.Forms.Panel panel23;
         private System.Windows.Forms.TextBox txtPasswordaccount;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton tsttimkiem;
+        private System.Windows.Forms.ToolStripTextBox txtsearch;
     }
 }

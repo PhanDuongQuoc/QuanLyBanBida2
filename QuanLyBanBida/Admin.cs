@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
@@ -405,6 +406,8 @@ namespace QuanLyBanBida
 
         }
 
+
+
       public bool kiemtrathongtintaikhoan(string username)
         {
             SqlConnection sqlConnection=new SqlConnection(connect);
@@ -444,23 +447,151 @@ namespace QuanLyBanBida
         // nhấp vào nút thêm tài khoản 
         private void btn_AddAccount_Click(object sender, EventArgs e)
         {
-            string displayname = txt_DisplayName.Text;
-            string username = txt_nameaccount.Text;
-            string password=txtPasswordaccount.Text;
-            string type=int.Parse(txt_AccountType.Text).ToString();
-            addAcount(displayname,username,password,type);
-            viewlistaccount();
-            txt_DisplayName.Text = "";
-            txt_nameaccount.Text = "";
-            txtPasswordaccount.Text = "";
-            txt_AccountType.Text = "";
+            if(string.IsNullOrEmpty(txt_DisplayName.Text) || string.IsNullOrEmpty(txt_nameaccount.Text)|| string.IsNullOrEmpty(txtPasswordaccount.Text) || string.IsNullOrEmpty(txt_AccountType.Text))
+            {
+                MessageBox.Show("Bạn chưa nhập thông tin !");
+            }
+            else 
+            {
+                string displayname = txt_DisplayName.Text;
+                string username = txt_nameaccount.Text;
+                string password = txtPasswordaccount.Text;
+                string type = int.Parse(txt_AccountType.Text).ToString();
+                addAcount(displayname, username, password, type);
+                viewlistaccount();
+                txt_DisplayName.Text = "";
+                txt_nameaccount.Text = "";
+                txtPasswordaccount.Text = "";
+                txt_AccountType.Text = "";
+            }
 
+        }
+
+        //xóa thông tin tài khoản 
+        public void deletedataccount(string username) 
+        {
+            if (kiemtrathongtintaikhoan(username)) 
+            {
+                SqlConnection sqlConnection = new SqlConnection(connect);
+                string query = "delete from Account where UserName=@username";
+                SqlCommand cmd = new SqlCommand(query, sqlConnection);
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@username", username);
+                sqlConnection.Open();
+                cmd.ExecuteNonQuery();
+                sqlConnection.Close();
+                MessageBox.Show("Bạn xóa tài khoản thành công !");
+                
+            }
+            else 
+            {
+                MessageBox.Show("Tài khoản bàn muốn xóa không có !");
+            }
+        }
+        //nút xóa thông tin tài khoản 
+        private void btn_DeleteAccount_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txt_nameaccount.Text))
+            {
+                MessageBox.Show("Bạn vui lòng nhập thông tin tài khoản cần xóa !");
+            }
+            else
+            {
+                string username = txt_nameaccount.Text;
+                deletedataccount(username);
+                txt_DisplayName.Text = "";
+                txt_nameaccount.Text = "";
+                txtPasswordaccount.Text = "";
+                txt_AccountType.Text = "";
+            
+                 txt_nameaccount.Focus();
+                 viewlistaccount();
+            }
+        }
+
+        //cập nhật thông tin tài khoản 
+        public void updateaccount(string DisplayName, string UserName, string PassWord, string Type) 
+        {
+            if (kiemtrathongtintaikhoan(UserName)) 
+            {
+                SqlConnection sqlConnection = new SqlConnection(connect);
+                string query = "update Account set DisplayName=@Displayname, PassWord=@PassWord,Type=@Type where UserName=@UserName";
+                SqlCommand cmd=new SqlCommand(query, sqlConnection);
+               cmd.CommandType = CommandType.Text;
+               cmd.Parameters.AddWithValue("@DisplayName", DisplayName);
+               cmd.Parameters.AddWithValue("@UserName", UserName);
+                cmd.Parameters.AddWithValue ("@Password", PassWord);
+                cmd.Parameters.AddWithValue("@Type", Type);
+                sqlConnection.Open();
+                cmd.ExecuteNonQuery();
+                sqlConnection.Close() ;
+                MessageBox.Show("Tài khoản bạn cập nhật thành công !");
+
+
+            }
+            else 
+            {
+                MessageBox.Show("Tài khoàn bạn muốn cập nhật không có !");
+            }
+        }
+
+        private void btn_EditAccount_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txt_nameaccount.Text)) 
+            {
+                MessageBox.Show("Bạn vui long nhập thông tin tài khoản cần cập nhật ! ");
+            }
+            else 
+            {
+                string display=txt_DisplayName.Text;
+                string username = txt_nameaccount.Text;
+                string password=txtPasswordaccount.Text;
+                string type=int.Parse(txt_AccountType.Text).ToString();
+                updateaccount(display, username, password, type);
+
+                txt_DisplayName.Text = "";
+                txt_nameaccount.Text = "";
+                txtPasswordaccount.Text = "";
+                txt_AccountType.Text = "";
+            
+                 txt_nameaccount.Focus();
+                 viewlistaccount();
+
+            }
+            
         }
         // xem dữ liệu sau khi load danh sách tài khoản 
 
         private void btn_ViewAccount_Click(object sender, EventArgs e)
         {
             viewlistaccount();
+        }
+        //tìm tài khoản
+        public void searchaccount(string DisplayName) 
+        {
+            SqlConnection sqlConnection = new SqlConnection(connect);
+            string query = "SELECT * FROM Account WHERE DisplayName = @DisplayName ";
+            SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+            sqlCommand.Parameters.AddWithValue("@DisplayName", DisplayName);
+
+            SqlDataAdapter adapter = new SqlDataAdapter(sqlCommand);
+            DataSet dt = new DataSet();
+            adapter.Fill(dt);
+
+            // Đổ dữ liệu vào DataGridView
+            dtgv_Account.DataSource = dt;
+
+        }
+
+        public void nutsearchacount() 
+        {
+            string username = txt_DisplayName.Text;
+            searchaccount(username);
+
+        }
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            nutsearchacount();
         }
 
         //load lại tất cả thông tin sau khi cập nhật tất cả các chức năng
@@ -502,6 +633,6 @@ namespace QuanLyBanBida
             
         }
 
-        
+    
     }
 }
