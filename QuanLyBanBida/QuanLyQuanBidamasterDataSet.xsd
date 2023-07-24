@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="QuanLyQuanBidaDataSet" targetNamespace="http://tempuri.org/QuanLyQuanBidaDataSet.xsd" xmlns:mstns="http://tempuri.org/QuanLyQuanBidaDataSet.xsd" xmlns="http://tempuri.org/QuanLyQuanBidaDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="QuanLyQuanBidamasterDataSet" targetNamespace="http://tempuri.org/QuanLyQuanBidamasterDataSet.xsd" xmlns:mstns="http://tempuri.org/QuanLyQuanBidamasterDataSet.xsd" xmlns="http://tempuri.org/QuanLyQuanBidamasterDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="QuanLyQuanBidaConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="QuanLyQuanBidaConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.QuanLyBanBida.Properties.Settings.GlobalReference.Default.QuanLyQuanBidaConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="QuanLyQuanBidamaster" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="QuanLyQuanBidamaster (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.QuanLyBanBida.Properties.Settings.GlobalReference.Default.QuanLyQuanBidamaster" Provider="Microsoft.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="AccountTableAdapter" GeneratorDataComponentClassName="AccountTableAdapter" Name="Account" UserDataComponentName="AccountTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="QuanLyQuanBidaConnectionString (Settings)" DbObjectName="QuanLyQuanBida.dbo.Account" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="QuanLyQuanBidamaster (Settings)" DbObjectName="QuanLyQuanBidamaster.dbo.Account" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Account] WHERE (([DisplayName] = @Original_DisplayName) AND ([UserName] = @Original_UserName) AND ([PassWord] = @Original_PassWord) AND ([Type] = @Original_Type))</CommandText>
@@ -67,7 +67,7 @@ SELECT DisplayName, UserName, PassWord, Type FROM Account WHERE (UserName = @Use
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="BILLTableAdapter" GeneratorDataComponentClassName="BILLTableAdapter" Name="BILL" UserDataComponentName="BILLTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="QuanLyQuanBidaConnectionString (Settings)" DbObjectName="QuanLyQuanBida.dbo.BILL" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="QuanLyQuanBidamaster (Settings)" DbObjectName="QuanLyQuanBidamaster.dbo.BILL" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[BILL] WHERE (([id] = @Original_id) AND ([DateChecKIn] = @Original_DateChecKIn) AND ((@IsNull_DateCheckOut = 1 AND [DateCheckOut] IS NULL) OR ([DateCheckOut] = @Original_DateCheckOut)) AND ([idTable] = @Original_idTable) AND ([status] = @Original_status))</CommandText>
@@ -83,9 +83,10 @@ SELECT DisplayName, UserName, PassWord, Type FROM Account WHERE (UserName = @Use
                 </DeleteCommand>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO [dbo].[BILL] ([DateChecKIn], [DateCheckOut], [idTable], [status]) VALUES (@DateChecKIn, @DateCheckOut, @idTable, @status);
-SELECT id, DateChecKIn, DateCheckOut, idTable, status FROM BILL WHERE (id = SCOPE_IDENTITY())</CommandText>
+                    <CommandText>INSERT INTO [dbo].[BILL] ([id], [DateChecKIn], [DateCheckOut], [idTable], [status]) VALUES (@id, @DateChecKIn, @DateCheckOut, @idTable, @status);
+SELECT id, DateChecKIn, DateCheckOut, idTable, status FROM BILL WHERE (id = @id)</CommandText>
                     <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@DateChecKIn" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="DateChecKIn" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@DateCheckOut" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="DateCheckOut" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@idTable" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idTable" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -101,9 +102,10 @@ SELECT id, DateChecKIn, DateCheckOut, idTable, status FROM BILL WHERE (id = SCOP
                 </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE [dbo].[BILL] SET [DateChecKIn] = @DateChecKIn, [DateCheckOut] = @DateCheckOut, [idTable] = @idTable, [status] = @status WHERE (([id] = @Original_id) AND ([DateChecKIn] = @Original_DateChecKIn) AND ((@IsNull_DateCheckOut = 1 AND [DateCheckOut] IS NULL) OR ([DateCheckOut] = @Original_DateCheckOut)) AND ([idTable] = @Original_idTable) AND ([status] = @Original_status));
+                    <CommandText>UPDATE [dbo].[BILL] SET [id] = @id, [DateChecKIn] = @DateChecKIn, [DateCheckOut] = @DateCheckOut, [idTable] = @idTable, [status] = @status WHERE (([id] = @Original_id) AND ([DateChecKIn] = @Original_DateChecKIn) AND ((@IsNull_DateCheckOut = 1 AND [DateCheckOut] IS NULL) OR ([DateCheckOut] = @Original_DateCheckOut)) AND ([idTable] = @Original_idTable) AND ([status] = @Original_status));
 SELECT id, DateChecKIn, DateCheckOut, idTable, status FROM BILL WHERE (id = @id)</CommandText>
                     <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@DateChecKIn" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="DateChecKIn" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@DateCheckOut" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="DateCheckOut" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@idTable" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idTable" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -114,7 +116,6 @@ SELECT id, DateChecKIn, DateCheckOut, idTable, status FROM BILL WHERE (id = @id)
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_DateCheckOut" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="DateCheckOut" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_idTable" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idTable" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_status" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="status" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="id" DataSourceName="QuanLyQuanBida.dbo.BILL" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </UpdateCommand>
@@ -131,7 +132,7 @@ SELECT id, DateChecKIn, DateCheckOut, idTable, status FROM BILL WHERE (id = @id)
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="BillInfoTableAdapter" GeneratorDataComponentClassName="BillInfoTableAdapter" Name="BillInfo" UserDataComponentName="BillInfoTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="QuanLyQuanBidaConnectionString (Settings)" DbObjectName="QuanLyQuanBida.dbo.BillInfo" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="QuanLyQuanBidamaster (Settings)" DbObjectName="QuanLyQuanBidamaster.dbo.BillInfo" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[BillInfo] WHERE (([id] = @Original_id) AND ([idBill] = @Original_idBill) AND ([idFood] = @Original_idFood) AND ([count] = @Original_count))</CommandText>
@@ -145,9 +146,10 @@ SELECT id, DateChecKIn, DateCheckOut, idTable, status FROM BILL WHERE (id = @id)
                 </DeleteCommand>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO [dbo].[BillInfo] ([idBill], [idFood], [count]) VALUES (@idBill, @idFood, @count);
-SELECT id, idBill, idFood, count FROM BillInfo WHERE (id = SCOPE_IDENTITY())</CommandText>
+                    <CommandText>INSERT INTO [dbo].[BillInfo] ([id], [idBill], [idFood], [count]) VALUES (@id, @idBill, @idFood, @count);
+SELECT id, idBill, idFood, count FROM BillInfo WHERE (id = @id)</CommandText>
                     <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@idBill" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idBill" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@idFood" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idFood" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@count" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="count" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -162,9 +164,10 @@ SELECT id, idBill, idFood, count FROM BillInfo WHERE (id = SCOPE_IDENTITY())</Co
                 </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE [dbo].[BillInfo] SET [idBill] = @idBill, [idFood] = @idFood, [count] = @count WHERE (([id] = @Original_id) AND ([idBill] = @Original_idBill) AND ([idFood] = @Original_idFood) AND ([count] = @Original_count));
+                    <CommandText>UPDATE [dbo].[BillInfo] SET [id] = @id, [idBill] = @idBill, [idFood] = @idFood, [count] = @count WHERE (([id] = @Original_id) AND ([idBill] = @Original_idBill) AND ([idFood] = @Original_idFood) AND ([count] = @Original_count));
 SELECT id, idBill, idFood, count FROM BillInfo WHERE (id = @id)</CommandText>
                     <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@idBill" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idBill" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@idFood" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idFood" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@count" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="count" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -172,7 +175,6 @@ SELECT id, idBill, idFood, count FROM BillInfo WHERE (id = @id)</CommandText>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_idBill" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idBill" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_idFood" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idFood" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_count" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="count" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="id" DataSourceName="QuanLyQuanBida.dbo.BillInfo" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </UpdateCommand>
@@ -188,7 +190,7 @@ SELECT id, idBill, idFood, count FROM BillInfo WHERE (id = @id)</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="FoodTableAdapter" GeneratorDataComponentClassName="FoodTableAdapter" Name="Food" UserDataComponentName="FoodTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="QuanLyQuanBidaConnectionString (Settings)" DbObjectName="QuanLyQuanBida.dbo.Food" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="QuanLyQuanBidamaster (Settings)" DbObjectName="QuanLyQuanBidamaster.dbo.Food" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Food] WHERE (([id] = @Original_id) AND ([name] = @Original_name) AND ([idCategory] = @Original_idCategory) AND ([price] = @Original_price))</CommandText>
@@ -202,9 +204,10 @@ SELECT id, idBill, idFood, count FROM BillInfo WHERE (id = @id)</CommandText>
                 </DeleteCommand>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO [dbo].[Food] ([name], [idCategory], [price]) VALUES (@name, @idCategory, @price);
-SELECT id, name, idCategory, price FROM Food WHERE (id = SCOPE_IDENTITY())</CommandText>
+                    <CommandText>INSERT INTO [dbo].[Food] ([id], [name], [idCategory], [price]) VALUES (@id, @name, @idCategory, @price);
+SELECT id, name, idCategory, price FROM Food WHERE (id = @id)</CommandText>
                     <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@name" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="name" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@idCategory" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idCategory" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@price" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="price" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -219,9 +222,10 @@ SELECT id, name, idCategory, price FROM Food WHERE (id = SCOPE_IDENTITY())</Comm
                 </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE [dbo].[Food] SET [name] = @name, [idCategory] = @idCategory, [price] = @price WHERE (([id] = @Original_id) AND ([name] = @Original_name) AND ([idCategory] = @Original_idCategory) AND ([price] = @Original_price));
+                    <CommandText>UPDATE [dbo].[Food] SET [id] = @id, [name] = @name, [idCategory] = @idCategory, [price] = @price WHERE (([id] = @Original_id) AND ([name] = @Original_name) AND ([idCategory] = @Original_idCategory) AND ([price] = @Original_price));
 SELECT id, name, idCategory, price FROM Food WHERE (id = @id)</CommandText>
                     <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@name" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="name" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@idCategory" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idCategory" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@price" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="price" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -229,7 +233,6 @@ SELECT id, name, idCategory, price FROM Food WHERE (id = @id)</CommandText>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_name" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="name" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_idCategory" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idCategory" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@Original_price" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="price" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="id" DataSourceName="QuanLyQuanBida.dbo.Food" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </UpdateCommand>
@@ -245,7 +248,7 @@ SELECT id, name, idCategory, price FROM Food WHERE (id = @id)</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="FoodCategoryTableAdapter" GeneratorDataComponentClassName="FoodCategoryTableAdapter" Name="FoodCategory" UserDataComponentName="FoodCategoryTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="QuanLyQuanBidaConnectionString (Settings)" DbObjectName="QuanLyQuanBida.dbo.FoodCategory" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="QuanLyQuanBidamaster (Settings)" DbObjectName="QuanLyQuanBidamaster.dbo.FoodCategory" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[FoodCategory] WHERE (([id] = @Original_id) AND ([name] = @Original_name))</CommandText>
@@ -257,9 +260,10 @@ SELECT id, name, idCategory, price FROM Food WHERE (id = @id)</CommandText>
                 </DeleteCommand>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO [dbo].[FoodCategory] ([name]) VALUES (@name);
-SELECT id, name FROM FoodCategory WHERE (id = SCOPE_IDENTITY())</CommandText>
+                    <CommandText>INSERT INTO [dbo].[FoodCategory] ([id], [name]) VALUES (@id, @name);
+SELECT id, name FROM FoodCategory WHERE (id = @id)</CommandText>
                     <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@name" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="name" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
@@ -272,13 +276,13 @@ SELECT id, name FROM FoodCategory WHERE (id = SCOPE_IDENTITY())</CommandText>
                 </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE [dbo].[FoodCategory] SET [name] = @name WHERE (([id] = @Original_id) AND ([name] = @Original_name));
+                    <CommandText>UPDATE [dbo].[FoodCategory] SET [id] = @id, [name] = @name WHERE (([id] = @Original_id) AND ([name] = @Original_name));
 SELECT id, name FROM FoodCategory WHERE (id = @id)</CommandText>
                     <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@name" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="name" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_name" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="name" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="id" DataSourceName="QuanLyQuanBida.dbo.FoodCategory" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </UpdateCommand>
@@ -292,7 +296,7 @@ SELECT id, name FROM FoodCategory WHERE (id = @id)</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TableBidaTableAdapter" GeneratorDataComponentClassName="TableBidaTableAdapter" Name="TableBida" UserDataComponentName="TableBidaTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="QuanLyQuanBidaConnectionString (Settings)" DbObjectName="QuanLyQuanBida.dbo.TableBida" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="QuanLyQuanBidamaster (Settings)" DbObjectName="QuanLyQuanBidamaster.dbo.TableBida" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[TableBida] WHERE (([id] = @Original_id) AND ([name] = @Original_name) AND ([status] = @Original_status))</CommandText>
@@ -305,9 +309,10 @@ SELECT id, name FROM FoodCategory WHERE (id = @id)</CommandText>
                 </DeleteCommand>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO [dbo].[TableBida] ([name], [status]) VALUES (@name, @status);
-SELECT id, name, status FROM TableBida WHERE (id = SCOPE_IDENTITY())</CommandText>
+                    <CommandText>INSERT INTO [dbo].[TableBida] ([id], [name], [status]) VALUES (@id, @name, @status);
+SELECT id, name, status FROM TableBida WHERE (id = @id)</CommandText>
                     <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@name" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="name" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@status" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="status" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
@@ -321,15 +326,15 @@ SELECT id, name, status FROM TableBida WHERE (id = SCOPE_IDENTITY())</CommandTex
                 </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE [dbo].[TableBida] SET [name] = @name, [status] = @status WHERE (([id] = @Original_id) AND ([name] = @Original_name) AND ([status] = @Original_status));
+                    <CommandText>UPDATE [dbo].[TableBida] SET [id] = @id, [name] = @name, [status] = @status WHERE (([id] = @Original_id) AND ([name] = @Original_name) AND ([status] = @Original_status));
 SELECT id, name, status FROM TableBida WHERE (id = @id)</CommandText>
                     <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@name" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="name" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@status" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="status" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_name" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="name" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_status" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="status" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="id" DataSourceName="QuanLyQuanBida.dbo.TableBida" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </UpdateCommand>
@@ -342,128 +347,84 @@ SELECT id, name, status FROM TableBida WHERE (id = @id)</CommandText>
             </Mappings>
             <Sources />
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="USP_LoginTableAdapter" GeneratorDataComponentClassName="USP_LoginTableAdapter" Name="USP_Login" UserDataComponentName="USP_LoginTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="QuanLyQuanBidaConnectionString (Settings)" DbObjectName="QuanLyQuanBida.dbo.USP_Login" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
-                    <CommandText>dbo.USP_Login</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@userName" Precision="0" ProviderType="NVarChar" Scale="0" Size="100" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@passWord" Precision="0" ProviderType="NVarChar" Scale="0" Size="100" SourceColumnNullMapping="false" SourceVersion="Current" />
-                    </Parameters>
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="DisplayName" DataSetColumn="DisplayName" />
-              <Mapping SourceColumn="UserName" DataSetColumn="UserName" />
-              <Mapping SourceColumn="PassWord" DataSetColumn="PassWord" />
-              <Mapping SourceColumn="Type" DataSetColumn="Type" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="QuanLyQuanBidaDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="QuanLyQuanBidaDataSet" msprop:Generator_DataSetName="QuanLyQuanBidaDataSet">
+  <xs:element name="QuanLyQuanBidamasterDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="QuanLyQuanBidamasterDataSet" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="QuanLyQuanBidamasterDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Account" msprop:Generator_RowEvHandlerName="AccountRowChangeEventHandler" msprop:Generator_RowDeletedName="AccountRowDeleted" msprop:Generator_RowDeletingName="AccountRowDeleting" msprop:Generator_RowEvArgName="AccountRowChangeEvent" msprop:Generator_TablePropName="Account" msprop:Generator_RowChangedName="AccountRowChanged" msprop:Generator_RowChangingName="AccountRowChanging" msprop:Generator_TableClassName="AccountDataTable" msprop:Generator_RowClassName="AccountRow" msprop:Generator_TableVarName="tableAccount" msprop:Generator_UserTableName="Account">
+        <xs:element name="Account" msprop:Generator_RowClassName="AccountRow" msprop:Generator_RowEvHandlerName="AccountRowChangeEventHandler" msprop:Generator_RowDeletedName="AccountRowDeleted" msprop:Generator_RowDeletingName="AccountRowDeleting" msprop:Generator_RowEvArgName="AccountRowChangeEvent" msprop:Generator_TablePropName="Account" msprop:Generator_RowChangedName="AccountRowChanged" msprop:Generator_UserTableName="Account" msprop:Generator_RowChangingName="AccountRowChanging" msprop:Generator_TableClassName="AccountDataTable" msprop:Generator_TableVarName="tableAccount">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="DisplayName" msprop:Generator_ColumnPropNameInRow="DisplayName" msprop:Generator_ColumnPropNameInTable="DisplayNameColumn" msprop:Generator_ColumnVarNameInTable="columnDisplayName" msprop:Generator_UserColumnName="DisplayName">
+              <xs:element name="DisplayName" msprop:Generator_UserColumnName="DisplayName" msprop:Generator_ColumnPropNameInTable="DisplayNameColumn" msprop:Generator_ColumnPropNameInRow="DisplayName" msprop:Generator_ColumnVarNameInTable="columnDisplayName">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="UserName" msprop:Generator_ColumnPropNameInRow="UserName" msprop:Generator_ColumnPropNameInTable="UserNameColumn" msprop:Generator_ColumnVarNameInTable="columnUserName" msprop:Generator_UserColumnName="UserName">
+              <xs:element name="UserName" msprop:Generator_UserColumnName="UserName" msprop:Generator_ColumnPropNameInTable="UserNameColumn" msprop:Generator_ColumnPropNameInRow="UserName" msprop:Generator_ColumnVarNameInTable="columnUserName">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="PassWord" msprop:Generator_ColumnPropNameInRow="PassWord" msprop:Generator_ColumnPropNameInTable="PassWordColumn" msprop:Generator_ColumnVarNameInTable="columnPassWord" msprop:Generator_UserColumnName="PassWord">
+              <xs:element name="PassWord" msprop:Generator_UserColumnName="PassWord" msprop:Generator_ColumnPropNameInTable="PassWordColumn" msprop:Generator_ColumnPropNameInRow="PassWord" msprop:Generator_ColumnVarNameInTable="columnPassWord">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="1000" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Type" msprop:Generator_ColumnPropNameInRow="Type" msprop:Generator_ColumnPropNameInTable="TypeColumn" msprop:Generator_ColumnVarNameInTable="columnType" msprop:Generator_UserColumnName="Type" type="xs:int" />
+              <xs:element name="Type" msprop:Generator_UserColumnName="Type" msprop:Generator_ColumnPropNameInTable="TypeColumn" msprop:Generator_ColumnPropNameInRow="Type" msprop:Generator_ColumnVarNameInTable="columnType" type="xs:int" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="BILL" msprop:Generator_RowEvHandlerName="BILLRowChangeEventHandler" msprop:Generator_RowDeletedName="BILLRowDeleted" msprop:Generator_RowDeletingName="BILLRowDeleting" msprop:Generator_RowEvArgName="BILLRowChangeEvent" msprop:Generator_TablePropName="BILL" msprop:Generator_RowChangedName="BILLRowChanged" msprop:Generator_RowChangingName="BILLRowChanging" msprop:Generator_TableClassName="BILLDataTable" msprop:Generator_RowClassName="BILLRow" msprop:Generator_TableVarName="tableBILL" msprop:Generator_UserTableName="BILL">
+        <xs:element name="BILL" msprop:Generator_RowClassName="BILLRow" msprop:Generator_RowEvHandlerName="BILLRowChangeEventHandler" msprop:Generator_RowDeletedName="BILLRowDeleted" msprop:Generator_RowDeletingName="BILLRowDeleting" msprop:Generator_RowEvArgName="BILLRowChangeEvent" msprop:Generator_TablePropName="BILL" msprop:Generator_RowChangedName="BILLRowChanged" msprop:Generator_UserTableName="BILL" msprop:Generator_RowChangingName="BILLRowChanging" msprop:Generator_TableClassName="BILLDataTable" msprop:Generator_TableVarName="tableBILL">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_UserColumnName="id" type="xs:int" />
-              <xs:element name="DateChecKIn" msprop:Generator_ColumnPropNameInRow="DateChecKIn" msprop:Generator_ColumnPropNameInTable="DateChecKInColumn" msprop:Generator_ColumnVarNameInTable="columnDateChecKIn" msprop:Generator_UserColumnName="DateChecKIn" type="xs:dateTime" />
-              <xs:element name="DateCheckOut" msprop:Generator_ColumnPropNameInRow="DateCheckOut" msprop:Generator_ColumnPropNameInTable="DateCheckOutColumn" msprop:Generator_ColumnVarNameInTable="columnDateCheckOut" msprop:Generator_UserColumnName="DateCheckOut" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="idTable" msprop:Generator_ColumnPropNameInRow="idTable" msprop:Generator_ColumnPropNameInTable="idTableColumn" msprop:Generator_ColumnVarNameInTable="columnidTable" msprop:Generator_UserColumnName="idTable" type="xs:int" />
-              <xs:element name="status" msprop:Generator_ColumnPropNameInRow="status" msprop:Generator_ColumnPropNameInTable="statusColumn" msprop:Generator_ColumnVarNameInTable="columnstatus" msprop:Generator_UserColumnName="status" type="xs:int" />
+              <xs:element name="id" msprop:Generator_UserColumnName="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnVarNameInTable="columnid" type="xs:int" />
+              <xs:element name="DateChecKIn" msprop:Generator_UserColumnName="DateChecKIn" msprop:Generator_ColumnPropNameInTable="DateChecKInColumn" msprop:Generator_ColumnPropNameInRow="DateChecKIn" msprop:Generator_ColumnVarNameInTable="columnDateChecKIn" type="xs:dateTime" />
+              <xs:element name="DateCheckOut" msprop:Generator_UserColumnName="DateCheckOut" msprop:Generator_ColumnPropNameInTable="DateCheckOutColumn" msprop:Generator_ColumnPropNameInRow="DateCheckOut" msprop:Generator_ColumnVarNameInTable="columnDateCheckOut" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="idTable" msprop:Generator_UserColumnName="idTable" msprop:Generator_ColumnPropNameInTable="idTableColumn" msprop:Generator_ColumnPropNameInRow="idTable" msprop:Generator_ColumnVarNameInTable="columnidTable" type="xs:int" />
+              <xs:element name="status" msprop:Generator_UserColumnName="status" msprop:Generator_ColumnPropNameInTable="statusColumn" msprop:Generator_ColumnPropNameInRow="status" msprop:Generator_ColumnVarNameInTable="columnstatus" type="xs:int" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="BillInfo" msprop:Generator_RowEvHandlerName="BillInfoRowChangeEventHandler" msprop:Generator_RowDeletedName="BillInfoRowDeleted" msprop:Generator_RowDeletingName="BillInfoRowDeleting" msprop:Generator_RowEvArgName="BillInfoRowChangeEvent" msprop:Generator_TablePropName="BillInfo" msprop:Generator_RowChangedName="BillInfoRowChanged" msprop:Generator_RowChangingName="BillInfoRowChanging" msprop:Generator_TableClassName="BillInfoDataTable" msprop:Generator_RowClassName="BillInfoRow" msprop:Generator_TableVarName="tableBillInfo" msprop:Generator_UserTableName="BillInfo">
+        <xs:element name="BillInfo" msprop:Generator_RowClassName="BillInfoRow" msprop:Generator_RowEvHandlerName="BillInfoRowChangeEventHandler" msprop:Generator_RowDeletedName="BillInfoRowDeleted" msprop:Generator_RowDeletingName="BillInfoRowDeleting" msprop:Generator_RowEvArgName="BillInfoRowChangeEvent" msprop:Generator_TablePropName="BillInfo" msprop:Generator_RowChangedName="BillInfoRowChanged" msprop:Generator_UserTableName="BillInfo" msprop:Generator_RowChangingName="BillInfoRowChanging" msprop:Generator_TableClassName="BillInfoDataTable" msprop:Generator_TableVarName="tableBillInfo">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_UserColumnName="id" type="xs:int" />
-              <xs:element name="idBill" msprop:Generator_ColumnPropNameInRow="idBill" msprop:Generator_ColumnPropNameInTable="idBillColumn" msprop:Generator_ColumnVarNameInTable="columnidBill" msprop:Generator_UserColumnName="idBill" type="xs:int" />
-              <xs:element name="idFood" msprop:Generator_ColumnPropNameInRow="idFood" msprop:Generator_ColumnPropNameInTable="idFoodColumn" msprop:Generator_ColumnVarNameInTable="columnidFood" msprop:Generator_UserColumnName="idFood" type="xs:int" />
-              <xs:element name="count" msprop:Generator_ColumnPropNameInRow="count" msprop:Generator_ColumnPropNameInTable="countColumn" msprop:Generator_ColumnVarNameInTable="columncount" msprop:Generator_UserColumnName="count" type="xs:int" />
+              <xs:element name="id" msprop:Generator_UserColumnName="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnVarNameInTable="columnid" type="xs:int" />
+              <xs:element name="idBill" msprop:Generator_UserColumnName="idBill" msprop:Generator_ColumnPropNameInTable="idBillColumn" msprop:Generator_ColumnPropNameInRow="idBill" msprop:Generator_ColumnVarNameInTable="columnidBill" type="xs:int" />
+              <xs:element name="idFood" msprop:Generator_UserColumnName="idFood" msprop:Generator_ColumnPropNameInTable="idFoodColumn" msprop:Generator_ColumnPropNameInRow="idFood" msprop:Generator_ColumnVarNameInTable="columnidFood" type="xs:int" />
+              <xs:element name="count" msprop:Generator_UserColumnName="count" msprop:Generator_ColumnPropNameInTable="countColumn" msprop:Generator_ColumnPropNameInRow="count" msprop:Generator_ColumnVarNameInTable="columncount" type="xs:int" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Food" msprop:Generator_RowEvHandlerName="FoodRowChangeEventHandler" msprop:Generator_RowDeletedName="FoodRowDeleted" msprop:Generator_RowDeletingName="FoodRowDeleting" msprop:Generator_RowEvArgName="FoodRowChangeEvent" msprop:Generator_TablePropName="Food" msprop:Generator_RowChangedName="FoodRowChanged" msprop:Generator_RowChangingName="FoodRowChanging" msprop:Generator_TableClassName="FoodDataTable" msprop:Generator_RowClassName="FoodRow" msprop:Generator_TableVarName="tableFood" msprop:Generator_UserTableName="Food">
+        <xs:element name="Food" msprop:Generator_RowClassName="FoodRow" msprop:Generator_RowEvHandlerName="FoodRowChangeEventHandler" msprop:Generator_RowDeletedName="FoodRowDeleted" msprop:Generator_RowDeletingName="FoodRowDeleting" msprop:Generator_RowEvArgName="FoodRowChangeEvent" msprop:Generator_TablePropName="Food" msprop:Generator_RowChangedName="FoodRowChanged" msprop:Generator_UserTableName="Food" msprop:Generator_RowChangingName="FoodRowChanging" msprop:Generator_TableClassName="FoodDataTable" msprop:Generator_TableVarName="tableFood">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_UserColumnName="id" type="xs:int" />
-              <xs:element name="name" msprop:Generator_ColumnPropNameInRow="name" msprop:Generator_ColumnPropNameInTable="nameColumn" msprop:Generator_ColumnVarNameInTable="columnname" msprop:Generator_UserColumnName="name">
+              <xs:element name="id" msprop:Generator_UserColumnName="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnVarNameInTable="columnid" type="xs:int" />
+              <xs:element name="name" msprop:Generator_UserColumnName="name" msprop:Generator_ColumnPropNameInTable="nameColumn" msprop:Generator_ColumnPropNameInRow="name" msprop:Generator_ColumnVarNameInTable="columnname">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="idCategory" msprop:Generator_ColumnPropNameInRow="idCategory" msprop:Generator_ColumnPropNameInTable="idCategoryColumn" msprop:Generator_ColumnVarNameInTable="columnidCategory" msprop:Generator_UserColumnName="idCategory" type="xs:int" />
-              <xs:element name="price" msprop:Generator_ColumnPropNameInRow="price" msprop:Generator_ColumnPropNameInTable="priceColumn" msprop:Generator_ColumnVarNameInTable="columnprice" msprop:Generator_UserColumnName="price" type="xs:double" />
+              <xs:element name="idCategory" msprop:Generator_UserColumnName="idCategory" msprop:Generator_ColumnPropNameInTable="idCategoryColumn" msprop:Generator_ColumnPropNameInRow="idCategory" msprop:Generator_ColumnVarNameInTable="columnidCategory" type="xs:int" />
+              <xs:element name="price" msprop:Generator_UserColumnName="price" msprop:Generator_ColumnPropNameInTable="priceColumn" msprop:Generator_ColumnPropNameInRow="price" msprop:Generator_ColumnVarNameInTable="columnprice" type="xs:double" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="FoodCategory" msprop:Generator_RowEvHandlerName="FoodCategoryRowChangeEventHandler" msprop:Generator_RowDeletedName="FoodCategoryRowDeleted" msprop:Generator_RowDeletingName="FoodCategoryRowDeleting" msprop:Generator_RowEvArgName="FoodCategoryRowChangeEvent" msprop:Generator_TablePropName="FoodCategory" msprop:Generator_RowChangedName="FoodCategoryRowChanged" msprop:Generator_RowChangingName="FoodCategoryRowChanging" msprop:Generator_TableClassName="FoodCategoryDataTable" msprop:Generator_RowClassName="FoodCategoryRow" msprop:Generator_TableVarName="tableFoodCategory" msprop:Generator_UserTableName="FoodCategory">
+        <xs:element name="FoodCategory" msprop:Generator_RowClassName="FoodCategoryRow" msprop:Generator_RowEvHandlerName="FoodCategoryRowChangeEventHandler" msprop:Generator_RowDeletedName="FoodCategoryRowDeleted" msprop:Generator_RowDeletingName="FoodCategoryRowDeleting" msprop:Generator_RowEvArgName="FoodCategoryRowChangeEvent" msprop:Generator_TablePropName="FoodCategory" msprop:Generator_RowChangedName="FoodCategoryRowChanged" msprop:Generator_UserTableName="FoodCategory" msprop:Generator_RowChangingName="FoodCategoryRowChanging" msprop:Generator_TableClassName="FoodCategoryDataTable" msprop:Generator_TableVarName="tableFoodCategory">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_UserColumnName="id" type="xs:int" />
-              <xs:element name="name" msprop:Generator_ColumnPropNameInRow="name" msprop:Generator_ColumnPropNameInTable="nameColumn" msprop:Generator_ColumnVarNameInTable="columnname" msprop:Generator_UserColumnName="name">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="100" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="TableBida" msprop:Generator_RowEvHandlerName="TableBidaRowChangeEventHandler" msprop:Generator_RowDeletedName="TableBidaRowDeleted" msprop:Generator_RowDeletingName="TableBidaRowDeleting" msprop:Generator_RowEvArgName="TableBidaRowChangeEvent" msprop:Generator_TablePropName="TableBida" msprop:Generator_RowChangedName="TableBidaRowChanged" msprop:Generator_RowChangingName="TableBidaRowChanging" msprop:Generator_TableClassName="TableBidaDataTable" msprop:Generator_RowClassName="TableBidaRow" msprop:Generator_TableVarName="tableTableBida" msprop:Generator_UserTableName="TableBida">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_UserColumnName="id" type="xs:int" />
-              <xs:element name="name" msprop:Generator_ColumnPropNameInRow="name" msprop:Generator_ColumnPropNameInTable="nameColumn" msprop:Generator_ColumnVarNameInTable="columnname" msprop:Generator_UserColumnName="name">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="100" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="status" msprop:Generator_ColumnPropNameInRow="status" msprop:Generator_ColumnPropNameInTable="statusColumn" msprop:Generator_ColumnVarNameInTable="columnstatus" msprop:Generator_UserColumnName="status">
+              <xs:element name="id" msprop:Generator_UserColumnName="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnVarNameInTable="columnid" type="xs:int" />
+              <xs:element name="name" msprop:Generator_UserColumnName="name" msprop:Generator_ColumnPropNameInTable="nameColumn" msprop:Generator_ColumnPropNameInRow="name" msprop:Generator_ColumnVarNameInTable="columnname">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
@@ -473,31 +434,24 @@ SELECT id, name, status FROM TableBida WHERE (id = @id)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="USP_Login" msprop:Generator_RowEvHandlerName="USP_LoginRowChangeEventHandler" msprop:Generator_RowDeletedName="USP_LoginRowDeleted" msprop:Generator_RowDeletingName="USP_LoginRowDeleting" msprop:Generator_RowEvArgName="USP_LoginRowChangeEvent" msprop:Generator_TablePropName="USP_Login" msprop:Generator_RowChangedName="USP_LoginRowChanged" msprop:Generator_RowChangingName="USP_LoginRowChanging" msprop:Generator_TableClassName="USP_LoginDataTable" msprop:Generator_RowClassName="USP_LoginRow" msprop:Generator_TableVarName="tableUSP_Login" msprop:Generator_UserTableName="USP_Login">
+        <xs:element name="TableBida" msprop:Generator_RowClassName="TableBidaRow" msprop:Generator_RowEvHandlerName="TableBidaRowChangeEventHandler" msprop:Generator_RowDeletedName="TableBidaRowDeleted" msprop:Generator_RowDeletingName="TableBidaRowDeleting" msprop:Generator_RowEvArgName="TableBidaRowChangeEvent" msprop:Generator_TablePropName="TableBida" msprop:Generator_RowChangedName="TableBidaRowChanged" msprop:Generator_UserTableName="TableBida" msprop:Generator_RowChangingName="TableBidaRowChanging" msprop:Generator_TableClassName="TableBidaDataTable" msprop:Generator_TableVarName="tableTableBida">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="DisplayName" msprop:Generator_ColumnPropNameInRow="DisplayName" msprop:Generator_ColumnPropNameInTable="DisplayNameColumn" msprop:Generator_ColumnVarNameInTable="columnDisplayName" msprop:Generator_UserColumnName="DisplayName">
+              <xs:element name="id" msprop:Generator_UserColumnName="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnVarNameInTable="columnid" type="xs:int" />
+              <xs:element name="name" msprop:Generator_UserColumnName="name" msprop:Generator_ColumnPropNameInTable="nameColumn" msprop:Generator_ColumnPropNameInRow="name" msprop:Generator_ColumnVarNameInTable="columnname">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="UserName" msprop:Generator_ColumnPropNameInRow="UserName" msprop:Generator_ColumnPropNameInTable="UserNameColumn" msprop:Generator_ColumnVarNameInTable="columnUserName" msprop:Generator_UserColumnName="UserName">
+              <xs:element name="status" msprop:Generator_UserColumnName="status" msprop:Generator_ColumnPropNameInTable="statusColumn" msprop:Generator_ColumnPropNameInRow="status" msprop:Generator_ColumnVarNameInTable="columnstatus">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="PassWord" msprop:Generator_ColumnPropNameInRow="PassWord" msprop:Generator_ColumnPropNameInTable="PassWordColumn" msprop:Generator_ColumnVarNameInTable="columnPassWord" msprop:Generator_UserColumnName="PassWord">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="1000" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Type" msprop:Generator_ColumnPropNameInRow="Type" msprop:Generator_ColumnPropNameInTable="TypeColumn" msprop:Generator_ColumnVarNameInTable="columnType" msprop:Generator_UserColumnName="Type" type="xs:int" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -527,17 +481,13 @@ SELECT id, name, status FROM TableBida WHERE (id = @id)</CommandText>
       <xs:selector xpath=".//mstns:TableBida" />
       <xs:field xpath="mstns:id" />
     </xs:unique>
-    <xs:unique name="USP_Login_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:USP_Login" />
-      <xs:field xpath="mstns:UserName" />
-    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK__BILL__status__47DBAE45" msdata:parent="TableBida" msdata:child="BILL" msdata:parentkey="id" msdata:childkey="idTable" msprop:Generator_UserParentTable="TableBida" msprop:Generator_UserChildTable="BILL" msprop:Generator_RelationVarName="relationFK__BILL__status__47DBAE45" msprop:Generator_UserRelationName="FK__BILL__status__47DBAE45" msprop:Generator_ChildPropName="GetBILLRows" msprop:Generator_ParentPropName="TableBidaRow" />
-      <msdata:Relationship name="FK__BillInfo__idBill__4BAC3F29" msdata:parent="BILL" msdata:child="BillInfo" msdata:parentkey="id" msdata:childkey="idBill" msprop:Generator_UserParentTable="BILL" msprop:Generator_UserChildTable="BillInfo" msprop:Generator_RelationVarName="relationFK__BillInfo__idBill__4BAC3F29" msprop:Generator_ChildPropName="GetBillInfoRows" msprop:Generator_ParentPropName="BILLRow" msprop:Generator_UserRelationName="FK__BillInfo__idBill__4BAC3F29" />
-      <msdata:Relationship name="FK__BillInfo__idFood__4CA06362" msdata:parent="Food" msdata:child="BillInfo" msdata:parentkey="id" msdata:childkey="idFood" msprop:Generator_UserParentTable="Food" msprop:Generator_UserChildTable="BillInfo" msprop:Generator_RelationVarName="relationFK__BillInfo__idFood__4CA06362" msprop:Generator_UserRelationName="FK__BillInfo__idFood__4CA06362" msprop:Generator_ChildPropName="GetBillInfoRows" msprop:Generator_ParentPropName="FoodRow" />
-      <msdata:Relationship name="FK__Food__idCategory__4316F928" msdata:parent="FoodCategory" msdata:child="Food" msdata:parentkey="id" msdata:childkey="idCategory" msprop:Generator_UserParentTable="FoodCategory" msprop:Generator_UserChildTable="Food" msprop:Generator_RelationVarName="relationFK__Food__idCategory__4316F928" msprop:Generator_UserRelationName="FK__Food__idCategory__4316F928" msprop:Generator_ChildPropName="GetFoodRows" msprop:Generator_ParentPropName="FoodCategoryRow" />
+      <msdata:Relationship name="FK__BILL__status__47DBAE45" msdata:parent="TableBida" msdata:child="BILL" msdata:parentkey="id" msdata:childkey="idTable" msprop:Generator_UserParentTable="TableBida" msprop:Generator_UserChildTable="BILL" msprop:Generator_RelationVarName="relationFK__BILL__status__47DBAE45" msprop:Generator_ChildPropName="GetBILLRows" msprop:Generator_ParentPropName="TableBidaRow" msprop:Generator_UserRelationName="FK__BILL__status__47DBAE45" />
+      <msdata:Relationship name="FK__BillInfo__idBill__4BAC3F29" msdata:parent="BILL" msdata:child="BillInfo" msdata:parentkey="id" msdata:childkey="idBill" msprop:Generator_UserParentTable="BILL" msprop:Generator_UserChildTable="BillInfo" msprop:Generator_RelationVarName="relationFK__BillInfo__idBill__4BAC3F29" msprop:Generator_ChildPropName="GetBillInfoRows" msprop:Generator_UserRelationName="FK__BillInfo__idBill__4BAC3F29" msprop:Generator_ParentPropName="BILLRow" />
+      <msdata:Relationship name="FK__BillInfo__idFood__4CA06362" msdata:parent="Food" msdata:child="BillInfo" msdata:parentkey="id" msdata:childkey="idFood" msprop:Generator_UserParentTable="Food" msprop:Generator_UserChildTable="BillInfo" msprop:Generator_RelationVarName="relationFK__BillInfo__idFood__4CA06362" msprop:Generator_ChildPropName="GetBillInfoRows" msprop:Generator_ParentPropName="FoodRow" msprop:Generator_UserRelationName="FK__BillInfo__idFood__4CA06362" />
+      <msdata:Relationship name="FK__Food__idCategory__4316F928" msdata:parent="FoodCategory" msdata:child="Food" msdata:parentkey="id" msdata:childkey="idCategory" msprop:Generator_UserParentTable="FoodCategory" msprop:Generator_UserChildTable="Food" msprop:Generator_RelationVarName="relationFK__Food__idCategory__4316F928" msprop:Generator_ChildPropName="GetFoodRows" msprop:Generator_ParentPropName="FoodCategoryRow" msprop:Generator_UserRelationName="FK__Food__idCategory__4316F928" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

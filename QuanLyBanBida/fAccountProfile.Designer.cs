@@ -36,6 +36,10 @@ namespace QuanLyBanBida
             this.txt_Name = new Guna.UI2.WinForms.Guna2TextBox();
             this.txt_User = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnEexit = new Guna.UI2.WinForms.Guna2Button();
+            this.txt_RetypePassword = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txt_NewPassword = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txt_Password = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
@@ -43,9 +47,6 @@ namespace QuanLyBanBida
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.btn_minium = new Guna.UI2.WinForms.Guna2ControlBox();
             this.btn_Exit = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.txt_Password = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txt_NewPassword = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txt_RetypePassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.guna2Panel1.SuspendLayout();
@@ -64,13 +65,14 @@ namespace QuanLyBanBida
             this.btn_Update.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btn_Update.ForeColor = System.Drawing.Color.White;
             this.btn_Update.HoverState.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.btn_Update.Location = new System.Drawing.Point(93, 480);
+            this.btn_Update.Location = new System.Drawing.Point(49, 484);
             this.btn_Update.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Update.Name = "btn_Update";
-            this.btn_Update.Size = new System.Drawing.Size(221, 48);
+            this.btn_Update.Size = new System.Drawing.Size(132, 48);
             this.btn_Update.TabIndex = 6;
             this.btn_Update.Text = "Cập nhật";
             this.btn_Update.UseTransparentBackground = true;
+            this.btn_Update.Click += new System.EventHandler(this.btn_Update_Click);
             // 
             // txt_Name
             // 
@@ -128,6 +130,7 @@ namespace QuanLyBanBida
             // guna2Panel2
             // 
             this.guna2Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(43)))));
+            this.guna2Panel2.Controls.Add(this.btnEexit);
             this.guna2Panel2.Controls.Add(this.txt_RetypePassword);
             this.guna2Panel2.Controls.Add(this.txt_NewPassword);
             this.guna2Panel2.Controls.Add(this.txt_Password);
@@ -141,6 +144,105 @@ namespace QuanLyBanBida
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(441, 726);
             this.guna2Panel2.TabIndex = 7;
+            // 
+            // btnEexit
+            // 
+            this.btnEexit.Animated = true;
+            this.btnEexit.BackColor = System.Drawing.Color.Transparent;
+            this.btnEexit.BorderRadius = 10;
+            this.btnEexit.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(20)))), ((int)(((byte)(137)))));
+            this.btnEexit.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnEexit.ForeColor = System.Drawing.Color.White;
+            this.btnEexit.HoverState.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnEexit.Location = new System.Drawing.Point(252, 484);
+            this.btnEexit.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEexit.Name = "btnEexit";
+            this.btnEexit.Size = new System.Drawing.Size(132, 48);
+            this.btnEexit.TabIndex = 10;
+            this.btnEexit.Text = "Hủy";
+            this.btnEexit.UseTransparentBackground = true;
+            this.btnEexit.Click += new System.EventHandler(this.btnEexit_Click);
+            // 
+            // txt_RetypePassword
+            // 
+            this.txt_RetypePassword.Animated = true;
+            this.txt_RetypePassword.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(153)))), ((int)(((byte)(149)))));
+            this.txt_RetypePassword.BorderRadius = 6;
+            this.txt_RetypePassword.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_RetypePassword.DefaultText = "";
+            this.txt_RetypePassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txt_RetypePassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txt_RetypePassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_RetypePassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_RetypePassword.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(43)))));
+            this.txt_RetypePassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_RetypePassword.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.txt_RetypePassword.ForeColor = System.Drawing.Color.White;
+            this.txt_RetypePassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_RetypePassword.Location = new System.Drawing.Point(49, 403);
+            this.txt_RetypePassword.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_RetypePassword.Name = "txt_RetypePassword";
+            this.txt_RetypePassword.PasswordChar = '●';
+            this.txt_RetypePassword.PlaceholderForeColor = System.Drawing.Color.White;
+            this.txt_RetypePassword.PlaceholderText = "Nhập lại mật Khẩu mới";
+            this.txt_RetypePassword.SelectedText = "";
+            this.txt_RetypePassword.Size = new System.Drawing.Size(335, 44);
+            this.txt_RetypePassword.TabIndex = 9;
+            this.txt_RetypePassword.UseSystemPasswordChar = true;
+            // 
+            // txt_NewPassword
+            // 
+            this.txt_NewPassword.Animated = true;
+            this.txt_NewPassword.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(153)))), ((int)(((byte)(149)))));
+            this.txt_NewPassword.BorderRadius = 6;
+            this.txt_NewPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_NewPassword.DefaultText = "";
+            this.txt_NewPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txt_NewPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txt_NewPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_NewPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_NewPassword.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(43)))));
+            this.txt_NewPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_NewPassword.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.txt_NewPassword.ForeColor = System.Drawing.Color.White;
+            this.txt_NewPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_NewPassword.Location = new System.Drawing.Point(49, 333);
+            this.txt_NewPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_NewPassword.Name = "txt_NewPassword";
+            this.txt_NewPassword.PasswordChar = '●';
+            this.txt_NewPassword.PlaceholderForeColor = System.Drawing.Color.White;
+            this.txt_NewPassword.PlaceholderText = "Mật Khẩu mới";
+            this.txt_NewPassword.SelectedText = "";
+            this.txt_NewPassword.Size = new System.Drawing.Size(335, 44);
+            this.txt_NewPassword.TabIndex = 8;
+            this.txt_NewPassword.UseSystemPasswordChar = true;
+            // 
+            // txt_Password
+            // 
+            this.txt_Password.Animated = true;
+            this.txt_Password.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(153)))), ((int)(((byte)(149)))));
+            this.txt_Password.BorderRadius = 6;
+            this.txt_Password.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_Password.DefaultText = "";
+            this.txt_Password.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txt_Password.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txt_Password.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_Password.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_Password.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(43)))));
+            this.txt_Password.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_Password.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.txt_Password.ForeColor = System.Drawing.Color.White;
+            this.txt_Password.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_Password.Location = new System.Drawing.Point(49, 265);
+            this.txt_Password.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_Password.Name = "txt_Password";
+            this.txt_Password.PasswordChar = '●';
+            this.txt_Password.PlaceholderForeColor = System.Drawing.Color.White;
+            this.txt_Password.PlaceholderText = "Mật khẩu";
+            this.txt_Password.SelectedText = "";
+            this.txt_Password.Size = new System.Drawing.Size(335, 44);
+            this.txt_Password.TabIndex = 7;
+            this.txt_Password.UseSystemPasswordChar = true;
             // 
             // guna2PictureBox1
             // 
@@ -203,87 +305,6 @@ namespace QuanLyBanBida
             this.btn_Exit.Size = new System.Drawing.Size(47, 34);
             this.btn_Exit.TabIndex = 2;
             // 
-            // txt_Password
-            // 
-            this.txt_Password.Animated = true;
-            this.txt_Password.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(153)))), ((int)(((byte)(149)))));
-            this.txt_Password.BorderRadius = 6;
-            this.txt_Password.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txt_Password.DefaultText = "";
-            this.txt_Password.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txt_Password.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txt_Password.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_Password.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_Password.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(43)))));
-            this.txt_Password.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_Password.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.txt_Password.ForeColor = System.Drawing.Color.White;
-            this.txt_Password.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_Password.Location = new System.Drawing.Point(49, 265);
-            this.txt_Password.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_Password.Name = "txt_Password";
-            this.txt_Password.PasswordChar = '●';
-            this.txt_Password.PlaceholderForeColor = System.Drawing.Color.White;
-            this.txt_Password.PlaceholderText = "Mật khẩu";
-            this.txt_Password.SelectedText = "";
-            this.txt_Password.Size = new System.Drawing.Size(335, 44);
-            this.txt_Password.TabIndex = 7;
-            this.txt_Password.UseSystemPasswordChar = true;
-            // 
-            // txt_NewPassword
-            // 
-            this.txt_NewPassword.Animated = true;
-            this.txt_NewPassword.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(153)))), ((int)(((byte)(149)))));
-            this.txt_NewPassword.BorderRadius = 6;
-            this.txt_NewPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txt_NewPassword.DefaultText = "";
-            this.txt_NewPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txt_NewPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txt_NewPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_NewPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_NewPassword.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(43)))));
-            this.txt_NewPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_NewPassword.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.txt_NewPassword.ForeColor = System.Drawing.Color.White;
-            this.txt_NewPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_NewPassword.Location = new System.Drawing.Point(49, 333);
-            this.txt_NewPassword.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_NewPassword.Name = "txt_NewPassword";
-            this.txt_NewPassword.PasswordChar = '●';
-            this.txt_NewPassword.PlaceholderForeColor = System.Drawing.Color.White;
-            this.txt_NewPassword.PlaceholderText = "Mật Khẩu mới";
-            this.txt_NewPassword.SelectedText = "";
-            this.txt_NewPassword.Size = new System.Drawing.Size(335, 44);
-            this.txt_NewPassword.TabIndex = 8;
-            this.txt_NewPassword.UseSystemPasswordChar = true;
-            // 
-            // txt_RetypePassword
-            // 
-            this.txt_RetypePassword.Animated = true;
-            this.txt_RetypePassword.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(153)))), ((int)(((byte)(149)))));
-            this.txt_RetypePassword.BorderRadius = 6;
-            this.txt_RetypePassword.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txt_RetypePassword.DefaultText = "";
-            this.txt_RetypePassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txt_RetypePassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txt_RetypePassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_RetypePassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_RetypePassword.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(43)))));
-            this.txt_RetypePassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_RetypePassword.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.txt_RetypePassword.ForeColor = System.Drawing.Color.White;
-            this.txt_RetypePassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_RetypePassword.Location = new System.Drawing.Point(49, 403);
-            this.txt_RetypePassword.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_RetypePassword.Name = "txt_RetypePassword";
-            this.txt_RetypePassword.PasswordChar = '●';
-            this.txt_RetypePassword.PlaceholderForeColor = System.Drawing.Color.White;
-            this.txt_RetypePassword.PlaceholderText = "Nhập lại mật Khẩu mới";
-            this.txt_RetypePassword.SelectedText = "";
-            this.txt_RetypePassword.Size = new System.Drawing.Size(335, 44);
-            this.txt_RetypePassword.TabIndex = 9;
-            this.txt_RetypePassword.UseSystemPasswordChar = true;
-            // 
             // fAccountProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -296,7 +317,6 @@ namespace QuanLyBanBida
             this.Name = "fAccountProfile";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Infomation";
-            this.Load += new System.EventHandler(this.fAccountProfile_Load);
             this.guna2Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
@@ -321,5 +341,6 @@ namespace QuanLyBanBida
         private Guna.UI2.WinForms.Guna2TextBox txt_RetypePassword;
         private Guna.UI2.WinForms.Guna2TextBox txt_NewPassword;
         private Guna.UI2.WinForms.Guna2TextBox txt_Password;
+        private Guna.UI2.WinForms.Guna2Button btnEexit;
     }
 }

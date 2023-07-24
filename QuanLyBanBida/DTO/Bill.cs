@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace QuanLyBanBida.DTO
 {
-    public  class Bill
+    public class Bill
     {
         private int id;
         private DateTime? dateCheckIn;

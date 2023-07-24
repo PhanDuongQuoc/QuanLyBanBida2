@@ -33,5 +33,16 @@ namespace QuanLyBanBida.Properties {
                 return ((string)(this["QuanLyQuanBidaConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DuyTrinhNe\\SQLEXPRESS;Initial Catalog=QuanLyQuanBiDaFinal;Integrated " +
+            "Security=True")]
+        public string QuanLyQuanBiDaFinalConnectionString {
+            get {
+                return ((string)(this["QuanLyQuanBiDaFinalConnectionString"]));
+            }
+        }
     }
 }

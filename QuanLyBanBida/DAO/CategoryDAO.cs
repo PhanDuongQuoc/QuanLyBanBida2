@@ -5,40 +5,55 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Documents;
 
 namespace QuanLyBanBida.DAO
 {
-    internal class CategoryDAO
+    public class CategoryDAO
     {
 
         private static CategoryDAO instance;
 
-
-        public static CategoryDAO Instance 
+        public static CategoryDAO Instance
         {
-            get { if (instance == null) instance = new CategoryDAO(); return instance; }
+            get { if (instance == null) instance = new CategoryDAO(); return CategoryDAO.instance; }
             private set { CategoryDAO.instance = value; }
         }
 
+        private CategoryDAO() { }
 
-        private CategoryDAO() 
-        {
-
-        }
-
-        public List<Category> Getlistcategory() 
+        public List<Category> GetListCategory()
         {
             List<Category> list = new List<Category>();
 
-            string query = "select *from FoodCategory";
-            DataTable data=DataProvider.Instance.ExecuteQuery(query);   
-            foreach (DataRow dr in data.Rows)
+            string query = "select * from FoodCategory";
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            foreach (DataRow item in data.Rows)
             {
-                Category category = new Category(dr);
+                Category category = new Category(item);
                 list.Add(category);
             }
-            return list;
 
+            return list;
+        }
+
+        public Category GetCategoryByID(int id)
+        {
+            Category category = null;
+
+            string query = "select * from FoodCategory where id = " + id;
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            foreach (DataRow item in data.Rows)
+            {
+                category = new Category(item);
+                return category;
+            }
+
+            return category;
         }
     }
 }

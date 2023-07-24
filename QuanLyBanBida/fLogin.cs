@@ -1,4 +1,5 @@
 ﻿using QuanLyBanBida.DAO;
+using QuanLyBanBida.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,36 +18,23 @@ namespace QuanLyBanBida
         {
             InitializeComponent();
         }
-        private void btn_Login_Click_1(object sender, EventArgs e)
-        {
 
-        }
-
-        bool Login(string userName, string passWord)
+        private void btn_Login_Click(object sender, EventArgs e)
         {
-            return AccountDAO.Instance.Login(userName, passWord);
-        }
-
-        private void btn_Exit_Click_1(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void fLogin_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (MessageBox.Show("Bạn có thật sự muốn thoát chương trình?", "Notifications", MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
+            /*string userName = txt_NameID.Text;
+            string passWord = txt_Password.Text;
+            if (Login(userName, passWord))
             {
-                e.Cancel = true;
+               *//* Account loginAccount = AccountDAO.Instance.GetAccountByUserName(userName);*//*
+                fTableManager f = new fTableManager(*//*loginAccount *//*);
+                this.Hide();
+                f.ShowDialog();
+                this.Show();
             }
-        }
-
-        private void guna2PictureBox2_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void guna2Button1_Click(object sender, EventArgs e)
-        {
+            else
+            {
+                MessageBox.Show("Sai tên tài khoản hoặc mật khẩu!");
+            }*/
             string userName = txt_NameID.Text;
             string passWord = txt_Password.Text;
             if (Login(userName, passWord))
@@ -62,5 +50,18 @@ namespace QuanLyBanBida
                 MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu!");
             }
         }
+
+        bool Login(string userName, string passWord)
+        {
+            return AccountDAO.Instance.Login(userName, passWord);
+        }
+
+        private void fLogin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Bạn có thật sự muốn thoát chương trình?", "Notifications", MessageBoxButtons.OKCancel) != DialogResult.OK)
+            {
+                e.Cancel = true;
+            }
+        }   
     }    
 }

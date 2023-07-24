@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace QuanLyBanBida.DTO
 {
-    internal class Food
+    public class Food
     {
 
         private int id;

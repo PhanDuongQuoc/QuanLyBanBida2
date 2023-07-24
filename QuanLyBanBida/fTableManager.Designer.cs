@@ -29,12 +29,6 @@ namespace QuanLyBanBida
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.menuStrip2 = new System.Windows.Forms.MenuStrip();
-            this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.thongTinTaiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.thôngTinCáNhânToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lsvBill = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -42,6 +36,8 @@ namespace QuanLyBanBida
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel3 = new System.Windows.Forms.Panel();
+            this.txt_EndTime = new System.Windows.Forms.TextBox();
+            this.txt_StartTime = new System.Windows.Forms.TextBox();
             this.cb_SwitchTable = new System.Windows.Forms.ComboBox();
             this.btn_SwitchTable = new System.Windows.Forms.Button();
             this.nm_Discount = new System.Windows.Forms.NumericUpDown();
@@ -54,64 +50,19 @@ namespace QuanLyBanBida
             this.btn_AddFood = new System.Windows.Forms.Button();
             this.flpTable = new System.Windows.Forms.FlowLayoutPanel();
             this.txttongtien = new System.Windows.Forms.TextBox();
-            this.menuStrip2.SuspendLayout();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.thongTinTaiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.thôngTinCáNhânToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nm_Discount)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmFoodCount)).BeginInit();
+            this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Location = new System.Drawing.Point(0, 28);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1168, 24);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // menuStrip2
-            // 
-            this.menuStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.adminToolStripMenuItem,
-            this.thongTinTaiToolStripMenuItem});
-            this.menuStrip2.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(1168, 28);
-            this.menuStrip2.TabIndex = 2;
-            this.menuStrip2.Text = "menuStrip2";
-            // 
-            // adminToolStripMenuItem
-            // 
-            this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
-            this.adminToolStripMenuItem.Size = new System.Drawing.Size(67, 24);
-            this.adminToolStripMenuItem.Text = "Admin";
-            this.adminToolStripMenuItem.Click += new System.EventHandler(this.adminToolStripMenuItem_Click);
-            // 
-            // thongTinTaiToolStripMenuItem
-            // 
-            this.thongTinTaiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.thôngTinCáNhânToolStripMenuItem,
-            this.dăngXuấtToolStripMenuItem});
-            this.thongTinTaiToolStripMenuItem.Name = "thongTinTaiToolStripMenuItem";
-            this.thongTinTaiToolStripMenuItem.Size = new System.Drawing.Size(151, 24);
-            this.thongTinTaiToolStripMenuItem.Text = "Thông tin tài khoản";
-            // 
-            // thôngTinCáNhânToolStripMenuItem
-            // 
-            this.thôngTinCáNhânToolStripMenuItem.Name = "thôngTinCáNhânToolStripMenuItem";
-            this.thôngTinCáNhânToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
-            this.thôngTinCáNhânToolStripMenuItem.Text = "Thông tin cá nhân";
-            this.thôngTinCáNhânToolStripMenuItem.Click += new System.EventHandler(this.thôngTinCáNhânToolStripMenuItem_Click);
-            // 
-            // dăngXuấtToolStripMenuItem
-            // 
-            this.dăngXuấtToolStripMenuItem.Name = "dăngXuấtToolStripMenuItem";
-            this.dăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
-            this.dăngXuấtToolStripMenuItem.Text = "Đăng Xuất";
-            this.dăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.ĐăngXuấtToolStripMenuItem_Click);
             // 
             // panel2
             // 
@@ -159,6 +110,8 @@ namespace QuanLyBanBida
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.txt_EndTime);
+            this.panel3.Controls.Add(this.txt_StartTime);
             this.panel3.Controls.Add(this.cb_SwitchTable);
             this.panel3.Controls.Add(this.btn_SwitchTable);
             this.panel3.Controls.Add(this.nm_Discount);
@@ -166,8 +119,22 @@ namespace QuanLyBanBida
             this.panel3.Controls.Add(this.btn_Checkout);
             this.panel3.Location = new System.Drawing.Point(683, 562);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(474, 82);
+            this.panel3.Size = new System.Drawing.Size(474, 131);
             this.panel3.TabIndex = 4;
+            // 
+            // txt_EndTime
+            // 
+            this.txt_EndTime.Location = new System.Drawing.Point(239, 83);
+            this.txt_EndTime.Name = "txt_EndTime";
+            this.txt_EndTime.Size = new System.Drawing.Size(110, 22);
+            this.txt_EndTime.TabIndex = 8;
+            // 
+            // txt_StartTime
+            // 
+            this.txt_StartTime.Location = new System.Drawing.Point(123, 83);
+            this.txt_StartTime.Name = "txt_StartTime";
+            this.txt_StartTime.Size = new System.Drawing.Size(110, 22);
+            this.txt_StartTime.TabIndex = 7;
             // 
             // cb_SwitchTable
             // 
@@ -185,6 +152,7 @@ namespace QuanLyBanBida
             this.btn_SwitchTable.TabIndex = 6;
             this.btn_SwitchTable.Text = "Chuyển bàn";
             this.btn_SwitchTable.UseVisualStyleBackColor = true;
+            this.btn_SwitchTable.Click += new System.EventHandler(this.btn_SwitchTable_Click);
             // 
             // nm_Discount
             // 
@@ -205,7 +173,7 @@ namespace QuanLyBanBida
             // 
             // btn_Checkout
             // 
-            this.btn_Checkout.Location = new System.Drawing.Point(191, 18);
+            this.btn_Checkout.Location = new System.Drawing.Point(186, 3);
             this.btn_Checkout.Name = "btn_Checkout";
             this.btn_Checkout.Size = new System.Drawing.Size(113, 56);
             this.btn_Checkout.TabIndex = 4;
@@ -273,7 +241,7 @@ namespace QuanLyBanBida
             this.flpTable.AutoScroll = true;
             this.flpTable.Location = new System.Drawing.Point(12, 41);
             this.flpTable.Name = "flpTable";
-            this.flpTable.Size = new System.Drawing.Size(659, 603);
+            this.flpTable.Size = new System.Drawing.Size(659, 652);
             this.flpTable.TabIndex = 4;
             this.flpTable.Paint += new System.Windows.Forms.PaintEventHandler(this.flpTable_Paint);
             // 
@@ -290,11 +258,63 @@ namespace QuanLyBanBida
             this.txttongtien.Text = "Tổng tiền";
             this.txttongtien.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 28);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1168, 24);
+            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // adminToolStripMenuItem
+            // 
+            this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
+            this.adminToolStripMenuItem.Size = new System.Drawing.Size(67, 24);
+            this.adminToolStripMenuItem.Text = "Admin";
+            this.adminToolStripMenuItem.Click += new System.EventHandler(this.adminToolStripMenuItem_Click);
+            // 
+            // thongTinTaiToolStripMenuItem
+            // 
+            this.thongTinTaiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.thôngTinCáNhânToolStripMenuItem,
+            this.dăngXuấtToolStripMenuItem});
+            this.thongTinTaiToolStripMenuItem.Name = "thongTinTaiToolStripMenuItem";
+            this.thongTinTaiToolStripMenuItem.Size = new System.Drawing.Size(151, 24);
+            this.thongTinTaiToolStripMenuItem.Text = "Thông tin tài khoản";
+            // 
+            // thôngTinCáNhânToolStripMenuItem
+            // 
+            this.thôngTinCáNhânToolStripMenuItem.Name = "thôngTinCáNhânToolStripMenuItem";
+            this.thôngTinCáNhânToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
+            this.thôngTinCáNhânToolStripMenuItem.Text = "Thông tin cá nhân";
+            this.thôngTinCáNhânToolStripMenuItem.Click += new System.EventHandler(this.thôngTinCáNhânToolStripMenuItem_Click);
+            // 
+            // dăngXuấtToolStripMenuItem
+            // 
+            this.dăngXuấtToolStripMenuItem.Name = "dăngXuấtToolStripMenuItem";
+            this.dăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
+            this.dăngXuấtToolStripMenuItem.Text = "Đăng Xuất";
+            this.dăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.ĐăngXuấtToolStripMenuItem_Click);
+            // 
+            // menuStrip2
+            // 
+            this.menuStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.adminToolStripMenuItem,
+            this.thongTinTaiToolStripMenuItem});
+            this.menuStrip2.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip2.Name = "menuStrip2";
+            this.menuStrip2.Size = new System.Drawing.Size(1168, 28);
+            this.menuStrip2.TabIndex = 2;
+            this.menuStrip2.Text = "menuStrip2";
+            this.menuStrip2.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip2_ItemClicked);
+            // 
             // fTableManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1168, 668);
+            this.ClientSize = new System.Drawing.Size(1168, 705);
             this.Controls.Add(this.txttongtien);
             this.Controls.Add(this.flpTable);
             this.Controls.Add(this.panel4);
@@ -306,26 +326,20 @@ namespace QuanLyBanBida
             this.Name = "fTableManager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TableManager";
-            this.Load += new System.EventHandler(this.fTableManager_Load);
-            this.menuStrip2.ResumeLayout(false);
-            this.menuStrip2.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nm_Discount)).EndInit();
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nmFoodCount)).EndInit();
+            this.menuStrip2.ResumeLayout(false);
+            this.menuStrip2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.MenuStrip menuStrip2;
-        private System.Windows.Forms.ToolStripMenuItem adminToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem thongTinTaiToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem thôngTinCáNhânToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem dăngXuấtToolStripMenuItem;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ListView lsvBill;
         private System.Windows.Forms.Panel panel3;
@@ -345,5 +359,13 @@ namespace QuanLyBanBida
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.TextBox txttongtien;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem adminToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem thongTinTaiToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem thôngTinCáNhânToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dăngXuấtToolStripMenuItem;
+        private System.Windows.Forms.MenuStrip menuStrip2;
+        private System.Windows.Forms.TextBox txt_EndTime;
+        private System.Windows.Forms.TextBox txt_StartTime;
     }
 }

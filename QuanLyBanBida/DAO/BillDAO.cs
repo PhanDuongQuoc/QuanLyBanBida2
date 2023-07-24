@@ -12,9 +12,9 @@ namespace QuanLyBanBida.DAO
     {
         private static BillDAO instance;
 
-        public static BillDAO Instance 
+        public static BillDAO Instance
         {
-            get { if(instance == null)instance = new BillDAO();return BillDAO.instance; }
+            get { if (instance == null) instance = new BillDAO(); return BillDAO.instance; }
             private set { BillDAO.instance = value; }
         }
         private BillDAO() { }
@@ -22,7 +22,7 @@ namespace QuanLyBanBida.DAO
         public int GetUncheckBillIDByTableID(int id)
         {
             DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM dbo.BILL WHERE idTable=" + id + " AND status = 0");
-            if(data.Rows.Count > 0)
+            if (data.Rows.Count > 0)
             {
                 Bill bill = new Bill(data.Rows[0]);
                 return bill.Id; // lấy id thành công
@@ -30,30 +30,65 @@ namespace QuanLyBanBida.DAO
             return -1; // thất bại = -1 
         }
 
-        public void addbill(int id) 
+        public void addbill(int id)
         {
-            DataProvider.Instance.ExecuteNonQuery("USP_chendulieuvaobill1 @idTable ", new object[] {id});
+            DataProvider.Instance.ExecuteNonQuery("USP_chendulieuvaobill1 @idTable ", new object[] { id });
         }
 
 
-        public int getmaxidbill() 
+        public int getmaxidbill()
         {
-            try 
+            try
             {
-                return (int)DataProvider.Instance.ExecuteScala("select max(id) from bill");
+                return (int)DataProvider.Instance.ExecuteScalar("select max(id) from bill");
             }
-            catch 
+            catch
             {
                 return 1;
             }
         }
 
 
-        public void kiemtrthanhtoan(int id,int discount)
+        public void CheckOut(int id, int discount, float totalPrice)
         {
-            string query = "update dbo.Bill set status=1,"+"discount="+discount+"where id=" + id;
-            DataProvider.Instance.ExecuteQuery(query);
+            string query = "UPDATE dbo.Bill SET dateCheckOut = GETDATE(), status = 1, " + "discount = " + discount + ", totalPrice = " + totalPrice + " WHERE id = " + id;
+            DataProvider.Instance.ExecuteNonQuery(query);
+        }
+        public void InsertBill(int id)
+        {
+            DataProvider.Instance.ExecuteNonQuery("exec USP_InsertBill @idTable", new object[] { id });
         }
 
+        public void DeleteBillInfoByBillID(int billID)
+        {
+            DataProvider.Instance.ExecuteNonQuery("DELETE FROM BillInfo WHERE idBill = @billID", new object[] { billID });
+        }
+
+        public DataTable GetBillListByDate(DateTime checkIn, DateTime checkOut)
+        {
+            return DataProvider.Instance.ExecuteQuery("exec USP_GetListBillByDate @checkIn , @checkOut", new object[] { checkIn, checkOut });
+        }
+
+        public DataTable GetBillListByDateAndPage(DateTime checkIn, DateTime checkOut, int pageNum)
+        {
+            return DataProvider.Instance.ExecuteQuery("exec USP_GetListBillByDateAndPage @checkIn , @checkOut , @page", new object[] { checkIn, checkOut, pageNum });
+        }
+
+        public int GetNumBillListByDate(DateTime checkIn, DateTime checkOut)
+        {
+            return (int)DataProvider.Instance.ExecuteScalar("exec USP_GetNumBillByDate @checkIn , @checkOut", new object[] { checkIn, checkOut });
+        }
+
+        public int GetMaxIDBill()
+        {
+            try
+            {
+                return (int)DataProvider.Instance.ExecuteScalar("SELECT MAX(id) FROM dbo.Bill");
+            }
+            catch
+            {
+                return 1;
+            }
+        }
     }
 }

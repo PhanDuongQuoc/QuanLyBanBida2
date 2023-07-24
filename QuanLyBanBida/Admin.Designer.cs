@@ -33,14 +33,19 @@ namespace QuanLyBanBida
             this.tcAdmin = new System.Windows.Forms.TabControl();
             this.tp_Bill = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txt_PageBill = new System.Windows.Forms.TextBox();
+            this.btn_NextBillPage = new System.Windows.Forms.Button();
+            this.btn_PrevioursBillPage = new System.Windows.Forms.Button();
+            this.btn_LastBillPage = new System.Windows.Forms.Button();
+            this.btn_FristBillPage = new System.Windows.Forms.Button();
             this.dtgv_Bill = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btn_ = new System.Windows.Forms.Button();
+            this.btn_ViewBill = new System.Windows.Forms.Button();
             this.dtpk_ToDate = new System.Windows.Forms.DateTimePicker();
             this.dtpk_FromDate = new System.Windows.Forms.DateTimePicker();
             this.tp_Food = new System.Windows.Forms.TabPage();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_SearchFoodName = new System.Windows.Forms.TextBox();
             this.btn_SearchFood = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btn_ViewFood = new System.Windows.Forms.Button();
@@ -49,10 +54,10 @@ namespace QuanLyBanBida
             this.btn_AddFood = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.nm_Price = new System.Windows.Forms.NumericUpDown();
             this.lbl_FoodPrice = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.txt_Category = new System.Windows.Forms.TextBox();
+            this.cb_Category = new System.Windows.Forms.ComboBox();
             this.lbl_Category = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.txt_NameFood = new System.Windows.Forms.TextBox();
@@ -92,18 +97,15 @@ namespace QuanLyBanBida
             this.lbl_IDTable = new System.Windows.Forms.Label();
             this.dtgv_Table = new System.Windows.Forms.DataGridView();
             this.tp_Account = new System.Windows.Forms.TabPage();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.tsttimkiem = new System.Windows.Forms.ToolStripButton();
+            this.txtsearch = new System.Windows.Forms.ToolStripTextBox();
             this.dtgv_Account = new System.Windows.Forms.DataGridView();
             this.panel21 = new System.Windows.Forms.Panel();
             this.btn_ViewAccount = new System.Windows.Forms.Button();
             this.btn_EditAccount = new System.Windows.Forms.Button();
             this.btn_DeleteAccount = new System.Windows.Forms.Button();
             this.btn_AddAccount = new System.Windows.Forms.Button();
-            this.panel26 = new System.Windows.Forms.Panel();
-            this.txt_nameaccount = new System.Windows.Forms.TextBox();
-            this.lbl_NameID = new System.Windows.Forms.Label();
-            this.panel25 = new System.Windows.Forms.Panel();
-            this.txt_DisplayName = new System.Windows.Forms.TextBox();
-            this.lbl_DisplayName = new System.Windows.Forms.Label();
             this.panel22 = new System.Windows.Forms.Panel();
             this.panel23 = new System.Windows.Forms.Panel();
             this.txtPasswordaccount = new System.Windows.Forms.TextBox();
@@ -111,6 +113,12 @@ namespace QuanLyBanBida
             this.panel24 = new System.Windows.Forms.Panel();
             this.txt_AccountType = new System.Windows.Forms.TextBox();
             this.lbl_AccountType = new System.Windows.Forms.Label();
+            this.panel25 = new System.Windows.Forms.Panel();
+            this.txt_DisplayName = new System.Windows.Forms.TextBox();
+            this.lbl_DisplayName = new System.Windows.Forms.Label();
+            this.panel26 = new System.Windows.Forms.Panel();
+            this.txt_nameaccount = new System.Windows.Forms.TextBox();
+            this.lbl_NameID = new System.Windows.Forms.Label();
             this.tp_InfoCustomer = new System.Windows.Forms.TabPage();
             this.btnvecuoi = new System.Windows.Forms.Button();
             this.btnquaphai = new System.Windows.Forms.Button();
@@ -134,9 +142,6 @@ namespace QuanLyBanBida
             this.btnvedau = new System.Windows.Forms.Button();
             this.btnquatrai = new System.Windows.Forms.Button();
             this.dtgv_InfoCustomer = new System.Windows.Forms.DataGridView();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.tsttimkiem = new System.Windows.Forms.ToolStripButton();
-            this.txtsearch = new System.Windows.Forms.ToolStripTextBox();
             this.tcAdmin.SuspendLayout();
             this.tp_Bill.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -147,7 +152,7 @@ namespace QuanLyBanBida
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nm_Price)).BeginInit();
             this.panel9.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -167,17 +172,17 @@ namespace QuanLyBanBida
             this.panel18.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_Table)).BeginInit();
             this.tp_Account.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_Account)).BeginInit();
             this.panel21.SuspendLayout();
-            this.panel26.SuspendLayout();
-            this.panel25.SuspendLayout();
             this.panel22.SuspendLayout();
             this.panel23.SuspendLayout();
             this.panel24.SuspendLayout();
+            this.panel25.SuspendLayout();
+            this.panel26.SuspendLayout();
             this.tp_InfoCustomer.SuspendLayout();
             this.panel20.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_InfoCustomer)).BeginInit();
-            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcAdmin
@@ -209,11 +214,72 @@ namespace QuanLyBanBida
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.txt_PageBill);
+            this.panel1.Controls.Add(this.btn_NextBillPage);
+            this.panel1.Controls.Add(this.btn_PrevioursBillPage);
+            this.panel1.Controls.Add(this.btn_LastBillPage);
+            this.panel1.Controls.Add(this.btn_FristBillPage);
             this.panel1.Controls.Add(this.dtgv_Bill);
             this.panel1.Location = new System.Drawing.Point(8, 59);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(841, 423);
             this.panel1.TabIndex = 3;
+            // 
+            // txt_PageBill
+            // 
+            this.txt_PageBill.Location = new System.Drawing.Point(368, 386);
+            this.txt_PageBill.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_PageBill.Name = "txt_PageBill";
+            this.txt_PageBill.ReadOnly = true;
+            this.txt_PageBill.Size = new System.Drawing.Size(99, 27);
+            this.txt_PageBill.TabIndex = 10;
+            this.txt_PageBill.Text = "1";
+            this.txt_PageBill.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_PageBill.TextChanged += new System.EventHandler(this.txt_PageBill_TextChanged);
+            // 
+            // btn_NextBillPage
+            // 
+            this.btn_NextBillPage.Location = new System.Drawing.Point(593, 385);
+            this.btn_NextBillPage.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_NextBillPage.Name = "btn_NextBillPage";
+            this.btn_NextBillPage.Size = new System.Drawing.Size(100, 28);
+            this.btn_NextBillPage.TabIndex = 9;
+            this.btn_NextBillPage.Text = "Next";
+            this.btn_NextBillPage.UseVisualStyleBackColor = true;
+            this.btn_NextBillPage.Click += new System.EventHandler(this.btnNextBillPage_Click);
+            // 
+            // btn_PrevioursBillPage
+            // 
+            this.btn_PrevioursBillPage.Location = new System.Drawing.Point(131, 386);
+            this.btn_PrevioursBillPage.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_PrevioursBillPage.Name = "btn_PrevioursBillPage";
+            this.btn_PrevioursBillPage.Size = new System.Drawing.Size(100, 28);
+            this.btn_PrevioursBillPage.TabIndex = 8;
+            this.btn_PrevioursBillPage.Text = "Previours";
+            this.btn_PrevioursBillPage.UseVisualStyleBackColor = true;
+            this.btn_PrevioursBillPage.Click += new System.EventHandler(this.btnPrevioursBillPage_Click);
+            // 
+            // btn_LastBillPage
+            // 
+            this.btn_LastBillPage.Location = new System.Drawing.Point(722, 384);
+            this.btn_LastBillPage.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_LastBillPage.Name = "btn_LastBillPage";
+            this.btn_LastBillPage.Size = new System.Drawing.Size(100, 28);
+            this.btn_LastBillPage.TabIndex = 7;
+            this.btn_LastBillPage.Text = "Last";
+            this.btn_LastBillPage.UseVisualStyleBackColor = true;
+            this.btn_LastBillPage.Click += new System.EventHandler(this.btn_LastBillPage_Click);
+            // 
+            // btn_FristBillPage
+            // 
+            this.btn_FristBillPage.Location = new System.Drawing.Point(14, 386);
+            this.btn_FristBillPage.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_FristBillPage.Name = "btn_FristBillPage";
+            this.btn_FristBillPage.Size = new System.Drawing.Size(100, 28);
+            this.btn_FristBillPage.TabIndex = 6;
+            this.btn_FristBillPage.Text = "First";
+            this.btn_FristBillPage.UseVisualStyleBackColor = true;
+            this.btn_FristBillPage.Click += new System.EventHandler(this.btn_FristBillPage_Click);
             // 
             // dtgv_Bill
             // 
@@ -222,12 +288,12 @@ namespace QuanLyBanBida
             this.dtgv_Bill.Name = "dtgv_Bill";
             this.dtgv_Bill.RowHeadersWidth = 51;
             this.dtgv_Bill.RowTemplate.Height = 24;
-            this.dtgv_Bill.Size = new System.Drawing.Size(842, 423);
+            this.dtgv_Bill.Size = new System.Drawing.Size(842, 379);
             this.dtgv_Bill.TabIndex = 0;
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.btn_);
+            this.panel2.Controls.Add(this.btn_ViewBill);
             this.panel2.Controls.Add(this.dtpk_ToDate);
             this.panel2.Controls.Add(this.dtpk_FromDate);
             this.panel2.Location = new System.Drawing.Point(8, 6);
@@ -235,14 +301,15 @@ namespace QuanLyBanBida
             this.panel2.Size = new System.Drawing.Size(841, 47);
             this.panel2.TabIndex = 2;
             // 
-            // btn_
+            // btn_ViewBill
             // 
-            this.btn_.Location = new System.Drawing.Point(360, 11);
-            this.btn_.Name = "btn_";
-            this.btn_.Size = new System.Drawing.Size(129, 31);
-            this.btn_.TabIndex = 2;
-            this.btn_.Text = "Thống kê";
-            this.btn_.UseVisualStyleBackColor = true;
+            this.btn_ViewBill.Location = new System.Drawing.Point(360, 11);
+            this.btn_ViewBill.Name = "btn_ViewBill";
+            this.btn_ViewBill.Size = new System.Drawing.Size(129, 31);
+            this.btn_ViewBill.TabIndex = 2;
+            this.btn_ViewBill.Text = "Thống kê";
+            this.btn_ViewBill.UseVisualStyleBackColor = true;
+            this.btn_ViewBill.Click += new System.EventHandler(this.btn_ViewBill_Click);
             // 
             // dtpk_ToDate
             // 
@@ -274,20 +341,20 @@ namespace QuanLyBanBida
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.textBox1);
+            this.panel6.Controls.Add(this.txt_SearchFoodName);
             this.panel6.Controls.Add(this.btn_SearchFood);
             this.panel6.Location = new System.Drawing.Point(516, 6);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(332, 59);
             this.panel6.TabIndex = 3;
             // 
-            // textBox1
+            // txt_SearchFoodName
             // 
-            this.textBox1.Location = new System.Drawing.Point(36, 15);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(170, 30);
-            this.textBox1.TabIndex = 6;
+            this.txt_SearchFoodName.Location = new System.Drawing.Point(36, 15);
+            this.txt_SearchFoodName.Multiline = true;
+            this.txt_SearchFoodName.Name = "txt_SearchFoodName";
+            this.txt_SearchFoodName.Size = new System.Drawing.Size(170, 30);
+            this.txt_SearchFoodName.TabIndex = 6;
             // 
             // btn_SearchFood
             // 
@@ -298,6 +365,7 @@ namespace QuanLyBanBida
             this.btn_SearchFood.TabIndex = 5;
             this.btn_SearchFood.Text = "Tìm";
             this.btn_SearchFood.UseVisualStyleBackColor = true;
+            this.btn_SearchFood.Click += new System.EventHandler(this.btn_SearchFood_Click);
             // 
             // panel5
             // 
@@ -319,6 +387,7 @@ namespace QuanLyBanBida
             this.btn_ViewFood.TabIndex = 4;
             this.btn_ViewFood.Text = "Xem";
             this.btn_ViewFood.UseVisualStyleBackColor = true;
+            this.btn_ViewFood.Click += new System.EventHandler(this.btn_ShowFood_Click);
             // 
             // btn_EditFood
             // 
@@ -329,6 +398,7 @@ namespace QuanLyBanBida
             this.btn_EditFood.TabIndex = 3;
             this.btn_EditFood.Text = "Sửa";
             this.btn_EditFood.UseVisualStyleBackColor = true;
+            this.btn_EditFood.Click += new System.EventHandler(this.btn_EditFood_Click);
             // 
             // btn_DeleteFood
             // 
@@ -339,6 +409,7 @@ namespace QuanLyBanBida
             this.btn_DeleteFood.TabIndex = 2;
             this.btn_DeleteFood.Text = "Xóa";
             this.btn_DeleteFood.UseVisualStyleBackColor = true;
+            this.btn_DeleteFood.Click += new System.EventHandler(this.btn_DeleteFood_Click);
             // 
             // btn_AddFood
             // 
@@ -349,6 +420,7 @@ namespace QuanLyBanBida
             this.btn_AddFood.TabIndex = 1;
             this.btn_AddFood.Text = "Thêm";
             this.btn_AddFood.UseVisualStyleBackColor = true;
+            this.btn_AddFood.Click += new System.EventHandler(this.btn_AddFood_Click);
             // 
             // panel4
             // 
@@ -363,27 +435,25 @@ namespace QuanLyBanBida
             // 
             // panel10
             // 
-            this.panel10.Controls.Add(this.numericUpDown1);
+            this.panel10.Controls.Add(this.nm_Price);
             this.panel10.Controls.Add(this.lbl_FoodPrice);
             this.panel10.Location = new System.Drawing.Point(16, 260);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(300, 70);
             this.panel10.TabIndex = 4;
-            this.panel10.Paint += new System.Windows.Forms.PaintEventHandler(this.panel10_Paint);
             // 
-            // numericUpDown1
+            // nm_Price
             // 
-            this.numericUpDown1.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.numericUpDown1.Location = new System.Drawing.Point(118, 26);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.nm_Price.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.nm_Price.Location = new System.Drawing.Point(118, 26);
+            this.nm_Price.Maximum = new decimal(new int[] {
             100000000,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(170, 30);
-            this.numericUpDown1.TabIndex = 1;
-            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            this.nm_Price.Name = "nm_Price";
+            this.nm_Price.Size = new System.Drawing.Size(170, 30);
+            this.nm_Price.TabIndex = 1;
             // 
             // lbl_FoodPrice
             // 
@@ -394,26 +464,23 @@ namespace QuanLyBanBida
             this.lbl_FoodPrice.Size = new System.Drawing.Size(50, 22);
             this.lbl_FoodPrice.TabIndex = 0;
             this.lbl_FoodPrice.Text = "Giá: ";
-            this.lbl_FoodPrice.Click += new System.EventHandler(this.lbl_FoodPrice_Click);
             // 
             // panel9
             // 
-            this.panel9.Controls.Add(this.txt_Category);
+            this.panel9.Controls.Add(this.cb_Category);
             this.panel9.Controls.Add(this.lbl_Category);
             this.panel9.Location = new System.Drawing.Point(16, 179);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(300, 70);
             this.panel9.TabIndex = 3;
             // 
-            // txt_Category
+            // cb_Category
             // 
-            this.txt_Category.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.txt_Category.Location = new System.Drawing.Point(118, 20);
-            this.txt_Category.Multiline = true;
-            this.txt_Category.Name = "txt_Category";
-            this.txt_Category.Size = new System.Drawing.Size(170, 30);
-            this.txt_Category.TabIndex = 1;
-            this.txt_Category.TextChanged += new System.EventHandler(this.txt_Category_TextChanged);
+            this.cb_Category.FormattingEnabled = true;
+            this.cb_Category.Location = new System.Drawing.Point(118, 23);
+            this.cb_Category.Name = "cb_Category";
+            this.cb_Category.Size = new System.Drawing.Size(170, 27);
+            this.cb_Category.TabIndex = 1;
             // 
             // lbl_Category
             // 
@@ -424,7 +491,6 @@ namespace QuanLyBanBida
             this.lbl_Category.Size = new System.Drawing.Size(102, 22);
             this.lbl_Category.TabIndex = 0;
             this.lbl_Category.Text = "Danh Mục: ";
-            this.lbl_Category.Click += new System.EventHandler(this.lbl_Category_Click);
             // 
             // panel8
             // 
@@ -443,7 +509,6 @@ namespace QuanLyBanBida
             this.txt_NameFood.Name = "txt_NameFood";
             this.txt_NameFood.Size = new System.Drawing.Size(170, 30);
             this.txt_NameFood.TabIndex = 1;
-            this.txt_NameFood.TextChanged += new System.EventHandler(this.txt_NameFood_TextChanged);
             // 
             // lbl_NameFood
             // 
@@ -454,7 +519,6 @@ namespace QuanLyBanBida
             this.lbl_NameFood.Size = new System.Drawing.Size(92, 22);
             this.lbl_NameFood.TabIndex = 0;
             this.lbl_NameFood.Text = "Tên Món: ";
-            this.lbl_NameFood.Click += new System.EventHandler(this.lbl_NameFood_Click);
             // 
             // panel7
             // 
@@ -471,6 +535,7 @@ namespace QuanLyBanBida
             this.txt_idFood.Name = "txt_idFood";
             this.txt_idFood.Size = new System.Drawing.Size(170, 27);
             this.txt_idFood.TabIndex = 1;
+            this.txt_idFood.TextChanged += new System.EventHandler(this.txt_idFood_TextChanged);
             // 
             // lbl_FoodID
             // 
@@ -481,7 +546,6 @@ namespace QuanLyBanBida
             this.lbl_FoodID.Size = new System.Drawing.Size(41, 22);
             this.lbl_FoodID.TabIndex = 0;
             this.lbl_FoodID.Text = "ID: ";
-            this.lbl_FoodID.Click += new System.EventHandler(this.lbl_FoodID_Click);
             // 
             // panel3
             // 
@@ -500,7 +564,6 @@ namespace QuanLyBanBida
             this.dtgv_Food.RowTemplate.Height = 24;
             this.dtgv_Food.Size = new System.Drawing.Size(496, 408);
             this.dtgv_Food.TabIndex = 0;
-            this.dtgv_Food.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_Food_CellContentClick);
             // 
             // tp_Category
             // 
@@ -682,7 +745,6 @@ namespace QuanLyBanBida
             this.lbl_TableStatus.Size = new System.Drawing.Size(100, 22);
             this.lbl_TableStatus.TabIndex = 0;
             this.lbl_TableStatus.Text = "Trạng thái: ";
-            this.lbl_TableStatus.Click += new System.EventHandler(this.lbl_TableStatus_Click);
             // 
             // panel11
             // 
@@ -702,7 +764,6 @@ namespace QuanLyBanBida
             this.btn_ViewTable.TabIndex = 4;
             this.btn_ViewTable.Text = "Xem";
             this.btn_ViewTable.UseVisualStyleBackColor = true;
-            this.btn_ViewTable.Click += new System.EventHandler(this.btn_ViewTable_Click);
             // 
             // btn_EditTable
             // 
@@ -713,7 +774,6 @@ namespace QuanLyBanBida
             this.btn_EditTable.TabIndex = 3;
             this.btn_EditTable.Text = "Sửa";
             this.btn_EditTable.UseVisualStyleBackColor = true;
-            this.btn_EditTable.Click += new System.EventHandler(this.btn_EditTable_Click);
             // 
             // panel14
             // 
@@ -740,7 +800,6 @@ namespace QuanLyBanBida
             this.txt_TableName.Name = "txt_TableName";
             this.txt_TableName.Size = new System.Drawing.Size(170, 30);
             this.txt_TableName.TabIndex = 1;
-            this.txt_TableName.TextChanged += new System.EventHandler(this.txt_TableName_TextChanged);
             // 
             // lbl_TableName
             // 
@@ -802,6 +861,34 @@ namespace QuanLyBanBida
             this.tp_Account.Text = "Tài Khoản";
             this.tp_Account.UseVisualStyleBackColor = true;
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsttimkiem,
+            this.txtsearch});
+            this.toolStrip1.Location = new System.Drawing.Point(3, 3);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(853, 27);
+            this.toolStrip1.TabIndex = 7;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // tsttimkiem
+            // 
+            this.tsttimkiem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsttimkiem.Image = ((System.Drawing.Image)(resources.GetObject("tsttimkiem.Image")));
+            this.tsttimkiem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsttimkiem.Name = "tsttimkiem";
+            this.tsttimkiem.Size = new System.Drawing.Size(29, 24);
+            // 
+            // txtsearch
+            // 
+            this.txtsearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtsearch.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtsearch.Name = "txtsearch";
+            this.txtsearch.Size = new System.Drawing.Size(580, 27);
+            this.txtsearch.Text = "Tìm kiếm";
+            // 
             // dtgv_Account
             // 
             this.dtgv_Account.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -862,59 +949,6 @@ namespace QuanLyBanBida
             this.btn_AddAccount.Text = "Thêm";
             this.btn_AddAccount.UseVisualStyleBackColor = true;
             this.btn_AddAccount.Click += new System.EventHandler(this.btn_AddAccount_Click);
-            // 
-            // panel26
-            // 
-            this.panel26.Controls.Add(this.txt_nameaccount);
-            this.panel26.Controls.Add(this.lbl_NameID);
-            this.panel26.Location = new System.Drawing.Point(3, 71);
-            this.panel26.Name = "panel26";
-            this.panel26.Size = new System.Drawing.Size(411, 67);
-            this.panel26.TabIndex = 2;
-            // 
-            // txt_nameaccount
-            // 
-            this.txt_nameaccount.Location = new System.Drawing.Point(182, 25);
-            this.txt_nameaccount.Name = "txt_nameaccount";
-            this.txt_nameaccount.Size = new System.Drawing.Size(170, 27);
-            this.txt_nameaccount.TabIndex = 1;
-            // 
-            // lbl_NameID
-            // 
-            this.lbl_NameID.AutoSize = true;
-            this.lbl_NameID.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.lbl_NameID.Location = new System.Drawing.Point(18, 26);
-            this.lbl_NameID.Name = "lbl_NameID";
-            this.lbl_NameID.Size = new System.Drawing.Size(144, 22);
-            this.lbl_NameID.TabIndex = 0;
-            this.lbl_NameID.Text = "Tên Đăng Nhập: ";
-            // 
-            // panel25
-            // 
-            this.panel25.Controls.Add(this.txt_DisplayName);
-            this.panel25.Controls.Add(this.lbl_DisplayName);
-            this.panel25.Location = new System.Drawing.Point(3, 0);
-            this.panel25.Name = "panel25";
-            this.panel25.Size = new System.Drawing.Size(411, 68);
-            this.panel25.TabIndex = 3;
-            // 
-            // txt_DisplayName
-            // 
-            this.txt_DisplayName.Location = new System.Drawing.Point(182, 22);
-            this.txt_DisplayName.Multiline = true;
-            this.txt_DisplayName.Name = "txt_DisplayName";
-            this.txt_DisplayName.Size = new System.Drawing.Size(170, 30);
-            this.txt_DisplayName.TabIndex = 1;
-            // 
-            // lbl_DisplayName
-            // 
-            this.lbl_DisplayName.AutoSize = true;
-            this.lbl_DisplayName.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.lbl_DisplayName.Location = new System.Drawing.Point(18, 23);
-            this.lbl_DisplayName.Name = "lbl_DisplayName";
-            this.lbl_DisplayName.Size = new System.Drawing.Size(126, 22);
-            this.lbl_DisplayName.TabIndex = 0;
-            this.lbl_DisplayName.Text = "Tên Hiển Thị: ";
             // 
             // panel22
             // 
@@ -981,6 +1015,59 @@ namespace QuanLyBanBida
             this.lbl_AccountType.TabIndex = 0;
             this.lbl_AccountType.Text = "Loại Tài Khoản: ";
             // 
+            // panel25
+            // 
+            this.panel25.Controls.Add(this.txt_DisplayName);
+            this.panel25.Controls.Add(this.lbl_DisplayName);
+            this.panel25.Location = new System.Drawing.Point(3, 0);
+            this.panel25.Name = "panel25";
+            this.panel25.Size = new System.Drawing.Size(411, 68);
+            this.panel25.TabIndex = 3;
+            // 
+            // txt_DisplayName
+            // 
+            this.txt_DisplayName.Location = new System.Drawing.Point(182, 22);
+            this.txt_DisplayName.Multiline = true;
+            this.txt_DisplayName.Name = "txt_DisplayName";
+            this.txt_DisplayName.Size = new System.Drawing.Size(170, 30);
+            this.txt_DisplayName.TabIndex = 1;
+            // 
+            // lbl_DisplayName
+            // 
+            this.lbl_DisplayName.AutoSize = true;
+            this.lbl_DisplayName.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.lbl_DisplayName.Location = new System.Drawing.Point(18, 23);
+            this.lbl_DisplayName.Name = "lbl_DisplayName";
+            this.lbl_DisplayName.Size = new System.Drawing.Size(126, 22);
+            this.lbl_DisplayName.TabIndex = 0;
+            this.lbl_DisplayName.Text = "Tên Hiển Thị: ";
+            // 
+            // panel26
+            // 
+            this.panel26.Controls.Add(this.txt_nameaccount);
+            this.panel26.Controls.Add(this.lbl_NameID);
+            this.panel26.Location = new System.Drawing.Point(3, 71);
+            this.panel26.Name = "panel26";
+            this.panel26.Size = new System.Drawing.Size(411, 67);
+            this.panel26.TabIndex = 2;
+            // 
+            // txt_nameaccount
+            // 
+            this.txt_nameaccount.Location = new System.Drawing.Point(182, 25);
+            this.txt_nameaccount.Name = "txt_nameaccount";
+            this.txt_nameaccount.Size = new System.Drawing.Size(170, 27);
+            this.txt_nameaccount.TabIndex = 1;
+            // 
+            // lbl_NameID
+            // 
+            this.lbl_NameID.AutoSize = true;
+            this.lbl_NameID.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.lbl_NameID.Location = new System.Drawing.Point(18, 26);
+            this.lbl_NameID.Name = "lbl_NameID";
+            this.lbl_NameID.Size = new System.Drawing.Size(144, 22);
+            this.lbl_NameID.TabIndex = 0;
+            this.lbl_NameID.Text = "Tên Đăng Nhập: ";
+            // 
             // tp_InfoCustomer
             // 
             this.tp_InfoCustomer.Controls.Add(this.btnvecuoi);
@@ -996,7 +1083,6 @@ namespace QuanLyBanBida
             this.tp_InfoCustomer.TabIndex = 5;
             this.tp_InfoCustomer.Text = "Thông tin khách hàng";
             this.tp_InfoCustomer.UseVisualStyleBackColor = true;
-            this.tp_InfoCustomer.Click += new System.EventHandler(this.tp_InfoCustomer_Click);
             // 
             // btnvecuoi
             // 
@@ -1042,7 +1128,6 @@ namespace QuanLyBanBida
             this.panel20.Name = "panel20";
             this.panel20.Size = new System.Drawing.Size(851, 177);
             this.panel20.TabIndex = 3;
-            this.panel20.Paint += new System.Windows.Forms.PaintEventHandler(this.panel20_Paint);
             // 
             // txtngaycheckin
             // 
@@ -1205,36 +1290,6 @@ namespace QuanLyBanBida
             this.dtgv_InfoCustomer.RowTemplate.Height = 24;
             this.dtgv_InfoCustomer.Size = new System.Drawing.Size(859, 277);
             this.dtgv_InfoCustomer.TabIndex = 0;
-            this.dtgv_InfoCustomer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_InfoCustomer_CellContentClick);
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsttimkiem,
-            this.txtsearch});
-            this.toolStrip1.Location = new System.Drawing.Point(3, 3);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(853, 31);
-            this.toolStrip1.TabIndex = 7;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // tsttimkiem
-            // 
-            this.tsttimkiem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsttimkiem.Image = ((System.Drawing.Image)(resources.GetObject("tsttimkiem.Image")));
-            this.tsttimkiem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsttimkiem.Name = "tsttimkiem";
-            this.tsttimkiem.Size = new System.Drawing.Size(29, 28);
-            this.tsttimkiem.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
-            // txtsearch
-            // 
-            this.txtsearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtsearch.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtsearch.Name = "txtsearch";
-            this.txtsearch.Size = new System.Drawing.Size(580, 31);
-            this.txtsearch.Text = "Tìm kiếm";
             // 
             // fAdmin
             // 
@@ -1250,6 +1305,7 @@ namespace QuanLyBanBida
             this.tcAdmin.ResumeLayout(false);
             this.tp_Bill.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_Bill)).EndInit();
             this.panel2.ResumeLayout(false);
             this.tp_Food.ResumeLayout(false);
@@ -1259,7 +1315,7 @@ namespace QuanLyBanBida
             this.panel4.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nm_Price)).EndInit();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.panel8.ResumeLayout(false);
@@ -1288,23 +1344,23 @@ namespace QuanLyBanBida
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_Table)).EndInit();
             this.tp_Account.ResumeLayout(false);
             this.tp_Account.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_Account)).EndInit();
             this.panel21.ResumeLayout(false);
-            this.panel26.ResumeLayout(false);
-            this.panel26.PerformLayout();
-            this.panel25.ResumeLayout(false);
-            this.panel25.PerformLayout();
             this.panel22.ResumeLayout(false);
             this.panel23.ResumeLayout(false);
             this.panel23.PerformLayout();
             this.panel24.ResumeLayout(false);
             this.panel24.PerformLayout();
+            this.panel25.ResumeLayout(false);
+            this.panel25.PerformLayout();
+            this.panel26.ResumeLayout(false);
+            this.panel26.PerformLayout();
             this.tp_InfoCustomer.ResumeLayout(false);
             this.panel20.ResumeLayout(false);
             this.panel20.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_InfoCustomer)).EndInit();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1318,7 +1374,7 @@ namespace QuanLyBanBida
         private System.Windows.Forms.TabPage tp_Table;
         private System.Windows.Forms.TabPage tp_Account;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_SearchFoodName;
         private System.Windows.Forms.Button btn_SearchFood;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button btn_ViewFood;
@@ -1331,20 +1387,19 @@ namespace QuanLyBanBida
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dtgv_Bill;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btn_;
+        private System.Windows.Forms.Button btn_ViewBill;
         private System.Windows.Forms.DateTimePicker dtpk_ToDate;
         private System.Windows.Forms.DateTimePicker dtpk_FromDate;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Label lbl_FoodPrice;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.TextBox txt_Category;
         private System.Windows.Forms.Label lbl_Category;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.TextBox txt_NameFood;
         private System.Windows.Forms.Label lbl_NameFood;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label lbl_FoodID;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown nm_Price;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Button btn_ViewCategory;
         private System.Windows.Forms.Button btn_EditCategory;
@@ -1418,5 +1473,11 @@ namespace QuanLyBanBida
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton tsttimkiem;
         private System.Windows.Forms.ToolStripTextBox txtsearch;
+        private System.Windows.Forms.ComboBox cb_Category;
+        private System.Windows.Forms.TextBox txt_PageBill;
+        private System.Windows.Forms.Button btn_NextBillPage;
+        private System.Windows.Forms.Button btn_PrevioursBillPage;
+        private System.Windows.Forms.Button btn_LastBillPage;
+        private System.Windows.Forms.Button btn_FristBillPage;
     }
 }

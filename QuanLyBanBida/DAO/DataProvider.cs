@@ -10,55 +10,61 @@ namespace QuanLyBanBida.DAO
 {
     public class DataProvider
     {
-        private static DataProvider instance;
-        
+        private static DataProvider instance; // Ctrl + R + E
+
         public static DataProvider Instance
         {
-            get { if (instance == null) instance = new DataProvider();  return DataProvider.instance; }
+            get { if (instance == null) instance = new DataProvider(); return DataProvider.instance; }
             private set { DataProvider.instance = value; }
         }
 
         private DataProvider() { }
 
-        private string connectionSTR = @"Data Source=MSI\SQLEXPRESS;Initial Catalog=QuanLyQuanBidamaster;Integrated Security=True";
+        private string connectionSTR = "Data Source=.\\sqlexpress;Initial Catalog=QuanLyQuanBidaFinal1;Integrated Security=True";
 
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {
             DataTable data = new DataTable();
-            using (SqlConnection conn = new SqlConnection(connectionSTR))
-            {
-                conn.Open();
-                SqlCommand command = new SqlCommand(query, conn);
 
-                if(parameter != null)
+            using (SqlConnection connection = new SqlConnection(connectionSTR))
+            {
+                connection.Open();
+
+                SqlCommand command = new SqlCommand(query, connection);
+
+                if (parameter != null)
                 {
                     string[] listPara = query.Split(' ');
                     int i = 0;
-                    foreach (string item in listPara) 
+                    foreach (string item in listPara)
                     {
                         if (item.Contains('@'))
                         {
                             command.Parameters.AddWithValue(item, parameter[i]);
                             i++;
-                        } 
+                        }
                     }
                 }
 
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
+
                 adapter.Fill(data);
-                conn.Close();
+
+                connection.Close();
             }
-            
+
             return data;
         }
 
         public int ExecuteNonQuery(string query, object[] parameter = null)
         {
             int data = 0;
-            using (SqlConnection conn = new SqlConnection(connectionSTR))
+
+            using (SqlConnection connection = new SqlConnection(connectionSTR))
             {
-                conn.Open();
-                SqlCommand command = new SqlCommand(query, conn);
+                connection.Open();
+
+                SqlCommand command = new SqlCommand(query, connection);
 
                 if (parameter != null)
                 {
@@ -73,20 +79,24 @@ namespace QuanLyBanBida.DAO
                         }
                     }
                 }
+
                 data = command.ExecuteNonQuery();
-                conn.Close();
+
+                connection.Close();
             }
 
             return data;
         }
 
-        public object ExecuteScala(string query, object[] parameter = null)
+        public object ExecuteScalar(string query, object[] parameter = null)
         {
             object data = 0;
-            using (SqlConnection conn = new SqlConnection(connectionSTR))
+
+            using (SqlConnection connection = new SqlConnection(connectionSTR))
             {
-                conn.Open();
-                SqlCommand command = new SqlCommand(query, conn);
+                connection.Open();
+
+                SqlCommand command = new SqlCommand(query, connection);
 
                 if (parameter != null)
                 {
@@ -101,8 +111,10 @@ namespace QuanLyBanBida.DAO
                         }
                     }
                 }
+
                 data = command.ExecuteScalar();
-                conn.Close();
+
+                connection.Close();
             }
 
             return data;

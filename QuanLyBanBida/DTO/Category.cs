@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace QuanLyBanBida.DTO
 {
-    internal class Category
+    public class Category
     {
         private int id;
         private string name;
